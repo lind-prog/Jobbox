@@ -1,10 +1,10 @@
 class OffersController < ApplicationController
   def index
-    @user_job_search = UserJobSearch.all
-    @markers = @user_job_search.geocoded.map do |user_job_search|
+    @offers = UserJobSearch.all
+    @markers = @offers.geocoded.map do |offer|
       {
-        lat: user_job_search.latitude,
-        lng: user_job_search.longitude
+        lat: offer.latitude,
+        lng: offer.longitude
       }
     end
   end
