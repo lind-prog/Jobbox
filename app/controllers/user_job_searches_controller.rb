@@ -5,11 +5,7 @@ class UserJobSearchesController < ApplicationController
   # end
 
   def new
-    if current_user.last_user_job_search.present?
-      @user_job_search = current_user.last_user_job_search
-    else
-      @user_job_search = UserJobSearch.new
-    end
+    @user_job_search = UserJobSearch.find_or_create_by(job_seeker: current_user)
   end
 
   def update

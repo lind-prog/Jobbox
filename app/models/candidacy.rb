@@ -1,5 +1,5 @@
 class Candidacy < ApplicationRecord
-  belongs_to :user_job_search, class_name: "User"
-  belongs_to :recruiter, class_name: "Offer"
+  belongs_to :job_seeker, class_name: "User"
+  belongs_to :offer
   has_many :chatrooms
 end
