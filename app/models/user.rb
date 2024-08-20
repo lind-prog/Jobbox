@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :candidacies_as_job_seeker, class_name: "Candidacy", foreign_key: :job_seeker_id
   has_many :messages
 
-  # Devise modules
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

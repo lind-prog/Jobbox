@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_20_150524) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_20_152517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "candidacies", force: :cascade do |t|
     t.integer "match_level"
     t.string "status"
-    t.bigint "user_id", null: false
     t.bigint "offer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "job_seeker_id"
+    t.index ["job_seeker_id"], name: "index_candidacies_on_job_seeker_id"
     t.index ["offer_id"], name: "index_candidacies_on_offer_id"
-    t.index ["user_id"], name: "index_candidacies_on_user_id"
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -62,13 +62,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_150524) do
     t.decimal "salary"
     t.string "study_level"
     t.string "sector"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.index ["user_id"], name: "index_offers_on_user_id"
+    t.bigint "recruiter_id"
+    t.index ["recruiter_id"], name: "index_offers_on_recruiter_id"
   end
 
   create_table "user_job_searches", force: :cascade do |t|
@@ -83,8 +83,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_150524) do
     t.float "latitude"
     t.float "longitude"
     t.string "city"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_user_job_searches_on_user_id"
+    t.bigint "job_seeker_id"
+    t.index ["job_seeker_id"], name: "index_user_job_searches_on_job_seeker_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -102,7 +102,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_150524) do
   end
 
   add_foreign_key "candidacies", "offers"
-  add_foreign_key "candidacies", "users"
+  add_foreign_key "candidacies", "users", column: "job_seeker_id"
   add_foreign_key "chatrooms", "candidacies"
   add_foreign_key "chatrooms", "users", column: "receiver_id"
   add_foreign_key "chatrooms", "users", column: "sender_id"
@@ -110,6 +110,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_150524) do
   add_foreign_key "matches", "user_job_searches"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "offers", "users"
-  add_foreign_key "user_job_searches", "users"
+  add_foreign_key "offers", "users", column: "recruiter_id"
+  add_foreign_key "user_job_searches", "users", column: "job_seeker_id"
 end

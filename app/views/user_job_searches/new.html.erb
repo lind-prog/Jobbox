@@ -1,0 +1,17 @@
+<h2> Job recherché </h2>
+
+<%= simple_form_for(@user_job_search) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :city %>
+    <%= f.input :contrat_type %>
+    <%= f.input :experience_level %>
+    <%= f.input :salary %>
+    <%= f.input :study_level %>
+    <%= f.input :sector %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Valider mon profil",  class: "btn btn-outline-info booking-btn"%>
+  </div>
+<% end %>
