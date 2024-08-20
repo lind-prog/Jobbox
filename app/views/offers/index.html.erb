@@ -1,4 +1,18 @@
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="container">
+  <header class="header">
+    <h1 class="title">Job Map</h1>
+    <p class="subtitle">Match ton job sur la map !</p>
+  </header>
+
+  <div class="map-container">
+    <div class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2024 JobBox. Droit réservé..</p>
+  </footer>
+</div>
