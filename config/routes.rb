@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :users, only: %i[show] do
     resources :offers, only: %i[index]
-    resources :user_job_searches, only: %i[edit update]
+    resources :user_job_searches, only: %i[new update]
     collection do
       get :my_candidacies
     end
