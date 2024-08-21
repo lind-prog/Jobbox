@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[show]
   resources :user_job_searches, only: %i[new update create]
 
+  resources :user_job_searches, only: %i[show] do
+    resources :matches, only: %i[index]
+  end
+
   resources :offers, only: %i[index show new create] do
     resources :candidacies, only: %i[create]
     resources :matches, only: %i[index]
@@ -22,8 +26,6 @@ Rails.application.routes.draw do
       get :my_candidacies
     end
   end
-
-  resources :matches, only: %i[index]
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: %i[create]
