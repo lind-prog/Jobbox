@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :users, only: %i[ show ]
+  resources :users, only: %i[show]
   resources :user_job_searches, only: %i[new update create]
+
+  resources :user_job_searches, only: %i[show] do
+    resources :matches, only: %i[index]
+  end
 
   resources :offers, only: %i[index show new create] do
     resources :candidacies, only: %i[create]
@@ -22,8 +26,6 @@ Rails.application.routes.draw do
       get :my_candidacies
     end
   end
-
-  resources :matches, only: %i[index]
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: %i[create]
