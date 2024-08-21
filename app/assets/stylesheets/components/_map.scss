@@ -1,0 +1,123 @@
+/*
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease, visibility 300ms ease;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 90%;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff6f61;
+    }
+  }
+
+  .content {
+    text-align: center;
+    margin-top: 20px;
+
+    p {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ff4c3b;
+      }
+    }
+  }
+}
+ */
+ /* app/assets/stylesheets/mapbox-popup.scss */
+
+/* Styles généraux pour la pop-up Mapbox */
+.mapboxgl-popup {
+  max-width: 300px; /* Largeur maximale de la pop-up */
+  background: #fff; /* Fond blanc pour un contraste clair */
+  border-radius: 8px; /* Coins arrondis pour un effet doux */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile pour donner de la profondeur */
+  overflow: hidden; /* Évite le débordement du contenu */
+  font-family: "Open Sans", sans-serif; /* Police sans-serif moderne */
+}
+
+/* Styles pour le contenu de la pop-up */
+.mapboxgl-popup-content {
+  padding: 15px; /* Espacement intérieur pour un bon confort visuel */
+  text-align: center; /* Centre le texte pour une présentation uniforme */
+  color: #333; /* Couleur du texte pour une bonne lisibilité */
+
+  h2 {
+    font-size: 1.25rem; /* Taille de police plus grande pour les titres */
+    margin: 0 0 10px 0; /* Marge en bas pour séparer le titre du contenu */
+    color: #333; /* Couleur du titre */
+  }
+
+  p {
+    font-size: 1rem; /* Taille de police standard pour le texte */
+    margin: 0 0 15px 0; /* Marge en bas pour séparer le texte du bouton */
+    color: #666; /* Couleur du texte pour un contraste doux */
+  }
+
+  a.btn {
+    display: inline-block; /* Bouton en ligne avec padding */
+    padding: 10px 15px; /* Espacement pour le bouton */
+    background-color: #000000; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border-radius: 5px; /* Coins arrondis pour le bouton */
+    text-decoration: none; /* Retire la sous-ligne du lien */
+    font-weight: bold; /* Texte en gras pour le bouton */
+    transition: background-color 0.3s ease; /* Transition douce pour le survol */
+
+    &:hover {
+      background-color: #ff4c3b; /* Couleur du bouton au survol */
+    }
+  }
+}
