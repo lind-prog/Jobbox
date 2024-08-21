@@ -1,0 +1,36 @@
+.form-container {
+  width: 100%;
+  max-width: 800px; // Augmentez la largeur maximale du conteneur
+  background-color: #e2e2e2; // Couleur de fond plus foncée
+  padding: 30px; // Padding pour aérer le contenu
+  border-radius: 8px;
+  margin: 20px auto; // Centre le formulaire horizontalement
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; // Permet aux colonnes de passer à la ligne si nécessaire
+  margin-bottom: 20px; // Espacement entre les lignes de champs
+}
+.form-row > div {
+  padding: 0 15px; // Ajoute du padding entre les colonnes
+}
+
+.form-container .form-control {
+  font-size: 16px; 
+  padding: 12px;
+}
+
+.form-container label {
+  color: #000000;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
