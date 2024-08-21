@@ -1,5 +1,4 @@
 class UserJobSearchesController < ApplicationController
-
   # def edit
   #   @user_job_search = UserJobSearch.find_or_create(params[:id])
   # end
