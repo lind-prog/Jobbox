@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class CandidaciesController < ApplicationController
   def my_candidacies
     @candidacies = current_user.candidacies_as_job_seeker
   end
