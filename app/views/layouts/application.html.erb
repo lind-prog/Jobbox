@@ -14,6 +14,34 @@
   <%# <%= render "shared/navbar" %>
 <%= render "shared/flashes" %>
 
+<div class="nav-bar">
+  <div class="nav-item">
+    <%= link_to chatrooms_path do %>
+      <i class="fa fa-envelope"></i>
+    <% end %>
+  </div>
+  <div class="nav-item">
+    <%= link_to root_path do %>
+      <i class="fa fa-home"></i>
+    <% end %>
+  </div>
+  <div class="nav-item settings-dropdown">
+    <i class="fa fa-cog"></i>
+    <div class="dropdown-content">
+      <%= link_to 'Profile Settings', edit_user_registration_path, class: 'dropdown-item' %>
+      <%= link_to 'Account Settings', edit_user_registration_path, class: 'dropdown-item' %>
+      <%= link_to 'Privacy Settings', edit_user_registration_path, class: 'dropdown-item' %>
+    </div>
+  </div>
+  <div class="nav-item">
+    <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+      <i class="fa fa-sign-out"></i>
+    <% end %>
+  </div>
+</div>
+
+
+
     <%= yield %>
   </body>
 </html>
