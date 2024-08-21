@@ -1,47 +1,41 @@
-<h1>Mon profil</h1>
-<h2> Diplômes </h2>
-<h2> Expériences </h2>
-
-
-<div class="d-flex justify-content-center">
-  <div class="form-container">
-    <h2> Job recherché </h2>
-    <%= simple_form_for(@user_job_search) do |f| %>
-      <div class="form-row">
-        <div class="col-md-6">
-          <%= f.input :title, label: "Job", input_html: { class: 'form-control' } %>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :city, label: "Ville", input_html: { class: 'form-control' } %>
-        </div>
+<div class="form-container">
+  <h2> Job recherché </h2>
+  <%= simple_form_for @user_job_search do |f| %>
+    <div class="form-row">
+      <div class="col-md-6">
+        <%= f.input :title, label: "Job", input_html: { class: 'form-control' } %>
       </div>
+      <div class="col-md-6">
+        <%= f.input :city, label: "Ville", input_html: { class: 'form-control' } %>
+      </div>
+    </div>
 
-      <div class="form-row">
-        <div class="col-md-6">
-          <%= f.input :contrat_type, collection: ['CDI', 'CDD', 'Freelance', 'Stage', 'Alternance'], prompt: "Sélectionnez un type de contrat", label: "Type de contrat", input_html: { class: 'form-control' } %>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :experience_level, collection: ['0-1 an', '1-3 ans', '3-5 ans', '5-10 ans', '+ 10 ans'], prompt: "Sélectionnez un niveau d'expérience", label: "Niveau d'expérience", input_html: { class: 'form-control' } %>
-        </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <%= f.input :contrat_type, collection: ['CDI', 'CDD', 'Freelance', 'Stage', 'Alternance'], prompt: "Sélectionnez un type de contrat", label: "Type de contrat", input_html: { class: 'form-control' } %>
       </div>
+      <div class="col-md-6">
+        <%= f.input :experience_level, collection: ['0-1 an', '1-3 ans', '3-5 ans', '5-10 ans', '+ 10 ans'], prompt: "Sélectionnez un niveau d'expérience", label: "Niveau d'expérience", input_html: { class: 'form-control' } %>
+      </div>
+    </div>
 
-      <div class="form-row">
-        <div class="col-md-6">
-          <%= f.input :salary, collection: ['< 20k€', '20k€ - 30k€', '30k€ - 40k€', '40k€ - 50k€', '> 50k€'], prompt: "Sélectionnez une tranche salariale", label: "Salaire", input_html: { class: 'form-control' } %>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :study_level, collection: ['Aucun diplôme', 'Bac', 'Bac+2', 'Bac+3', 'Master', 'Doctorat'], prompt: "Sélectionnez un niveau d'étude", label: "Niveau d'étude", input_html: { class: 'form-control' } %>
-        </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <%= f.input :salary, collection: ['< 20k€', '20k€ - 30k€', '30k€ - 40k€', '40k€ - 50k€', '> 50k€'], prompt: "Sélectionnez une tranche salariale", label: "Salaire", input_html: { class: 'form-control' } %>
       </div>
+      <div class="col-md-6">
+        <%= f.input :study_level, collection: ['Aucun diplôme', 'Bac', 'Bac+2', 'Bac+3', 'Master', 'Doctorat'], prompt: "Sélectionnez un niveau d'étude", label: "Niveau d'étude", input_html: { class: 'form-control' } %>
+      </div>
+    </div>
 
-      <div class="form-row">
-        <div class="col-md-6">
-          <%= f.input :sector, collection: ['Finance', 'Technologie', 'Santé', 'Éducation', 'Construction', 'Marketing', 'Consulting'], prompt: "Sélectionnez un secteur", label: "Secteur", input_html: { class: 'form-control' } %>
-        </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <%= f.input :sector, collection: ['Finance', 'Technologie', 'Santé', 'Éducation', 'Construction', 'Marketing', 'Consulting'], prompt: "Sélectionnez un secteur", label: "Secteur", input_html: { class: 'form-control' } %>
       </div>
-      <div class="form-actions text-align: center">
-        <%= f.submit "Valider mon profil", class: "btn btn-outline-primary booking-btn align-items-center" %>
-      </div>
-    <% end %>
-  </div>
+    </div>
+    <div class="form-actions text-align: center">
+      <%= f.submit "Valider mon profil", class: "btn btn-outline-primary booking-btn align-items-center" %>
+    </div>
+  <% end %>
+
 </div>
