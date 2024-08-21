@@ -1,0 +1,74 @@
+.offer-page {
+  max-width: 1200px; /* Increased width to accommodate the map on the right */
+  margin: 20px auto; /* Adds margin to create space between the block and the navbar */
+  padding: 20px;
+  display: flex; /* Flexbox to align details and map side by side */
+  gap: 20px; /* Space between offer details and map */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .offer-details {
+    flex: 2; /* Takes up more space compared to the map */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+
+    p {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #666;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    p strong {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .salary {
+      font-weight: bold;
+      color: #FFA500; /* Orange color for salary */
+      font-size: 1.4rem;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+
+  .map-container {
+    flex: 1; /* Takes up less space compared to the offer details */
+    height: 400px; /* Set a fixed height for the map */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-family: 'Lovelo', sans-serif;
+  }
+
+  .btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #C3F73A;
+    color: #333;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .btn:hover {
+    background-color: #95E06C;
+    transform: scale(1.02);
+  }
+}
