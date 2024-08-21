@@ -1,11 +1,42 @@
-<h1>Mon profil</h1>
-<h2> Diplômes </h2>
-<h2> Expériences </h2>
+<h1 class="text-center"> Mon Profil </h1>
 
+ <div class="d-flex justify-content-center">
+  <div class="form-container d-flex align-items-start pl-5 pr-5">
+  <div class="info-container flex-grow-1">
+    <p> Nom </p>
+    <div class="input-like"><%= @user.name %></div>
+    <p> E-mail </p>
+    <div class="input-like"><%= @user.email %></div>
+    <p> Téléphone </p>
+    <div class="input-like"><%= @user.phone %></div>
+    <p> Addresse </p>
+    <div class="input-like"><%= @user.address %></div>
+  </div>
+  <div class="avatar-container">
+  <%= image_tag 'https://i0.wp.com/pixarpost.com/wp-content/uploads/2020/10/a760d-duke2bcaboom2bsolo2btoy2bstory2b42bposter2bcopy.jpg?fit=1130%2C668&ssl=1', alt: "Avatar Profil", class: 'avatar' %>
+  </div>
+  </div>
+</div>
 
+<h2 class="text-center mt-5"> Diplômes </h2>
+ <div class="d-flex justify-content-center">
+  <div class="form-container pt-5">
+  <div class="input-like-2"><%= @user.diplome %></div>
+  </div>
+</div>
+
+<h2 class="text-center mt-5"> Expériences </h2>
 <div class="d-flex justify-content-center">
-  <div class="form-container">
-    <h2> Job recherché </h2>
+  <div class="form-container pt-5">
+  <div class="input-like-2"><%= @user.experience %></div>
+  </div>
+</div>
+
+<h2 class="text-center mt-5"> Job recherché </h2>
+<div class="d-flex justify-content-center">
+  <div class="form-container pt-5">
+
+
     <%= simple_form_for(@user_job_search) do |f| %>
       <div class="form-row">
         <div class="col-md-6">
@@ -40,8 +71,10 @@
         </div>
       </div>
       <div class="form-actions text-align: center">
-        <%= f.submit "Valider mon profil", class: "btn btn-success booking-btn align-items-center" %>
+        <%= f.submit "Valider mon profil", class: "btn btn-custom align-items-center" %>
       </div>
     <% end %>
+
+
   </div>
 </div>
