@@ -3,7 +3,7 @@
     <h2><%= recruiter.name %></h2>
     <div class="content">
       <p><%= offer.title %></p>
-      <a href="#" class="btn">Voir l'offre</a>
+      <%= link_to "Voir l'offre", offer_path(offer), :class => "btn mt-3 mb-3" %>
     </div>
   </div>
 </div>
