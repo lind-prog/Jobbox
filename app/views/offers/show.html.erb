@@ -9,8 +9,40 @@
     <p class="salary"><strong>Salaire:</strong> <%= @offer.salary %>K</p>
     <p><strong>Secteur:</strong> <%= @offer.sector %></p>
 
+    <div class="offer-info">
+      <div class="offer-info-block city-block">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Ville:</strong> <%= @offer.address %></p>
+      </div>
+
+      <div class="offer-info-block contract-block">
+        <i class="fas fa-briefcase"></i>
+        <p><strong>Type de contrat:</strong> <%= @offer.contrat_type %></p>
+      </div>
+
+      <div class="offer-info-block experience-block">
+        <i class="fas fa-user-tie"></i>
+        <p><strong>Niveau d'expérience:</strong> <%= @offer.experience_level %></p>
+      </div>
+
+      <div class="offer-info-block education-block">
+        <i class="fas fa-graduation-cap"></i>
+        <p><strong>Niveau d'études:</strong> <%= @offer.study_level %></p>
+      </div>
+
+      <div class="offer-info-block sector-block">
+        <i class="fas fa-industry"></i>
+        <p><strong>Secteur:</strong> <%= @offer.sector %></p>
+      </div>
+
+      <div class="offer-info-block salary-block">
+        <i class="fas fa-money-bill-wave"></i>
+        <p class="salary"><strong>Salaire:</strong> <%= @offer.salary %>K</p>
+      </div>
+    </div>
+
     <%= link_to 'Postuler', offers_path, class: 'btn btn-primary' %>
   </div>
 
-  <div class="map-container" id="map"></div> <!-- This will hold the Mapbox map -->
+  <div class="map-container" id="map"></div>
 </div>

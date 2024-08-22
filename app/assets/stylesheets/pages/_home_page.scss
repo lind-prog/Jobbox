@@ -1,98 +1,203 @@
-/* Home Page Styles */
-
 .home-page {
   font-family: 'Roboto', sans-serif;
-  color: #333;
+  background: #fff;
 }
 
-/* Banner Section */
 .banner {
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
-  color: white;
+  position: relative; /* Nécessaire pour le positionnement absolu du pseudo-élément */
+  background: url('pexels-sora-shimazaki-5668859.jpg') no-repeat center center; /* Image de fond */
+  background-size: cover; /* Assure que l'image couvre toute la bannière */
+  color: #4CAF50;
+  padding: 0; /* Retire le padding pour occuper toute la hauteur */
   text-align: center;
-  padding: 100px 20px;
-  position: relative;
+  height: 100vh; /* Hauteur de la fenêtre d'affichage */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre le contenu verticalement */
+  overflow: hidden;
+}
+
+/* Pseudo-élément pour la superposition sombre */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Couleur noire avec opacité de 40% */
+  z-index: 1; /* Place la superposition au-dessus de l'image de fond */
+}
+
+.banner h1,
+.banner .buttons,
+.banner .btn-primary,
+.banner .btn-secondary,
+.banner .scroll-down {
+  position: relative; /* Nécessaire pour s'assurer que le contenu reste au-dessus de la superposition */
+  z-index: 2; /* Place le contenu au-dessus de la superposition */
 }
 
 .banner h1 {
   font-family: 'Lovelo', sans-serif;
-  font-size: 4rem;
-  margin-bottom: 20px;
-  animation: fadeInDown 1s ease-out;
+  font-size: 5rem; /* Augmente la taille du titre */
+  font-weight: bold; /* Rend le titre en gras */
+  margin-bottom: 80px; /* Espace important entre le titre et les boutons */
 }
 
 .banner .buttons {
-  margin-bottom: 20px;
-}
-
-.banner .btn {
-  margin: 10px;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between; /* Garde les boutons de chaque côté */
+  padding: 0 20px;
+  margin-bottom: 40px; /* Augmente l'espace sous les boutons */
 }
 
 .banner .btn-primary {
-  background-color: #f77f00;
-  color: white;
+  flex: 1;
+  margin: 0 10px; /* Espace entre les boutons */
+  background: #4CAF50; /* Couleur de fond verte */
+  color: #fff;
   border: none;
+  border-radius: 8px; /* Bords arrondis pour un look moderne */
+  padding: 15px 30px; /* Taille du bouton principal */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banner .btn-primary:hover {
+  background: #388E3C; /* Couleur de fond au survol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre au survol */
 }
 
 .banner .btn-secondary {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
+  background: #ffffff; /* Couleur de fond blanche */
+  color: #4CAF50; /* Couleur du texte verte pour matcher le bouton principal */
+  border: 2px solid #4CAF50; /* Bordure verte */
+  border-radius: 8px; /* Bords arrondis pour le bouton secondaire */
+  padding: 10px 20px; /* Taille du bouton secondaire */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px auto; /* Centre le bouton mais ne le rend pas plus large */
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.banner .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+.banner .btn-secondary:hover {
+  background: #4CAF50; /* Couleur de fond au survol */
+  color: #ffffff; /* Couleur du texte au survol */
+  border-color: #388E3C; /* Couleur de la bordure au survol */
 }
 
-/* Information Sections */
+.banner .scroll-down {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  position: absolute;
+  bottom: 20px; /* Ajuste la position verticale si nécessaire */
+  left: 0; /* Remise à zéro pour permettre le centrage */
+  right: 0; /* Assure que le conteneur prend toute la largeur */
+  font-size: 5rem; /* Augmente la taille de la flèche */
+  color: #fff;
+  animation: bounce 1.5s infinite;
+}
+
+/* Animation de rebondissement pour la flèche */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px); /* Augmente l'ampleur du rebond */
+  }
+  60% {
+    transform: translateY(-10px); /* Ajuste l'ampleur du rebond */
+  }
+}
+
 .info-section {
-  padding: 50px 20px;
-  background-color: #f8f9fa;
+  padding: 60px 20px; /* Padding autour des blocs d'infos */
 }
 
 .info-block {
-  background: white;
-  margin: 20px 0;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  display: flex;
+  align-items: flex-start; /* Aligne les éléments en haut */
+  margin-bottom: 120px; /* Augmente la marge inférieure entre les blocs */
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  max-width: 900px; /* Réduit la largeur des blocs */
+  margin: 0 auto; /* Centre horizontalement les blocs */
+  opacity: 0; /* Masque les blocs au départ */
+  transform: translateY(50px); /* Décale les blocs vers le bas */
 }
 
-.info-block.show {
+/* Lorsque le bloc devient visible */
+.info-block.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0); /* Réinitialise le décalage */
 }
 
-.info-block h2 {
-  font-family: 'Lovelo', sans-serif;
-  font-size: 2.5rem;
-  color: #f77f00;
-  margin-bottom: 20px;
+/* Lorsque le bloc devient visible avec animation */
+.info-block.animate {
+  animation: slideIn 0.6s ease-out;
 }
 
-.info-block p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Keyframe Animations */
-@keyframes fadeInDown {
+/* Animation pour les nouveaux blocs */
+@keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.info-block.reversed {
+  flex-direction: row-reverse;
+}
+
+.info-content {
+  display: flex;
+  align-items: flex-start; /* Aligne le texte et l'image en haut */
+  width: 100%;
+}
+
+.info-content .text {
+  flex: 1;
+  padding: 20px;
+  margin-right: 30px; /* Augmente l'espace à droite du texte dans les blocs normaux */
+}
+
+.info-content .text h2 {
+  font-family: 'Lovelo', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 50px; /* Augmente l'espace sous le titre */
+}
+
+.info-content .text p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 125px; /* Augmente l'espace entre les paragraphes */
+}
+
+.info-content .image {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  margin-left: 30px; /* Augmente l'espace à gauche de l'image dans les blocs normaux */
+}
+
+.info-content .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block; /* Assure que l'image est un bloc */
 }
