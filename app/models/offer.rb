@@ -1,7 +1,8 @@
 class Offer < ApplicationRecord
   belongs_to :recruiter, class_name: "User", foreign_key: 'recruiter_id'
-  has_many :candidacies
-  has_many :matches
+  has_many :candidacies, dependent: :destroy
+  has_many :matches, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  validates :title, :contrat_type, :address, :experience_level, :salary, :study_level, :sector, presence: true
 end
