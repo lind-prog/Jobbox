@@ -1,56 +1,56 @@
 .popup-overlay {
-  position: fixed; /* Position fixe pour couvrir l'écran */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fond sombre avec opacité */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Assure que la pop-up est au-dessus des autres éléments */
+  z-index: 1000;
 }
 
 .popup {
-  background: #333; /* Fond sombre pour la pop-up */
-  color: #fff; /* Texte en blanc pour le contraste */
-  border-radius: 8px; /* Coins arrondis */
-  padding: 15px; /* Espacement intérieur */
-  max-width: 700px; /* Largeur maximale plus grande pour un design horizontal */
-  max-height: 200px; /* Hauteur maximale réduite pour une apparence plus fine */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Ombre portée légère pour un effet de profondeur subtil */
-  text-align: center; /* Alignement du texte au centre */
-  font-family: "Open Sans", sans-serif; /* Police cohérente avec le reste du design */
+  background: #333;
+  color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  max-width: 700px;
+  max-height: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
 
 .popup h2 {
-  font-size: 1.25rem; /* Taille de police du titre réduite pour la finesse */
-  margin-bottom: 10px; /* Espacement inférieur réduit */
-  color: #95E06C; /* Couleur du titre en vert pour le contraste */
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #95E06C;
 }
 
 .popup .content {
-  margin-bottom: 10px; /* Espacement inférieur de la section de contenu */
+  margin-bottom: 10px;
 }
 
 .popup p {
-  font-size: 0.9rem; /* Taille de police du texte réduite pour plus de finesse */
-  color: #ccc; /* Couleur du texte pour plus de lisibilité */
-  margin: 0; /* Suppression des marges pour une disposition plus compacte */
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
 }
 
 .popup a.btn {
   display: inline-block;
-  padding: 8px 14px; /* Espacement intérieur du bouton réduit pour une apparence plus fine */
-  background-color: #95E06C; /* Fond vert pour le bouton */
-  color: #fff; /* Texte en blanc */
-  border-radius: 4px; /* Coins arrondis pour le bouton */
-  text-decoration: none; /* Suppression du soulignement */
-  font-weight: 500; /* Poids de police plus léger pour plus de finesse */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions pour la couleur de fond et l'effet d'agrandissement */
+  padding: 8px 14px;
+  background-color: #95E06C;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
 
   &:hover {
-    background-color: #78c44d; /* Couleur de fond plus foncée au survol */
-    transform: scale(1.02); /* Effet d'agrandissement subtil au survol */
+    background-color: #78c44d;
+    transform: scale(1.02);
   }
 }
