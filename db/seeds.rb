@@ -1,7 +1,7 @@
 # Destroy all existing users and offers
 puts "Destroy start"
 Match.destroy_all
-Offer.destroy_allrails 
+Offer.destroy_all
 UserJobSearch.destroy_all
 User.destroy_all
 puts "Destroy end"
