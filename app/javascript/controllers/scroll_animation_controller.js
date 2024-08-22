@@ -1,25 +1,33 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="scroll-animation"
 export default class extends Controller {
-  static targets = ["infoBlock"]
+  static targets = ["infoBlock"];
 
   connect() {
-    window.addEventListener("scroll", this.reveal.bind(this))
-    this.reveal() // Pour déclencher l'animation lors du chargement initial de la page
+    this.handleScroll();
+    window.addEventListener("scroll", this.handleScroll.bind(this));
+    window.addEventListener("keydown", this.handleKeydown.bind(this));
   }
 
   disconnect() {
-    window.removeEventListener("scroll", this.reveal.bind(this))
+    window.removeEventListener("scroll", this.handleScroll.bind(this));
+    window.removeEventListener("keydown", this.handleKeydown.bind(this));
   }
 
-  reveal() {
-    this.infoBlockTargets.forEach(block => {
-      const blockTop = block.getBoundingClientRect().top
-      const windowHeight = window.innerHeight
-      if (blockTop < windowHeight - 100) {
-        block.classList.add("show")
+  handleScroll() {
+    this.infoBlockTargets.forEach((block) => {
+      const rect = block.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        block.classList.add("visible", "animate");
+      } else {
+        block.classList.remove("visible", "animate");
       }
-    })
+    });
+  }
+
+  handleKeydown(event) {
+    if (event.key === "ArrowDown") {
+      this.handleScroll();
+    }
   }
 }
