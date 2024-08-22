@@ -13,7 +13,7 @@ class UserJobSearchesController < ApplicationController
       Offer.all.each do |offer|
         Match.create!(offer: offer, user_job_search: @user_job_search)
       end
-      redirect_to matches_user_job_search_path(@user_job_search), notice: "Votre profil a été complété avec succès !"
+      redirect_to user_job_search_matches_path(@user_job_search), notice: "Votre profil a été complété avec succès !"
     else
       render :edit, status: :unprocessable_entity
     end
