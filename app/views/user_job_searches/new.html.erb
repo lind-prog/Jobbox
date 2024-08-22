@@ -57,7 +57,7 @@
 
       <div class="form-row">
         <div class="col-md-6">
-          <%= f.input :salary, collection: ['< 20k€', '20k€ - 30k€', '30k€ - 40k€', '40k€ - 50k€', '> 50k€'], prompt: "Sélectionnez une tranche salariale", label: "Salaire", input_html: { class: 'form-control' } %>
+          <%= f.input :salary, collection: ['20k€ - 30k€', '30k€ - 40k€', '40k€ - 50k€', '50k€ - 60k€','60k€ - 70k€','< 70k€' ], prompt: "Sélectionnez une tranche salariale", label: "Salaire", input_html: { class: 'form-control' } %>
         </div>
         <div class="col-md-6">
           <%= f.input :study_level, collection: ['Aucun diplôme', 'Bac', 'Bac+2', 'Bac+3', 'Master', 'Doctorat'], prompt: "Sélectionnez un niveau d'étude", label: "Niveau d'étude", input_html: { class: 'form-control' } %>
