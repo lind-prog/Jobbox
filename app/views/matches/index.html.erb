@@ -1,7 +1,7 @@
 <div class="container">
   <header class="header">
     <h1 class="title">Job Map</h1>
-    <p class="subtitle">Match ton job sur la map !</p>
+    <p class="subtitle">Trouvez votre opportunité professionnelle sur la carte.</p>
   </header>
 
   <div class="map-container">
@@ -13,6 +13,17 @@
   </div>
 
   <footer class="footer">
-    <p>© 2024 JobBox. Droit réservé.</p>
+    <p>© 2024 JobBox. Tous droits réservés.</p>
   </footer>
+</div>
+
+<div class="contact-map-container">
+
+  <div class="map-container">
+    <div id="map" class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>

@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-scroll">
   <div class="container-fluid">
+  <% if user_signed_in?  && current_user.user_job_search.present? %>
     <%= link_to user_job_search_matches_path(@user_job_search), class: 'navbar-brand d-flex align-items-center' do %>
       <i class="fas fa-map-marked-alt fa-lg"></i>
+      <% end %>
     <% end %>
         <%= link_to root_path, class: 'navbar-brand d-flex align-items-center' do %>
       <i class="fas fa-home fa-lg"></i>
