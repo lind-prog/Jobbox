@@ -1,10 +1,30 @@
 <div class="container">
   <header class="header">
     <h1 class="title">Job Map</h1>
-    <p class="subtitle">Trouvez votre opportunité professionnelle sur la carte.</p>
+    <p class="subtitle">Match ton meilleur job !</p>
   </header>
 
+  <div class="filter-bar">
+    <h3>Filtrer par type</h3>
+    <div class="filter-options">
+      <label><input type="checkbox" class="filter-checkbox" data-filter="legendary"> Légendaire</label>
+      <label><input type="checkbox" class="filter-checkbox" data-filter="epic"> Épique</label>
+      <label><input type="checkbox" class="filter-checkbox" data-filter="rare"> Rare</label>
+      <label><input type="checkbox" class="filter-checkbox" data-filter="common"> Commun</label>
+    </div>
+  </div>
+
   <div class="map-container">
+    <div class="legend">
+      <h3>Légende</h3>
+      <ul>
+        <li><span class="legendary-dot"></span> Légendaire = Match à 100%</li>
+        <li><span class="epic-dot"></span> Épique = Match à 90%</li>
+        <li><span class="rare-dot"></span> Rare = Match à 70%</li>
+        <li><span class="common-dot"></span> Commun = Match à 50%</li>
+      </ul>
+    </div>
+
     <div class="map"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
@@ -12,18 +32,12 @@
     </div>
   </div>
 
+  <div class="info-box">
+    <h2 class="info-title">Conseils pour ta recherche</h2>
+    <p class="info-text">Utilise la carte pour découvrir les opportunités les plus proches de chez toi. Zoom pour explorer, clique pour voir les détails des offres.</p>
+  </div>
+
   <footer class="footer">
     <p>© 2024 JobBox. Tous droits réservés.</p>
   </footer>
-</div>
-
-<div class="contact-map-container">
-
-  <div class="map-container">
-    <div id="map" class="map"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
 </div>

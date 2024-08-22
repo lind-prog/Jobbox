@@ -1,121 +1,56 @@
-/*
 .popup-overlay {
-  position: fixed;
+  position: fixed; /* Position fixe pour couvrir l'écran */
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 300ms ease, visibility 300ms ease;
-
-  &.visible {
-    visibility: visible;
-    opacity: 1;
-  }
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond sombre avec opacité */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Assure que la pop-up est au-dessus des autres éléments */
 }
 
 .popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  max-width: 90%;
-  width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-
-  h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
-
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 24px;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #ff6f61;
-    }
-  }
-
-  .content {
-    text-align: center;
-    margin-top: 20px;
-
-    p {
-      margin: 10px 0;
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #ff6f61;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #ff4c3b;
-      }
-    }
-  }
-}
- */
- /* app/assets/stylesheets/mapbox-popup.scss */
-
-.mapboxgl-popup {
-  max-width: 300px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  font-family: "Open Sans", sans-serif;
+  background: #333; /* Fond sombre pour la pop-up */
+  color: #fff; /* Texte en blanc pour le contraste */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 15px; /* Espacement intérieur */
+  max-width: 700px; /* Largeur maximale plus grande pour un design horizontal */
+  max-height: 200px; /* Hauteur maximale réduite pour une apparence plus fine */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Ombre portée légère pour un effet de profondeur subtil */
+  text-align: center; /* Alignement du texte au centre */
+  font-family: "Open Sans", sans-serif; /* Police cohérente avec le reste du design */
 }
 
-.mapboxgl-popup-content {
-  padding: 15px;
-  text-align: center;
-  color: #333;
+.popup h2 {
+  font-size: 1.25rem; /* Taille de police du titre réduite pour la finesse */
+  margin-bottom: 10px; /* Espacement inférieur réduit */
+  color: #95E06C; /* Couleur du titre en vert pour le contraste */
+}
 
-  h2 {
-    font-size: 1.25rem;
-    margin: 0 0 10px 0;
-    color: #333;
-  }
+.popup .content {
+  margin-bottom: 10px; /* Espacement inférieur de la section de contenu */
+}
 
-  p {
-    font-size: 1rem; 
-    margin: 0 0 15px 0;
-    color: #666;
-  }
+.popup p {
+  font-size: 0.9rem; /* Taille de police du texte réduite pour plus de finesse */
+  color: #ccc; /* Couleur du texte pour plus de lisibilité */
+  margin: 0; /* Suppression des marges pour une disposition plus compacte */
+}
 
-  a.btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #95E06C;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+.popup a.btn {
+  display: inline-block;
+  padding: 8px 14px; /* Espacement intérieur du bouton réduit pour une apparence plus fine */
+  background-color: #95E06C; /* Fond vert pour le bouton */
+  color: #fff; /* Texte en blanc */
+  border-radius: 4px; /* Coins arrondis pour le bouton */
+  text-decoration: none; /* Suppression du soulignement */
+  font-weight: 500; /* Poids de police plus léger pour plus de finesse */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions pour la couleur de fond et l'effet d'agrandissement */
 
-    &:hover {
-      background-color: #95E06C;
-    }
+  &:hover {
+    background-color: #78c44d; /* Couleur de fond plus foncée au survol */
+    transform: scale(1.02); /* Effet d'agrandissement subtil au survol */
   }
 }
