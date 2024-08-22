@@ -1,7 +1,7 @@
 # Destroy all existing users and offers
 puts "Destroy start"
 Match.destroy_all
-Offer.destroy_allrails 
+Offer.destroy_allrails
 UserJobSearch.destroy_all
 User.destroy_all
 puts "Destroy end"
@@ -59,7 +59,7 @@ Offer.create!(
   contrat_type: "CDI",
   experience_level: "+ 10 ans",
   study_level: "Doctorat",
-  salary: "> 50k€",
+  salary: "50k€",
   sector: "Marketing",
   address: "35 Cours de Verdun, 33000 Bordeaux",
   recruiter: recruiter
