@@ -4,7 +4,9 @@
     <h1>JOBBOX</h1>
     <div class="buttons">
       <a href="#" class="btn btn-primary btn-large">Je suis recruteur</a>
+       <% if user_signed_in? %>
       <a href="<%= user_path(current_user) %>" class="btn btn-primary btn-large">Je recherche un emploi</a>
+      <% end %>
     </div>
     <a href="<%= new_user_session_path %>" class="btn btn-secondary btn-small">
       <%= current_user ? "Vous êtes connecté" : "Je me connecte" %>

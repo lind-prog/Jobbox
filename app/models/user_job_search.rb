@@ -3,5 +3,4 @@ class UserJobSearch < ApplicationRecord
   has_many :matches, dependent: :destroy
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
-  validates :title, :contrat_type, :city, :experience_level, :salary, :study_level, :sector, presence: true
 end
