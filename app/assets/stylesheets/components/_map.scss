@@ -78,46 +78,44 @@
  */
  /* app/assets/stylesheets/mapbox-popup.scss */
 
-/* Styles généraux pour la pop-up Mapbox */
 .mapboxgl-popup {
-  max-width: 300px; /* Largeur maximale de la pop-up */
-  background: #fff; /* Fond blanc pour un contraste clair */
-  border-radius: 8px; /* Coins arrondis pour un effet doux */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile pour donner de la profondeur */
-  overflow: hidden; /* Évite le débordement du contenu */
-  font-family: "Open Sans", sans-serif; /* Police sans-serif moderne */
+  max-width: 300px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
 }
 
-/* Styles pour le contenu de la pop-up */
 .mapboxgl-popup-content {
-  padding: 15px; /* Espacement intérieur pour un bon confort visuel */
-  text-align: center; /* Centre le texte pour une présentation uniforme */
-  color: #333; /* Couleur du texte pour une bonne lisibilité */
+  padding: 15px;
+  text-align: center;
+  color: #333;
 
   h2 {
-    font-size: 1.25rem; /* Taille de police plus grande pour les titres */
-    margin: 0 0 10px 0; /* Marge en bas pour séparer le titre du contenu */
-    color: #333; /* Couleur du titre */
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+    color: #333;
   }
 
   p {
-    font-size: 1rem; /* Taille de police standard pour le texte */
-    margin: 0 0 15px 0; /* Marge en bas pour séparer le texte du bouton */
-    color: #666; /* Couleur du texte pour un contraste doux */
+    font-size: 1rem; 
+    margin: 0 0 15px 0;
+    color: #666;
   }
 
   a.btn {
-    display: inline-block; /* Bouton en ligne avec padding */
-    padding: 10px 15px; /* Espacement pour le bouton */
-    background-color: #000000; /* Couleur de fond du bouton */
-    color: #fff; /* Couleur du texte du bouton */
-    border-radius: 5px; /* Coins arrondis pour le bouton */
-    text-decoration: none; /* Retire la sous-ligne du lien */
-    font-weight: bold; /* Texte en gras pour le bouton */
-    transition: background-color 0.3s ease; /* Transition douce pour le survol */
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #95E06C;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #ff4c3b; /* Couleur du bouton au survol */
+      background-color: #95E06C;
     }
   }
 }
