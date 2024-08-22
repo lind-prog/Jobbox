@@ -9,9 +9,9 @@ class MatchesController < ApplicationController
         lng: offer.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {
           offer: offer,
-          recruiter: offer.recruiter,
-          marker_html: render_to_string(partial: "marker")
-        })
+          recruiter: offer.recruiter
+        }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
