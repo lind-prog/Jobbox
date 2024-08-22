@@ -54,10 +54,19 @@
   margin-right: 15px;
 }
 
+    .salary {
+      font-weight: bold;
+      color: #FFA500; /* Orange color for salary */
+      font-size: 1.2rem;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+
 .offer-info-block:hover {
   background-color: #f9f9f9;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+
 
 .salary-block .salary {
   color: #FFA500;

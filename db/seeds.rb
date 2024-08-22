@@ -18,7 +18,7 @@ User.create!(
   phone: "06 12 34 56 78",
   address: "15 Rue Fondaudège, 33000 Bordeaux",
   diplome: "J'ai obtenu une Licence en Informatique suivie d'un Master en Sciences des Données à l'Université de Paris-Saclay, où j'ai développé une expertise en algorithmes et en analyse de données",
-  experience: "j'ai travaillé comme ingénieur en intelligence artificielle chez TechInnov, où j'ai conçu des solutions d'apprentissage automatique et optimisé des systèmes de recommandation, tout en dirigeant des projets de R&D pour améliorer les performances des produits technologiques."
+  experience: "J'ai travaillé comme ingénieur en intelligence artificielle chez TechInnov, où j'ai conçu des solutions d'apprentissage automatique et optimisé des systèmes de recommandation, tout en dirigeant des projets de R&D pour améliorer les performances des produits technologiques."
 )
 
 recruiter=User.create!(
@@ -61,7 +61,7 @@ Offer.create!(
   contrat_type: "CDI",
   experience_level: "+ 10 ans",
   study_level: "Doctorat",
-  salary: "50k€",
+  salary: "50k€ - 60k€",
   sector: "Marketing",
   address: "35 Cours de Verdun, 33000 Bordeaux",
   recruiter: recruiter
@@ -134,7 +134,7 @@ Offer.create!(
   contrat_type: "CDI",
   experience_level: "5-10 ans",
   study_level: "Master",
-  salary: "70k€ - 80k€",
+  salary: "< 70k€",
   sector: "Consulting",
   address: "25 Avenue de l'Opéra, 75001 Paris",
   recruiter: recruiter
@@ -170,7 +170,7 @@ Offer.create!(
   contrat_type: "CDI",
   experience_level: "3-5 ans",
   study_level: "Master",
-  salary: "45k€ - 55k€",
+  salary: "40k€ - 50k€",
   sector: "Technologie",
   address: "12 Boulevard Haussmann, 75009 Paris",
   recruiter: recruiter
@@ -182,7 +182,7 @@ Offer.create!(
   contrat_type: "CDI",
   experience_level: "+ 10 ans",
   study_level: "Doctorat",
-  salary: "> 50k€",
+  salary: "50k€ - 60k€",
   sector: "Technologie",
   address: "22 Rue de Rivoli, 75004 Paris",
   recruiter: recruiter
@@ -194,7 +194,7 @@ Offer.create!(
   contrat_type: "CDI",
   experience_level: "+ 10 ans",
   study_level: "Master",
-  salary: "70k€ - 80k€",
+  salary: "< 70k€",
   sector: "Ressources Humaines",
   address: "18 Rue de la Paix, 75002 Paris",
   recruiter: recruiter
@@ -206,7 +206,7 @@ Offer.create!(
   contrat_type: "CDD",
   experience_level: "2-3 ans",
   study_level: "Master",
-  salary: "35k€ - 45k€",
+  salary: "30k€ - 40k€",
   sector: "Marketing",
   address: "16 Rue de la République, 75011 Paris",
   recruiter: recruiter
@@ -218,7 +218,7 @@ Offer.create!(
   contrat_type: "CDD",
   experience_level: "1-2 ans",
   study_level: "Bac+3",
-  salary: "30k€ - 35k€",
+  salary: "30k€ - 40k€",
   sector: "Ressources Humaines",
   address: "5 Rue de la Boétie, 75008 Paris",
   recruiter: recruiter
