@@ -1,0 +1,98 @@
+/* Home Page Styles */
+
+.home-page {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+/* Banner Section */
+.banner {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.banner h1 {
+  font-family: 'Lovelo', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.banner .buttons {
+  margin-bottom: 20px;
+}
+
+.banner .btn {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banner .btn-primary {
+  background-color: #f77f00;
+  color: white;
+  border: none;
+}
+
+.banner .btn-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.banner .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Information Sections */
+.info-section {
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+}
+
+.info-block {
+  background: white;
+  margin: 20px 0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.info-block.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-block h2 {
+  font-family: 'Lovelo', sans-serif;
+  font-size: 2.5rem;
+  color: #f77f00;
+  margin-bottom: 20px;
+}
+
+.info-block p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,2 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-page" data-controller="scroll-animation">
+  <!-- Banner Section -->
+  <div class="banner">
+    <h1>JOBBOX</h1>
+    <div class="buttons">
+      <a href="#" class="btn btn-primary btn-large">Je suis recruteur</a>
+      <a href="<%= user_path(current_user) %>" class="btn btn-primary btn-large">Je recherche un emploi</a>
+    </div>
+    <a href="<%= new_user_session_path %>" class="btn btn-secondary btn-small">
+      <%= current_user ? "Vous êtes connecté" : "Je me connecte" %>
+    </a>
+  </div>
+
+  <!-- Information Blocks -->
+  <div class="info-section">
+    <div class="info-block animated" data-scroll-animation-target="infoBlock">
+      <h2>Objectif de Jobbox</h2>
+      <p>Notre mission est de transformer la recherche d'emploi en une expérience fluide et interactive. Jobbox offre une plateforme intuitive intégrant cartographie géolocalisée, communication directe, suivi personnalisé, et un système de matching intelligent.</p>
+    </div>
+
+    <div class="info-block animated" data-scroll-animation-target="infoBlock">
+      <h2>Gains de Temps et Localisation Précise</h2>
+      <p>Grâce à notre Carte Interactive, localisez rapidement les opportunités d'emploi à proximité ou dans la région de votre choix. Plus besoin de parcourir des listes interminables, trouvez le poste idéal en quelques clics.</p>
+    </div>
+
+    <div class="info-block animated" data-scroll-animation-target="infoBlock">
+      <h2>Carte Interactive</h2>
+      <p>Cette fonctionnalité centrale de Jobbox vous permet de visualiser les offres d'emploi sur une carte. En cliquant sur un marqueur, accédez instantanément aux détails du poste et aux informations sur l'entreprise. Simplifiez votre recherche grâce à une vue d'ensemble géographique.</p>
+    </div>
+
+    <div class="info-block animated" data-scroll-animation-target="infoBlock">
+      <h2>Système de Matching Intelligent</h2>
+      <p>Notre système révolutionnaire compare vos qualifications avec les offres d'emploi disponibles, prenant en compte les compétences, expériences, et diplômes, ainsi que la proximité géographique du poste.</p>
+      <p>Les offres sont classées en catégories : Légendaire, Épique, Rare, et Commun, pour une recherche encore plus précise.</p>
+    </div>
+
+    <div class="info-block animated" data-scroll-animation-target="infoBlock">
+      <h2>Outils de Communication Intégrés</h2>
+      <p>Discutez en temps réel avec les employeurs via notre chat instantané, organisez des entretiens vidéo directement depuis la plateforme, et gérez vos rendez-vous grâce à un calendrier synchronisé.</p>
+      <p>Nos rappels automatiques vous assurent de ne jamais manquer un entretien important.</p>
+    </div>
+  </div>
+</div>
+
+
