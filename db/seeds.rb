@@ -1,6 +1,10 @@
 # Destroy all existing users and offers
+puts "Destroy start"
+Match.destroy_all
+Offer.destroy_allrails 
+UserJobSearch.destroy_all
 User.destroy_all
-Offer.destroy_all
+puts "Destroy end"
 
 # Creating users
 User.create!(
