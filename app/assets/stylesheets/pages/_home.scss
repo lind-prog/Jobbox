@@ -1,56 +1,53 @@
+/* Importation des polices */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lovelo:wght@400;700&display=swap');
 
-
-.container-dashboard {
+/* Style de base pour le tableau de bord */
+.container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 30px;
+  align-items: center;
   min-height: 100vh;
-  animation: fadeIn 1s ease-in-out;
+  background-color: #0036FF; /* Couleur principale pour le fond */
+  margin: 0;
+  padding: 0;
 }
 
+.container-dashboard {
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+  box-sizing: border-box;
+}
 
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  max-width: 1200px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #FFFFFF; /* Fond blanc */
   border-radius: 12px;
-  color: #333;
-  overflow: auto;
-}
-
-.dashboard-title {
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 45px;
-  font-size: 32px;
-  font-family: 'Lovelo', sans-serif;
-  color: #0b0727;
-  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  overflow: hidden;
 }
 
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   gap: 20px;
 }
 
+/* Style de la carte de profil */
 .profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background-color: #eeece7;
+  padding: 30px;
+  background-color: #B6ABFF; /* Fond violet clair */
   border-radius: 12px;
   width: 100%;
-  max-width: 500px;
-  transition: transform 0.3s ease-in-out;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card-inner {
@@ -60,40 +57,43 @@
   width: 100%;
 }
 
+/* Image de profil */
 .profile-image {
-  width: 100%;
-  height: 250px;
+  width: 200px; /* Taille plus grande de l'avatar */
+  height: 200px;
   overflow: hidden;
-  border-radius: 12px 12px 0 0;
+  border-radius: 50%; /* Bordures arrondies pour créer un cercle */
   margin-bottom: 20px;
+  border: 4px solid #FFFFFF; /* Bordure blanche pour contraste */
+  display: flex; /* Pour centrer l'image */
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
 }
 
 .avatar {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* L'image remplit le conteneur tout en gardant le ratio */
+  border-radius: 50%; /* Assure que l'image elle-même est circulaire */
 }
 
+/* Informations de profil */
 .profile-info {
   text-align: center;
 }
 
 .profile-info h1 {
   margin: 0;
-  font-size: 24px;
-  color: #000000;
+  font-size: 26px;
+  color: #FFFFFF; /* Texte blanc */
   font-family: 'Lovelo', sans-serif;
 }
 
 .profile-info p {
   margin: 5px 0;
-  font-size: 18px;
-  color: #000000;
+  font-size: 16px;
+  color: #FFFFFF; /* Texte blanc */
   font-family: 'Roboto', sans-serif;
-}
-
-.profile-card:hover {
-  transform: translateY(-10px);
 }
 
 .actions {
@@ -103,6 +103,44 @@
   flex: 1;
 }
 
+.actions .box {
+  background-color: #FFFFFF; /* Fond blanc */
+  color: #0036FF; /* Texte en bleu foncé */
+  padding: 20px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.actions .box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.actions .box h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #0036FF;
+  font-family: 'Lovelo', sans-serif;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #0036FF; /* Bouton bleu foncé */
+  color: #FFFFFF; /* Texte blanc */
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn:hover {
+  background-color: #001F80; /* Plus foncé au survol */
+  transform: scale(1.02);
+}
+
+/* Section du calendrier */
 .calendar-section {
   display: flex;
   flex-direction: column;
@@ -111,10 +149,10 @@
 }
 
 .calendar {
-  background-color: #eeece7;
+  background-color: #0036FF; /* Fond bleu foncé pour le calendrier */
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0px 5px 5px #0b0727;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
   overflow: hidden;
@@ -123,7 +161,7 @@
 .calendar header {
   text-align: center;
   margin-bottom: 10px;
-  color: #000000;
+  color: #FFFFFF; /* Texte blanc */
   font-family: 'Lovelo', sans-serif;
 }
 
@@ -136,76 +174,26 @@
 .calendar-day {
   text-align: center;
   padding: 12px;
-  border: 1px solid #444;
   border-radius: 8px;
-  background-color: #ebebeb;
+  background-color: #B6ABFF; /* Fond violet clair pour les jours */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  color: #ccc;
+  color: #333333; /* Texte gris foncé */
 }
 
 .calendar-day.today {
-  background-color: #888888;
-  color: #333;
+  background-color: #FFFFFF; /* Jour actuel en blanc */
+  color: #0036FF; /* Texte bleu foncé */
   font-weight: bold;
 }
 
-.calendar-day.past {
-  background-color: #1a1a1a;
-}
-
 .calendar-day:hover {
-  background-color: #444;
+  background-color: #777777; /* Survol en gris moyen */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.dashboard-section {
-  flex: 1 1 30%;
-}
-
-.box {
-  padding: 20px;
-  background-color: #eeece7;
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.box:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.box h2 {
-  margin-top: 0;
-  font-size: 22px;
-  color: #0b0727;
-  font-family: 'Lovelo', sans-serif;
-}
-
-.btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  background-color: #eeece7;
-  color: #333;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  font-family: 'Roboto', sans-serif;
-}
-
-.btn:hover {
-  background-color: #567aff;
-  transform: scale(1.02);
-}
-
+/* Responsivité pour petits écrans */
 @media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
