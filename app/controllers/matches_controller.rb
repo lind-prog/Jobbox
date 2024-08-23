@@ -1,7 +1,7 @@
 class MatchesController < ApplicationController
   def index
     @user_job_search = UserJobSearch.find(params[:user_job_search_id])
-    @matches = Match.where(user_job_search: @user_job_search).pluck(:offer_id)
+    @matches = Match.where(user_job_search: @user_job_search).select { |match| match.scoring >= 3 }.pluck(:offer_id)
     @offers = Offer.where(id: @matches)
     @markers = @offers.geocoded.map do |offer|
       {
