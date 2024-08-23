@@ -1,5 +1,5 @@
 .container {
-  background-image: url('blackmap.png');
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
   padding: 20px;
@@ -155,16 +155,16 @@
   margin: 20px auto 0 auto;
   padding: 12px 25px;
   font-size: 1.2rem;
-  background-color: #C3F73A;
-  color: #333;
+  background-color: #0037ff;
+  color: #ffffff;
   border-radius: 5px;
   text-align: center;
   transition: background-color 0.3s ease, transform 0.3s ease;
   font-family: 'Roboto', sans-serif;
-  border: #000;
+  border: #0037ff;
 }
 
 .btn:hover {
-  background-color: #95E06C;
+  background-color: #4a71ff;
   transform: scale(1.05);
 }
