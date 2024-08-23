@@ -18,7 +18,7 @@
 }
 
 .offer-header {
-  background-color: #111;
+  background-color: #eeece7;
   padding: 20px;
   border-bottom: 1px solid #333;
 }
@@ -32,13 +32,13 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0;
-  color: #fff;
+  color: #14006e;
   font-family: 'Lovelo', sans-serif;
 }
 
 .offer-subtitle {
   font-size: 1.2rem;
-  color: #ccc;
+  color: #2100b6;
 }
 
 .offer-content {
@@ -50,7 +50,7 @@
 .offer-details {
   flex: 1;
   padding: 20px;
-  background-color: #1a1a1a;
+  background-color: #eeece7;
   border-right: 1px solid #333;
   overflow-y: auto; /* Ajoute un défilement si le contenu dépasse */
   display: flex;
@@ -68,11 +68,11 @@
 .offer-info-block {
   display: flex;
   align-items: center;
-  background-color: #262626;
+  background-color: #d4d4d2;
   border: 1px solid #333;
   padding: 15px;
   border-radius: 8px;
-  color: #ccc;
+  color: #050d38;
   font-size: 1rem;
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -80,7 +80,7 @@
 
 .offer-info-block i {
   font-size: 1.5rem;
-  color: #b8adff;
+  color: #050d38;
   margin-right: 10px;
 }
 
@@ -97,28 +97,28 @@
 .offer-description {
   margin-top: 20px;
   padding: 20px;
-  background-color: #2a2a2a;
+  background-color: #eeece7;
   border-radius: 8px;
-  color: #ccc;
+  color: #050d38;
 }
 
 .offer-description h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: #050d38;
 }
 
 .offer-testimonials {
   margin-top: 20px;
   padding: 20px;
-  background-color: #2a2a2a;
+  background-color: #eeece7;
   border-radius: 8px;
 }
 
 .offer-testimonials h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: #050d38;
 }
 
 .testimonial {
@@ -127,14 +127,14 @@
 
 .testimonial p {
   font-size: 1rem;
-  color: #ccc;
+  color: #050d38;
 }
 
 .testimonial cite {
   display: block;
   margin-top: 5px;
   font-size: 0.9rem;
-  color: #aaa;
+  color: #050d38;
 }
 
 .map-container {
