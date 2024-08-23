@@ -11,5 +11,6 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    #rajouter le markeur map
   end
 end

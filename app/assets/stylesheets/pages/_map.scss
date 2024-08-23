@@ -3,7 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   max-width: 100%;
-  background-image: image-url('blackmap.png');
+  background-color: #e2e0f0;
   background-size: cover;
   background-position: center;
   padding: 20px;
@@ -19,7 +19,7 @@
   .title {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #95E06C;
+    color: #b8adff;
     animation: fadeIn 1s ease-in-out;
   }
 
@@ -181,9 +181,9 @@
 
 .filter-options input[type="checkbox"] {
   margin-right: 8px;
-  accent-color: #C3F73A;
+  accent-color: #b8adff;
 }
 
 .filter-options input[type="checkbox"]:checked {
-  accent-color: #00ff00;
+  accent-color: #7964ff;
 }
