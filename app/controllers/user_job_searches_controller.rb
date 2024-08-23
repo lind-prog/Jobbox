@@ -10,7 +10,7 @@ class UserJobSearchesController < ApplicationController
   def update
     @user_job_search = UserJobSearch.find(params[:id])
     if @user_job_search.update(user_job_search_params)
-      Match.where(user_job_search: @user_job_search).destroy
+      Match.where(user_job_search: @user_job_search).destroy_all
       Offer.all.each do |offer|
         Match.create!(offer: offer, user_job_search: @user_job_search)
       end

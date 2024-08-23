@@ -2,10 +2,12 @@
   <!-- Banner Section -->
   <div class="banner">
     <h1>JOBBOX</h1>
+    <p class="tagline">Votre prochain job, votre meilleur match !</p>
+
     <div class="buttons">
-       <% if user_signed_in? %>
-      <a href="#" class="btn btn-primary btn-large">Je suis recruteur</a>
-      <a href="<%= user_path(current_user) %>" class="btn btn-primary btn-large">Je recherche un emploi</a>
+      <% if user_signed_in? %>
+      <a href="#" class="btn btn-primary btn-medium">Je suis recruteur</a>
+      <a href="<%= user_path(current_user) %>" class="btn btn-primary btn-medium">Je recherche un emploi</a>
       <% end %>
     </div>
     <a href="<%= new_user_session_path %>" class="btn btn-secondary btn-small">
@@ -15,6 +17,7 @@
       &darr; <!-- Utilisez une flèche vers le bas -->
     </div>
   </div>
+
   <!-- Information Blocks -->
   <div class="info-section" data-controller="scroll-animation">
     <div class="info-block" data-scroll-animation-target="infoBlock">
