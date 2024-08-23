@@ -3,8 +3,8 @@
   <div class="banner">
     <h1>JOBBOX</h1>
     <div class="buttons">
-      <a href="#" class="btn btn-primary btn-large">Je suis recruteur</a>
        <% if user_signed_in? %>
+      <a href="#" class="btn btn-primary btn-large">Je suis recruteur</a>
       <a href="<%= user_path(current_user) %>" class="btn btn-primary btn-large">Je recherche un emploi</a>
       <% end %>
     </div>
