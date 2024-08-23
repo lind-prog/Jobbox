@@ -15,26 +15,67 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
+    this.markers = this.markersValue.map(marker => ({
+      ...marker,
+      element: this.#createMarkerElement(marker),
+      mapMarker: null
+    }));
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
+    // Attacher les écouteurs d'événements pour les cases à cocher
+    this.element.addEventListener('change', this.#filterMarkers.bind(this));
+  }
+
+  #createMarkerElement(marker) {
+    const customMarker = document.createElement("div");
+    customMarker.innerHTML = marker.marker_html;
+    return customMarker;
   }
 
   #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
-      const customMarker = document.createElement("div")
-      customMarker.innerHTML = marker.marker_html
-
-      new mapboxgl.Marker(customMarker)
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
-      .addTo(this.map)
-    })
+    this.markers.forEach(marker => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
+      marker.mapMarker = new mapboxgl.Marker(marker.element)
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
+        .addTo(this.map);
+    });
   }
 
   #fitMapToMarkers() {
-    const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    const bounds = new mapboxgl.LngLatBounds();
+    this.markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  }
+
+  #filterMarkers() {
+    const selectedFilters = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
+      .map(checkbox => checkbox.dataset.filter);
+
+    this.markers.forEach(marker => {
+      if (selectedFilters.length === 0 || selectedFilters.includes(marker.type)) {
+        marker.mapMarker.getElement().style.display = 'block';
+        // Ensuring marker is added to map in case it was previously removed
+        if (!marker.mapMarker.getMap()) {
+          marker.mapMarker.addTo(this.map);
+        }
+      } else {
+        marker.mapMarker.getElement().style.display = 'none';
+        // Optionally, you can also remove the marker from the map
+        // marker.mapMarker.remove();
+      }
+    });
   }
 }
+[
+  {
+    "lng": -73.985,
+    "lat": 40.758,
+    "info_window_html": "<p>Details here</p>",
+    "marker_html": "<div class='marker-icon'></div>",
+    "type": "legendary" // Assurez-vous d'inclure ce champ
+  },
+  // autres marqueurs
+]
