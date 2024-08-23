@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #eeece7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .popup {
-  background: #333;
+  background: #eeece7;
   color: #fff;
   border-radius: 8px;
   padding: 15px;
@@ -26,7 +26,7 @@
 .popup h2 {
   font-size: 1.25rem;
   margin-bottom: 10px;
-  color: #b8adff;
+  color: #070031;
 }
 
 .popup .content {
@@ -35,22 +35,22 @@
 
 .popup p {
   font-size: 0.9rem;
-  color: #ccc;
+  color: #2b0064;
   margin: 0;
 }
 
 .popup a.btn {
   display: inline-block;
   padding: 8px 14px;
-  background-color: #b8adff;
   color: #fff;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #4c00ff;
 
   &:hover {
-    background-color: #78c44d;
+    background-color: #110083;
     transform: scale(1.02);
   }
 }

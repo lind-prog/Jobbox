@@ -10,7 +10,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: #000;
+  background-color: #eeece7;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -90,7 +90,7 @@
 }
 
 .offer-info-block:hover {
-  background-color: #333;
+  background-color: #eeece7;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -141,7 +141,7 @@
   flex: 1;
   border-radius: 0 12px 12px 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #eeece7;
   display: flex;
 }
 

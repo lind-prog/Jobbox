@@ -19,13 +19,13 @@
   .title {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #b8adff;
+    color: #0b0727;
     animation: fadeIn 1s ease-in-out;
   }
 
   .subtitle {
     font-size: 1.25rem;
-    color: #ced4da;
+    color: #0b0727;
     animation: fadeIn 2s ease-in-out;
   }
 }
@@ -44,17 +44,17 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: rgba(87, 85, 85, 0.9);
+    background-color: #dadada;
     opacity: 70%;
     padding: 10px 15px;
-    color: #ced4da;
+    color: #000000;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     h3 {
       margin-bottom: 10px;
       font-size: 1.25rem;
-      color: #ffffff;
+      color: #000000;
     }
 
     ul {
@@ -65,7 +65,7 @@
         display: flex;
         align-items: center;
         margin-bottom: 5px;
-        color: #ffffff;
+        color: #000000;
         font-size: 1rem;
 
         .legendary-dot, .epic-dot, .rare-dot, .common-dot {
@@ -99,12 +99,12 @@
     height: 66vh;
     max-width: 1200px;
     border-radius: 8px;
-    border: 5px solid #161616;
+    border: 5px solid #02022c;
   }
 }
 
 .info-box {
-  background-color: rgba(87, 85, 85, 0.9);
+  background-color: #eeece7;
   opacity: 50%;
   padding: 15px;
   border-radius: 8px;
@@ -115,20 +115,20 @@
 
   .info-title {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 10px;
   }
 
   .info-text {
     font-size: 1rem;
-    color: #ffffff;
+    color: #000000;
   }
 }
 
 .footer {
   text-align: center;
   padding: 15px;
-  color: #797e77;
+  color: #16133a;
   border-radius: 8px;
   margin-top: 20px;
   animation: fadeIn 2s ease-in-out;
@@ -145,11 +145,11 @@
   }
 }
 .filter-bar {
-  background-color: rgba(56, 52, 52, 0.8);
+  background-color: #eeece7;
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
-  color: #ced4dab2;
+  color: #6200ff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -175,7 +175,7 @@
   display: flex;
   align-items: center;
   font-size: 1rem;
-  color: #ced4dad8;
+  color: #0e0069;
   cursor: pointer;
 }
 
@@ -185,5 +185,5 @@
 }
 
 .filter-options input[type="checkbox"]:checked {
-  accent-color: #7964ff;
+  accent-color: #100068;
 }
