@@ -95,9 +95,10 @@
   }
 
   .map {
-    width: 100%;
+    width: 66%;
     height: 66vh;
     max-width: 1200px;
+    margin-left: 30px;
     border-radius: 8px;
     border: 5px solid #161616;
   }
@@ -186,4 +187,9 @@
 
 .filter-options input[type="checkbox"]:checked {
   accent-color: #00ff00;
+}
+
+.row {
+  display: flex;
+  margin: 20px 0;
 }
