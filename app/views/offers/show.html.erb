@@ -1,40 +1,78 @@
-<div class="offer-page">
-  <div class="offer-details">
-    <h1><%= @offer.title %></h1>
-    <div class="offer-info">
-      <div class="offer-info-block city-block">
-        <i class="fas fa-map-marker-alt"></i>
-        <p><strong>Ville:</strong> <%= @offer.address %></p>
-      </div>
-
-      <div class="offer-info-block contract-block">
-        <i class="fas fa-briefcase"></i>
-        <p><strong>Type de contrat:</strong> <%= @offer.contrat_type %></p>
-      </div>
-
-      <div class="offer-info-block experience-block">
-        <i class="fas fa-user-tie"></i>
-        <p><strong>Niveau d'expérience:</strong> <%= @offer.experience_level %></p>
-      </div>
-
-      <div class="offer-info-block education-block">
-        <i class="fas fa-graduation-cap"></i>
-        <p><strong>Niveau d'études:</strong> <%= @offer.study_level %></p>
-      </div>
-
-      <div class="offer-info-block sector-block">
-        <i class="fas fa-industry"></i>
-        <p><strong>Secteur:</strong> <%= @offer.sector %></p>
-      </div>
-
-      <div class="offer-info-block salary-block">
-        <i class="fas fa-money-bill-wave"></i>
-        <p class="salary"><strong>Salaire:</strong> <%= @offer.salary %></p>
+<div class="container">
+  <div class="offer-page">
+    <!-- Section de l'en-tête de l'offre -->
+    <div class="offer-header">
+      <div class="offer-header-content">
+        <h1><%= @offer.title %></h1>
+        <p class="offer-subtitle"><%= @offer.title %> | <%= @offer.contrat_type %></p>
       </div>
     </div>
 
-    <%= link_to 'Postuler', offers_path, class: 'btn btn-primary' %>
-  </div>
+    <!-- Contenu principal avec les détails de l'offre et la carte -->
+    <div class="offer-content">
+      <!-- Section des détails de l'offre -->
+      <div class="offer-details">
+        <div class="offer-info">
+          <!-- Bloc des informations sur l'offre -->
+          <div class="offer-info-block city-block">
+            <i class="fas fa-map-marker-alt"></i>
+            <p><strong>Ville:</strong> <%= @offer.address %></p>
+          </div>
 
-  <div class="map-container" id="map"></div>
+          <div class="offer-info-block contract-block">
+            <i class="fas fa-briefcase"></i>
+            <p><strong>Type de contrat:</strong> <%= @offer.contrat_type %></p>
+          </div>
+
+          <div class="offer-info-block experience-block">
+            <i class="fas fa-user-tie"></i>
+            <p><strong>Niveau d'expérience:</strong> <%= @offer.experience_level %></p>
+          </div>
+
+          <div class="offer-info-block education-block">
+            <i class="fas fa-graduation-cap"></i>
+            <p><strong>Niveau d'études:</strong> <%= @offer.study_level %></p>
+          </div>
+
+          <div class="offer-info-block sector-block">
+            <i class="fas fa-industry"></i>
+            <p><strong>Secteur:</strong> <%= @offer.sector %></p>
+          </div>
+
+          <div class="offer-info-block salary-block">
+            <i class="fas fa-money-bill-wave"></i>
+            <p class="salary"><strong>Salaire:</strong> <%= @offer.salary %></p>
+          </div>
+        </div>
+
+        <div class="offer-description">
+          <h2>Description</h2>
+          <%#  <p><%= @offer.description %>
+        </div>
+
+        <div class="offer-testimonials">
+          <h2>Témoignages</h2>
+          <div class="testimonial">
+            <p>"Une entreprise incroyable pour laquelle travailler. L'équipe est super et l'environnement est stimulant!"</p>
+            <cite>- Jean Dupont</cite>
+          </div>
+          <div class="testimonial">
+            <p>"Une offre qui offre vraiment de bonnes opportunités de croissance personnelle et professionnelle."</p>
+            <cite>- Marie Curie</cite>
+          </div>
+        </div>
+
+        <%= link_to 'Postuler', offers_path, class: 'btn btn-primary' %>
+      </div>
+
+      <!-- Section de la carte -->
+      <div class="map-container">
+        <div id="map" class="map"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
