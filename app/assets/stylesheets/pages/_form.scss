@@ -5,6 +5,12 @@
   padding: 30px;
   border-radius: 8px;
   margin: 20px auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2 {
+  color: #95E06C;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .form-row {
@@ -16,7 +22,7 @@
   padding: 0 15px;
 }
 .info-container {
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .form-container .form-control {

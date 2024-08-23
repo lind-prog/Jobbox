@@ -1,43 +1,71 @@
-/* Importation des polices */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lovelo:wght@400;700&display=swap');
 
-/* Dashboard Container */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url('blackmap.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.container-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
 .dashboard-container {
   display: flex;
   flex-direction: column;
   padding: 30px;
   max-width: 1200px;
-  margin: 110px auto 50px auto; /* Ajustement pour éviter le chevauchement avec la navbar */
-  background-color: #fff; /* Blanc pour le fond du dashboard */
-  border-radius: 10px;
+  width: 100%;
+  background-color: #202020a6;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  overflow: auto;
 }
 
-/* Dashboard Header */
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 45px;
+  font-size: 32px;
+  font-family: 'Lovelo', sans-serif;
+  color: #95E06C;
+  animation: fadeIn 1s ease-in-out;
+}
+
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 30px;
-  gap: 20px; /* Espace entre la carte de profil et les actions */
+  gap: 20px;
 }
 
-/* Profile Card */
 .profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background: #fff;
-  border-radius: 20px;
+  background: #2a2a2a;
+  border-radius: 12px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 500px; /* Ajustez cette valeur selon vos besoins */
+  max-width: 500px;
   margin: 20px auto;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Inner Profile Card */
 .profile-card-inner {
   display: flex;
   flex-direction: column;
@@ -45,12 +73,11 @@
   width: 100%;
 }
 
-/* Profile Image */
 .profile-image {
   width: 100%;
-  height: 250px; /* Grande taille */
+  height: 250px;
   overflow: hidden;
-  border-radius: 20px 20px 0 0;
+  border-radius: 12px 12px 0 0;
   margin-bottom: 20px;
 }
 
@@ -60,7 +87,6 @@
   object-fit: cover;
 }
 
-/* Profile Info */
 .profile-info {
   text-align: center;
 }
@@ -68,23 +94,21 @@
 .profile-info h1 {
   margin: 0;
   font-size: 24px;
-  color: #333;
-  font-family: 'Lovelo', sans-serif; /* Utilisation de la police Lovelo */
+  color: #fff;
+  font-family: 'Lovelo', sans-serif;
 }
 
 .profile-info p {
   margin: 5px 0;
   font-size: 18px;
-  color: #666;
-  font-family: 'Roboto', sans-serif; /* Utilisation de la police Roboto */
+  color: #ccc;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Hover Effect */
 .profile-card:hover {
-  transform: translateY(-10px); /* Déplacement vers le haut au survol */
+  transform: translateY(-10px);
 }
 
-/* Actions Section */
 .actions {
   display: flex;
   flex-direction: column;
@@ -92,64 +116,63 @@
   flex: 1;
 }
 
-/* Calendar Section */
 .calendar-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alignement à gauche */
-  gap: 20px; /* Espacement entre le calendrier et les autres éléments */
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .calendar {
-  background-color: #95E06C; /* Vert foncé */
-  border-radius: 8px;
-  padding: 20px; /* Padding ajusté pour un espace plus grand autour du calendrier */
+  background-color: #333;
+  border-radius: 12px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Utilise toute la largeur disponible */
-  max-width: 500px; /* La largeur du calendrier est équivalente à celle de la carte utilisateur */
-  overflow: hidden; /* Cache le débordement */
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
 }
 
 .calendar header {
   text-align: center;
-  margin-bottom: 10px; /* Réduit l'espace sous l'en-tête */
+  margin-bottom: 10px;
   color: #fff;
-  font-family: 'Lovelo', sans-serif; /* Utilisation de la police Lovelo pour les titres du calendrier */
+  font-family: 'Lovelo', sans-serif;
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px; /* Espacement entre les jours */
+  gap: 4px;
 }
 
 .calendar-day {
   text-align: center;
-  padding: 12px; /* Padding ajusté pour une taille de jour plus visible */
-  border: 1px solid #ddd;
+  padding: 12px;
+  border: 1px solid #444;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #2a2a2a;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Roboto', sans-serif; /* Utilisation de la police Roboto pour les jours */
-  box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  color: #ccc;
 }
 
 .calendar-day.today {
-  background-color: #C3F73A; /* Fond distinctif pour le jour actuel */
-  color: #333; /* Texte sombre pour une meilleure lisibilité */
+  background-color: #C3F73A;
+  color: #333;
   font-weight: bold;
 }
 
 .calendar-day.past {
-  background-color: #f1f1f1;
+  background-color: #1a1a1a;
 }
 
 .calendar-day:hover {
-  background-color: #e0e0e0;
+  background-color: #444;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Dashboard Content */
 .dashboard-content {
   display: flex;
   flex-wrap: wrap;
@@ -162,7 +185,7 @@
 
 .box {
   padding: 20px;
-  background: #fff;
+  background: #2a2a2a;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
@@ -175,8 +198,8 @@
 .box h2 {
   margin-top: 0;
   font-size: 22px;
-  color: #333;
-  font-family: 'Lovelo', sans-serif; /* Utilisation de la police Lovelo pour les titres des sections */
+  color: #fff;
+  font-family: 'Lovelo', sans-serif;
 }
 
 .btn-primary {
@@ -184,20 +207,19 @@
   width: 100%;
   padding: 10px;
   text-align: center;
-  background-color: #C3F73A; /* Vert clair */
+  background-color: #C3F73A;
   color: #333;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  font-family: 'Roboto', sans-serif; /* Utilisation de la police Roboto pour les boutons */
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary:hover {
-  background-color: #95E06C; /* Vert foncé */
+  background-color: #95E06C;
   transform: scale(1.02);
 }
 
-/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
@@ -214,6 +236,6 @@
   }
 
   .calendar {
-    max-width: 100%; /* Assure que le calendrier peut utiliser toute la largeur disponible */
+    max-width: 100%;
   }
 }
