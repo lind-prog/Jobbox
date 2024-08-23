@@ -1,47 +1,50 @@
-<div class="dashboard-container">
-  <div class="dashboard-header">
-    <div class="profile-card">
-      <div class="profile-card-inner">
-        <div class="profile-image">
-          <%= link_to root_path do %>
-            <%= image_tag 'https://i0.wp.com/pixarpost.com/wp-content/uploads/2020/10/a760d-duke2bcaboom2bsolo2btoy2bstory2b42bposter2bcopy.jpg?fit=1130%2C668&ssl=1', alt: "Avatar Profil", class: 'avatar' %>
-          <% end %>
+<div class="dashboard-title">Mon Tableau de Bord</div>
+<div class = "container-dashboard">
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <div class="profile-card">
+        <div class="profile-card-inner">
+          <div class="profile-image">
+            <%= link_to root_path do %>
+              <%= image_tag 'https://cdn.booke.fr/wp-content/uploads/2023/12/20221312/BKE1009.webp', alt: "Avatar Profil", class: 'avatar' %>
+            <% end %>
+          </div>
+          <div class="profile-info">
+            <h1><%= @user.name %></h1>
+            <p><%= @user.email %></p>
+          </div>
         </div>
-        <div class="profile-info">
-          <h1><%= @user.name %></h1>
-          <p><%= @user.email %></p>
-        </div>
+      </div>
+
+      <div class="actions">
+        <section class="box profile-form">
+          <h2>Mon Profil</h2>
+          <%= link_to 'Compléter le formulaire', new_user_job_search_path(:user_id => @user.id), class: 'btn btn-primary' %>
+        </section>
+        <section class="box candidatures">
+          <h2>Mes Candidatures</h2>
+          <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn btn-primary' %>
+        </section>
+        <section class="box messages">
+          <h2>Ma Messagerie</h2>
+          <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn btn-primary' %>
+        </section>
       </div>
     </div>
 
-    <div class="actions">
-      <section class="box profile-form">
-        <h2>Mon Profil</h2>
-        <%= link_to 'Compléter le formulaire', new_user_job_search_path(:user_id => @user.id), class: 'btn btn-primary' %>
-      </section>
-      <section class="box candidatures">
-        <h2>Mes Candidatures</h2>
-        <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn btn-primary' %>
-      </section>
-      <section class="box messages">
-        <h2>Ma Messagerie</h2>
-        <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn btn-primary' %>
-      </section>
-    </div>
-  </div>
-
-  <div class="calendar-section">
-    <div class="calendar">
-      <header>
-        <h2><%= Date.today.strftime("%A") %></h2>
-        <p><%= Date.today.strftime("%B %Y") %></p>
-      </header>
-      <div class="calendar-grid">
-        <% (Date.today.beginning_of_month..Date.today.end_of_month).each do |day| %>
-          <div class="calendar-day <%= 'today' if day == Date.today %>">
-            <%= day.day %>
-          </div>
-        <% end %>
+    <div class="calendar-section">
+      <div class="calendar">
+        <header>
+          <h2><%= Date.today.strftime("%A") %></h2>
+          <p><%= Date.today.strftime("%B %Y") %></p>
+        </header>
+        <div class="calendar-grid">
+          <% (Date.today.beginning_of_month..Date.today.end_of_month).each do |day| %>
+            <div class="calendar-day <%= 'today' if day == Date.today %>">
+              <%= day.day %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
