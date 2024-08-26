@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Suivi de candidatures</h1>
+    <div class="text-end mb-3">
+        <%= link_to "Retour", user_path(current_user), class: "btn-back"%>
+      </div>
+
+    <div>
+      <% @candidacies.each do |candidacy| %>
+      <p><strong>Status :</strong> <%= candidacy.status %></p>
+      <p><%= candidacy.offer.name %></p>
+      <p><%= candidacy.offer.title %></p>
+      <p><strong>Status :</strong> <%= candidacy.status %></p>
+      <% end %>
+    </div>
+
+</div>
