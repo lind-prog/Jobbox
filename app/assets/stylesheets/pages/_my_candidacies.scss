@@ -1,0 +1,24 @@
+.btn-back {
+  display: inline-block;
+  margin: 20px 0 0 0;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background-color: #0037ff;
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  border: #0037ff;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #4a71ff;
+    transform: scale(1.05);
+  }
+}
+
+h1 {
+  color: #0b0727;
+  text-align: center;
+}
