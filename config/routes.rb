@@ -21,8 +21,6 @@ Rails.application.routes.draw do
     resources :matches, only: %i[index]
   end
 
-  resources :user_job_searches, only: %i[new update create show]
-
   resources :offers, only: %i[index show new create] do
     resources :candidacies, only: %i[create]
     resources :matches, only: %i[index]
