@@ -10,7 +10,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -18,7 +18,7 @@
 }
 
 .offer-header {
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   padding: 20px;
   border-bottom: 1px solid #333;
 }
@@ -50,7 +50,7 @@
 .offer-details {
   flex: 1;
   padding: 20px;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   border-right: 1px solid #333;
   overflow-y: auto; /* Ajoute un défilement si le contenu dépasse */
   display: flex;
@@ -90,14 +90,14 @@
 }
 
 .offer-info-block:hover {
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .offer-description {
   margin-top: 20px;
   padding: 20px;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   border-radius: 8px;
   color: #050d38;
 }
@@ -111,7 +111,7 @@
 .offer-testimonials {
   margin-top: 20px;
   padding: 20px;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   border-radius: 8px;
 }
 
@@ -141,7 +141,7 @@
   flex: 1;
   border-radius: 0 12px 12px 0;
   overflow: hidden;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   display: flex;
 }
 
