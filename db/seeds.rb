@@ -10,8 +10,8 @@ puts "Destroy end"
 
 # Creating users
 User.create!(
-  name: "duke Kaboom",
-  email: "tata@gmail.com",
+  name: "Jean Dupont",
+  email: "Dupont@gmail.com",
   password: "password123",
   password_confirmation: "password123",
   role: 0,
@@ -21,9 +21,21 @@ User.create!(
   experience: "J'ai travaillé comme ingénieur en intelligence artificielle chez TechInnov, où j'ai conçu des solutions d'apprentissage automatique et optimisé des systèmes de recommandation, tout en dirigeant des projets de R&D pour améliorer les performances des produits technologiques."
 )
 
-recruiter=User.create!(
+User.create!(
+  name: "Jules Durand",
+  email: "Durand@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  role: 0,
+  phone: "06 12 34 56 78",
+  address: "17 Rue sainte Catherine, 33000 Bordeaux",
+  diplome: "J'ai obtenu une Licence en Informatique suivie d'un Master en Sciences des Données à l'Université de Paris-Saclay, où j'ai développé une expertise en algorithmes et en analyse de données",
+  experience: "J'ai travaillé comme ingénieur en intelligence artificielle chez TechInnov, où j'ai conçu des solutions d'apprentissage automatique et optimisé des systèmes de recommandation, tout en dirigeant des projets de R&D pour améliorer les performances des produits technologiques."
+)
+
+recruiter = User.create!(
   name: "techInnov",
-  email: "toto@gmail.com",
+  email: "tech@gmail.com",
   password: "password123",
   password_confirmation: "password123",
   role: 1
@@ -128,102 +140,6 @@ Offer.create!(
   recruiter: recruiter
 )
 
-#Paris
 
-Offer.create!(
-  title: "Consultant en Stratégie",
-  contrat_type: "CDI",
-  experience_level: "5-10 ans",
-  study_level: "Master",
-  salary: "< 70k€",
-  sector: "Consulting",
-  address: "25 Avenue de l'Opéra, 75001 Paris",
-  description: "En tant que Consultant en Stratégie, vous conseillerez nos clients sur la définition et la mise en œuvre de stratégies d'entreprise pour améliorer leur performance et leur compétitivité. Vous réaliserez des analyses approfondies de leurs activités, identifierez les opportunités de croissance, et formulerez des recommandations sur mesure. Vos missions incluront également la gestion de projets stratégiques, l'accompagnement au changement, et le suivi des performances. Vous travaillerez avec des équipes pluridisciplinaires et participerez à des projets à forte visibilité. Ce poste offre des défis intellectuels stimulants, un environnement de travail collaboratif, et des possibilités de progression rapide. Avantages : rémunération attractive, bonus de performance, et développement de réseau professionnel.",
-  recruiter: recruiter
-)
-
-Offer.create!(
-  title: "Data Scientist",
-  contrat_type: "CDI",
-  experience_level: "2-5 ans",
-  study_level: "Master",
-  salary: "50k€ - 60k€",
-  sector: "Technologie",
-  address: "45 Rue de Rennes, 75006 Paris",
-  description: "En tant que Data Scientist, vous serez chargé d'exploiter les données pour fournir des analyses approfondies qui guideront les décisions stratégiques de l'entreprise. Vos missions incluront la collecte et le nettoyage des données, le développement de modèles prédictifs, et la création de visualisations pour communiquer efficacement les résultats aux équipes non techniques. Vous collaborerez étroitement avec les départements produit, marketing, et finance pour identifier des opportunités d'amélioration grâce aux données. Ce poste offre des opportunités de travail sur des projets variés et innovants, avec un accès aux dernières technologies de data science et une culture d'entreprise favorisant l'apprentissage continu. Avantages : télétravail, formations avancées en data science, et environnement de travail dynamique.",
-  recruiter: recruiter
-)
-
-Offer.create!(
-  title: "Ingénieur Sécurité Réseau",
-  contrat_type: "CDI",
-  experience_level: "5-10 ans",
-  study_level: "Master",
-  salary: "60k€ - 70k€",
-  sector: "Technologie",
-  address: "30 Rue du Faubourg Saint-Honoré, 75008 Paris",
-  description: "L'Ingénieur Sécurité Réseau sera responsable de la protection des infrastructures réseau de l'entreprise contre les cybermenaces. Vous concevrez, implémenterez et maintiendrez des solutions de sécurité pour prévenir les attaques, les intrusions et les fuites de données. Vos missions incluront l'analyse des risques, la mise en œuvre de pare-feux, la gestion des VPN, et la surveillance continue des systèmes pour détecter et neutraliser les menaces. Vous travaillerez en étroite collaboration avec les équipes IT pour assurer une sécurité robuste tout en facilitant les besoins opérationnels. Ce poste offre un environnement stimulant avec des défis techniques constants, des formations en sécurité informatique, et des opportunités d'évolution vers des postes de direction. Avantages : bonus de performance, certifications en sécurité, et environnement de travail innovant.",
-  recruiter: recruiter
-)
-
-Offer.create!(
-  title: "Product Owner",
-  contrat_type: "CDI",
-  experience_level: "3-5 ans",
-  study_level: "Master",
-  salary: "40k€ - 50k€",
-  sector: "Technologie",
-  address: "12 Boulevard Haussmann, 75009 Paris",
-  description: "En tant que Product Owner, vous serez le garant de la vision produit et vous dirigerez le développement de nouvelles fonctionnalités en collaborant étroitement avec les équipes de développement, de design, et de marketing. Vos missions incluront la définition et la priorisation des besoins, la rédaction des user stories, et la gestion du backlog produit. Vous serez également responsable de la validation des livrables et de l'amélioration continue du produit en fonction des retours utilisateurs. Ce poste offre une forte responsabilité dans le cycle de vie du produit, avec des interactions quotidiennes avec les parties prenantes clés, et une influence directe sur la réussite du produit. Avantages : environnement agile, opportunités de formation en gestion de produit, et potentiel d'évolution rapide.",
-  recruiter: recruiter
-)
-
-Offer.create!(
-  title: "Architecte Cloud",
-  contrat_type: "CDI",
-  experience_level: "+ 10 ans",
-  study_level: "Doctorat",
-  salary: "50k€ - 60k€",
-  sector: "Technologie",
-  address: "22 Rue de Rivoli, 75004 Paris",
-  description: "L'Architecte Cloud sera en charge de la conception et de la mise en œuvre des solutions cloud de l'entreprise. Vous serez responsable de définir l'architecture des infrastructures cloud, d'assurer leur scalabilité, et de garantir la sécurité et la conformité des données. Vos missions incluront également l'accompagnement des équipes dans la migration vers le cloud, l'optimisation des coûts, et l'intégration continue des nouvelles technologies cloud. Vous collaborerez avec les équipes DevOps pour automatiser les déploiements et améliorer les performances des systèmes. Ce poste offre des défis techniques stimulants, la possibilité de travailler avec des technologies de pointe, et un rôle stratégique dans la transformation digitale de l'entreprise. Avantages : salaire compétitif, certifications cloud, et environnement de travail innovant.",
-  recruiter: recruiter
-)
-
-Offer.create!(
-  title: "Responsable des Ressources Humaines",
-  contrat_type: "CDI",
-  experience_level: "+ 10 ans",
-  study_level: "Master",
-  salary: "< 70k€",
-  sector: "Ressources Humaines",
-  address: "18 Rue de la Paix, 75002 Paris",
-  description: "En tant que Responsable des Ressources Humaines, vous dirigerez l'ensemble des fonctions RH de l'entreprise, incluant le recrutement, la gestion des talents, la formation, et les relations sociales. Vous serez en charge de définir et de mettre en œuvre la stratégie RH en alignement avec les objectifs de l'entreprise. Vos missions incluront également l'accompagnement des managers, la gestion des carrières, et la supervision des processus de rémunération et de performance. Ce poste offre un rôle central dans l'évolution de la culture d'entreprise, avec des défis stratégiques et opérationnels constants, ainsi que des opportunités de développement personnel et professionnel. Avantages : package salarial attractif, avantages sociaux complets, et possibilités d'évolution vers des fonctions de direction.",
-  recruiter: recruiter
-)
-
-Offer.create!(
-  title: "Chef de Produit Marketing",
-  contrat_type: "CDD",
-  experience_level: "2-3 ans",
-  study_level: "Master",
-  salary: "30k€ - 40k€",
-  sector: "Marketing",
-  address: "16 Rue de la République, 75011 Paris",
-  description: "Le Chef de Produit Marketing sera en charge de la gestion de la gamme de produits de l'entreprise. Vous serez responsable de la définition des stratégies marketing, du lancement de nouveaux produits, et de la gestion du cycle de vie des produits existants. Vos missions incluront l'analyse du marché, la gestion des campagnes de communication, et la collaboration avec les équipes de vente pour maximiser les performances. Vous travaillerez également sur l'optimisation des mix-marketing et l'amélioration continue de l'expérience client. Ce poste offre une immersion complète dans le marketing produit, avec des responsabilités variées et un environnement dynamique. Avantages : environnement de travail stimulant, opportunités de développement professionnel, et bonus liés aux performances des produits.",
-  recruiter: recruiter
-)
-
-Offer.create!(
-  title: "Chargé de Recrutement",
-  contrat_type: "CDD",
-  experience_level: "1-2 ans",
-  study_level: "Bac+3",
-  salary: "30k€ - 40k€",
-  sector: "Ressources Humaines",
-  address: "5 Rue de la Boétie, 75008 Paris",
-  description: "En tant que Chargé de Recrutement, vous serez responsable de l'ensemble du processus de recrutement, depuis la définition des besoins jusqu'à l'intégration des nouveaux collaborateurs. Vous travaillerez en étroite collaboration avec les managers pour identifier les profils recherchés, rédiger les annonces, et mener les entretiens de sélection. Vos missions incluront également la gestion des relations avec les cabinets de recrutement, l'animation des sessions de recrutement, et la participation aux forums et salons de l'emploi. Ce poste offre une opportunité unique de développer vos compétences en recrutement dans un environnement dynamique et exigeant. Avantages : environnement de travail convivial, opportunités d'apprentissage, et possibilité d'évolution au sein du département RH.",
-  recruiter: recruiter
-)
 
 puts Offer.count
