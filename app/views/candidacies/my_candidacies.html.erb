@@ -3,9 +3,24 @@
     <div class="text-end mb-3">
         <%= link_to "Retour", user_path(current_user), class: "btn-back mb-3"%>
     </div>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "Tout", my_candidacies_candidacies_path, data: { turbo_frame: :candidacies }, class:"tab-underlined active" %>
+      </li>
+      <li>
+        <%= link_to "En cours", my_candidacies_candidacies_path(status: :pending), data: { turbo_frame: :candidacies }, class:"tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Validées", my_candidacies_candidacies_path(status: :validated), data: { turbo_frame: :candidacies },class:"tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Déclinées", my_candidacies_candidacies_path(status: :declined), data: { turbo_frame: :candidacies },class:"tab-underlined" %>
+      </li>
+    </ul>
+<%= turbo_frame_tag :candidacies do %>
   <div class="cards">
       <% @candidacies.each do |candidacy| %>
-      <%= link_to user_path(current_user), class: "card-link" do %>
+      <%= link_to user_path(current_user), class: "card-link", data: { turbo_frame: '_top' } do %>
         <div class="card-category p-3">
           <p class ="text-card"><%= candidacy.offer.recruiter.name %></p>
           <p class ="text-card"><strong><%= candidacy.offer.title %></strong></p>
@@ -31,4 +46,5 @@
       <% end %>
       <% end %>
   </div>
+<% end %>
 </div>

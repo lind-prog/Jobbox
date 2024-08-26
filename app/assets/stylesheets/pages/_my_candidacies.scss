@@ -21,6 +21,7 @@
 h1 {
   color: #0b0727;
   text-align: center;
+  margin-top: 30px;
 }
 
 .cards {
@@ -65,4 +66,26 @@ h1 {
 .card-link {
   text-decoration: none;
   color : black;
+}
+
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 18px;
+  .tab-underlined.active {
+    opacity: 1;
+    border-bottom: 3px solid #0037ff;
+  }
+  .tab-underlined {
+    color: #000000;
+    padding: 8px;
+    margin: 10px;
+    opacity: .4;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+  }
+
 }
