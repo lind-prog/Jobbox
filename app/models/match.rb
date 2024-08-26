@@ -12,4 +12,8 @@ class Match < ApplicationRecord
     score += 1 if Offer.near(user_job_search.city, 10).include?(offer)
     score
   end
+  #faire une methode qui va def le scoring
+  #set_level match.find(1)
+  #prendre l'instance avec un self.scoring if == 6 = legendaire ect..
+  #self.update (nomdecolumn =  legendaire)
 end
