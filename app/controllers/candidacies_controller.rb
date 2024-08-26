@@ -5,14 +5,19 @@ class CandidaciesController < ApplicationController
     @candidacy.job_seeker = current_user
     @candidacy.offer = Offer.find(params[:offer_id])
     if @candidacy.save
-      redirect_to my_candidacies_candidacies_path, notice: 'Votre candidature a bien été créée !'
+      @chatroom = Chatroom.create(candidacy: @candidacy)
+      redirect_to chatroom_path(@chatroom), notice: 'Votre candidature a bien été créée, vous pouvez maintenant discuter avec le recruteur!'
     else
       render "offers/show", status: :unprocessable_entity
     end
   end
 
   def my_candidacies
-    @candidacies = current_user.candidacies_as_job_seeker.includes(:offer)
+    if params[:status]
+      @candidacies = current_user.candidacies_as_job_seeker.where(status: params[:status]).includes(:offer)
+    else
+      @candidacies = current_user.candidacies_as_job_seeker.includes(:offer)
+    end
   end
 
   private
