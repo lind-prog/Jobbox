@@ -1,0 +1,28 @@
+<div data-controller="tinder" class="tinder">
+  <div data-tinder-target="cards" class="tinder--cards">
+    <% @job_seekers.each do |user| %>
+      <div data-id="<%= user.id %>" class="tinder--card" data-tinder-target="card">
+        <h3><%= user.name %></h3>
+        <p>Email: <%= user.email %></p>
+        <button data-action="click->tinder#toggleDiplome" class="btn-diplome">Diplôme</button>
+        <button data-action="click->tinder#toggleExperience" class="btn-experience">Expérience</button>
+        <div class="details diplome-details" style="display: none;">
+          <p><%= user.diplome %></p>
+        </div>
+        <div class="details experience-details" style="display: none;">
+          <p><%= user.experience %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tinder--buttons">
+    <button data-action="click->tinder#swipeLeft" id="nope"><i class="fa fa-remove"></i></button>
+    <button data-action="click->tinder#swipeRight" id="love"><i class="fa fa-briefcase"></i></button>
+  </div>
+</div>
+
+<div class="tinder--status">
+  <i class="fa fa-briefcase"></i> <!-- Valisette pour swipe droite -->
+  <i class="fa fa-remove"></i> <!-- Croix pour swipe gauche -->
+</div>
