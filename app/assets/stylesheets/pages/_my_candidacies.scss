@@ -22,3 +22,47 @@ h1 {
   color: #0b0727;
   text-align: center;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+.card-category{
+  background-color: #eeece7;
+  text-align: left;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.font-italic {
+  font-style: italic;
+  font-size: 14px;
+  color: rgb(82, 82, 82)
+}
+
+.text-card{
+  padding-left: 15px;
+  margin: 0 0 10px;
+}
+
+.border-top-line{
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.card-link {
+  text-decoration: none;
+  color : black;
+}

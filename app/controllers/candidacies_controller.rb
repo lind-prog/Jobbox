@@ -1,9 +1,9 @@
 class CandidaciesController < ApplicationController
 
   def create
-    @candidacy = Candidacy.new(candidacy_params)
-    @candidacy.user = current_user
-    @candidacy.offer = @offer
+    @candidacy = Candidacy.new
+    @candidacy.job_seeker = current_user
+    @candidacy.offer = Offer.find(params[:offer_id])
     if @candidacy.save
       redirect_to my_candidacies_candidacies_path, notice: 'Votre candidature a bien été créée !'
     else

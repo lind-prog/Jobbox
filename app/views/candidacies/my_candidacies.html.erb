@@ -1,16 +1,34 @@
 <div class="container">
   <h1>Suivi de candidatures</h1>
     <div class="text-end mb-3">
-        <%= link_to "Retour", user_path(current_user), class: "btn-back"%>
-      </div>
-
-    <div>
-      <% @candidacies.each do |candidacy| %>
-      <p><strong>Status :</strong> <%= candidacy.status %></p>
-      <p><%= candidacy.offer.name %></p>
-      <p><%= candidacy.offer.title %></p>
-      <p><strong>Status :</strong> <%= candidacy.status %></p>
-      <% end %>
+        <%= link_to "Retour", user_path(current_user), class: "btn-back mb-3"%>
     </div>
+  <div class="cards">
+      <% @candidacies.each do |candidacy| %>
+      <%= link_to user_path(current_user), class: "card-link" do %>
+        <div class="card-category p-3">
+          <p class ="text-card"><%= candidacy.offer.recruiter.name %></p>
+          <p class ="text-card"><strong><%= candidacy.offer.title %></strong></p>
+          <p class ="text-card">
+            <strong> Statut :</strong>
+            <span class="<%=
+              if candidacy.validated?
+                'text-success'
+              elsif candidacy.declined?
+                'text-danger'
+              elsif candidacy.pending?
+                'text-info'
+              else
+                ''
+              end
+            %>">
+              <%= candidacy.translated_status %>
+            </span>
+          </p>
 
+          <p class = "text-card font-weight-lighter font-italic border-top-line"> Envoyée le <%= candidacy.created_at.strftime("%d/%m/%Y") %></p>
+        </div>
+      <% end %>
+      <% end %>
+  </div>
 </div>
