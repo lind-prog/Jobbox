@@ -83,4 +83,22 @@ export default class extends Controller {
       console.log('remove')
     }
   }
+
+  displayDiplome(event) {
+    const card = event.target.offsetParent;
+    const userId = card.dataset.id;
+    const diplomeCard = document.getElementById(`${userId}_diplome`);
+    console.log(diplomeCard)
+    diplomeCard.classList.toggle('d-block');
+    diplomeCard.classList.toggle('d-none');
+  }
+
+  displayExperience(event) {
+    const card = event.target.offsetParent;
+    const userId = card.dataset.id;
+    const experienceCard = document.getElementById(`${userId}_experience`);
+    console.log(experienceCard)
+    experienceCard.classList.toggle('d-block');
+    experienceCard.classList.toggle('d-none');
+  }
 }
