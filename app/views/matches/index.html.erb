@@ -7,9 +7,10 @@
 <div class="filter-bar" data-controller="filter">
   <h3>Filtrer par type</h3>
   <div class="filter-options">
-    <%= simple_form_for :level, url: user_job_search_matches_path(@user_job_search), method: :get, remote: true, html: { id: "filter-form", data: { filter_target: "form" } } do |f| %>
-      <%= f.input :level, collection: ["Légendaire", "Epique", "Rare", "Commun"], as: :check_boxes, input_html: { class: "filter-checkbox", data:{ action: "click->filter#select", filter_target: "field" } } %>
-    <% end %>
+  <%= simple_form_for :level, url: user_job_search_matches_path(@user_job_search), method: :get, remote: true, html: { id: "filter-form", data: { filter_target: "form" } } do |f| %>
+  <%= f.input :level, collection: ["Légendaire", "Epique", "Rare", "Commun"], as: :check_boxes, input_html: { class: "filter-checkbox", data:{ action: "click->filter#select", filter_target: "field" } } %>
+<% end %>
+
   </div>
 </div>
 
