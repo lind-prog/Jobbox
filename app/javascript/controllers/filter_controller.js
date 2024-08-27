@@ -7,6 +7,14 @@ export default class extends Controller {
   }
 
   select() {
-    console.log(this.formTarget.submit())
+    const form = this.formTarget;
+    const formData = new FormData(form);
+
+    const params = new URLSearchParams(formData);
+    const newUrl = `${form.action}?${params.toString()}`;
+
+    Turbo.visit(newUrl, { frame: "map_frame" });
+
+    // console.log(this.formTarget.submit())
   }
 }

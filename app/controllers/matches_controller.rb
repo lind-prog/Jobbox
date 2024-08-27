@@ -4,7 +4,6 @@ class MatchesController < ApplicationController
     @user_matches = Match.where(user_job_search: @user_job_search)
     @matches = params[:level].present? ? @user_matches.where(level: params[:level][:level]) : @user_matches.select { |match| match.scoring >= 3 }
     @offers_with_level = @matches.pluck(:offer_id, :level)
-    # raise
     @offers = Offer.where(id: @offers_with_level.flatten.reject { |element| element.is_a?(String) })
     @markers = @offers.geocoded.map do |offer|
       marker = set_marker(@offers_with_level, offer.id)
@@ -14,8 +13,8 @@ class MatchesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {
           offer: offer,
           recruiter: offer.recruiter
-          }),
-          marker_html: render_to_string(partial: marker)
+        }),
+        marker_html: render_to_string(partial: marker)
       }
     end
   end

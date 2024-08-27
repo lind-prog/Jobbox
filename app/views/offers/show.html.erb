@@ -1,6 +1,5 @@
 <div class="container">
   <div class="offer-page">
-    <!-- Section de l'en-tête de l'offre -->
     <div class="offer-header">
       <div class="offer-header-content">
         <h1><%= @offer.title %></h1>
@@ -8,12 +7,9 @@
       </div>
     </div>
 
-    <!-- Contenu principal avec les détails de l'offre et la carte -->
     <div class="offer-content">
-      <!-- Section des détails de l'offre -->
       <div class="offer-details">
         <div class="offer-info">
-          <!-- Bloc des informations sur l'offre -->
           <div class="offer-info-block city-block">
             <i class="fas fa-map-marker-alt"></i>
             <p><strong>Ville :</strong> <%= @offer.address %></p>
@@ -65,12 +61,14 @@
         <%= button_to 'Postuler', offer_candidacies_path(@offer) , class: 'btn btn-primary' %>
       </div>
 
-      <!-- Section de la carte -->
       <div class="map-container">
-        <div id="map" class="map"
+        <div id="map" class="map map_offre"
           data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          data-map-marker-value="<%= @marker.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          data-map-longitude-value="<%= @offer.longitude %>"
+          data-map-latitude-value="<%= @offer.latitude %>">
+
         </div>
       </div>
     </div>

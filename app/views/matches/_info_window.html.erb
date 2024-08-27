@@ -3,7 +3,7 @@
     <h2><%= recruiter.name %></h2>
     <div class="content">
       <p><%= offer.title %></p>
-      <%= link_to offer_path(offer), class: "btn mt-3" do %>
+      <%= link_to offer_path(offer), class: "btn mt-3", data: { turbo_frame: '_top'} do %>
         <span>Voir l'offre</span>
       <% end %>
     </div>

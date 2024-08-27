@@ -4,7 +4,10 @@ import mapboxgl from 'mapbox-gl'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    marker: Array,
+    latitude: Number,
+    longitude: Number
   }
 
   connect() {
@@ -12,7 +15,9 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/titizzy/cm0b493nv00pv01qtglrn5rcw"
+      style: "mapbox://styles/titizzy/cm0b493nv00pv01qtglrn5rcw",
+      center: [this.longitudeValue, this.latitudeValue],
+      zoom: 17
     })
 
     this.markers = this.markersValue.map(marker => ({
@@ -21,10 +26,16 @@ export default class extends Controller {
       mapMarker: null
     }));
 
+    this.marker = this.markerValue.map(marker => ({
+      ...marker,
+      element: this.#createMarkerElement(marker),
+      mapMarker: null
+    }));
+
     this.#addMarkersToMap()
+    this.#addMarkersToOffer()
     this.#fitMapToMarkers()
 
-    // Attacher les écouteurs d'événements pour les cases à cocher
     this.element.addEventListener('change', this.#filterMarkers.bind(this));
   }
 
@@ -44,6 +55,14 @@ export default class extends Controller {
     });
   }
 
+  #addMarkersToOffer() {
+    this.marker.forEach(marker => {
+      marker.mapMarker = new mapboxgl.Marker(marker.element)
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(this.map);
+    });
+  }
+
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds();
     this.markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
@@ -52,31 +71,17 @@ export default class extends Controller {
 
   #filterMarkers() {
     const selectedFilters = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
-      .map(checkbox => checkbox.dataset.filter);
+    .map(checkbox => checkbox.dataset.filter);
 
     this.markers.forEach(marker => {
       if (selectedFilters.length === 0 || selectedFilters.includes(marker.type)) {
         marker.mapMarker.getElement().style.display = 'block';
-        // Ensuring marker is added to map in case it was previously removed
         if (!marker.mapMarker.getMap()) {
           marker.mapMarker.addTo(this.map);
         }
       } else {
         marker.mapMarker.getElement().style.display = 'none';
-        // Optionally, you can also remove the marker from the map
-        // marker.mapMarker.remove();
       }
     });
   }
 }
-[
-  {
-    "lng": -73.985,
-    "lat": 40.758,
-    "info_window_html": "<p>Details here</p>",
-    "marker_html": "<div class='marker-icon'></div>",
-    "type": "legendary" // Assurez-vous d'inclure ce champ
-  },
-  // autres marqueurs
-]
-
