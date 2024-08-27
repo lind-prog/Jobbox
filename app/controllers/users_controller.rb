@@ -17,8 +17,11 @@ class UsersController < ApplicationController
   # Affiche les demandeurs d'emploi pour les recruteurs à swiper
   def index
     # On filtre les demandeurs d'emploi qui n'ont pas encore été swipés par le recruteur actuel
-    @job_seekers = User.where(role: 0)
-
+    offer = current_user.offer
+    matches = Match.where(offer: offer).select{ |match| match.scoring >= 3 }
+    ids = matches.pluck(:user_job_search_id)
+    searches = UserJobSearch.where(id: ids)
+    @job_seekers = searches.map(&:job_seeker)
     #if @job_seekers.empty?
       #redirect_to root_path, notice: "Aucun demandeur d'emploi disponible pour le moment."
     #end
