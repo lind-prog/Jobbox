@@ -6,7 +6,7 @@
 
     <div class="buttons">
       <% if user_signed_in? %>
-      <a href="#" class="btn btn-primary btn-medium">Je suis recruteur</a>
+      <a href="<%= user_path(current_user) %>" class="btn btn-primary btn-medium">Je suis recruteur</a>
       <a href="<%= user_path(current_user) %>" class="btn btn-primary btn-medium">Je recherche un emploi</a>
       <% end %>
     </div>

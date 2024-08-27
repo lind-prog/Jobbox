@@ -6,9 +6,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    if @user.job_seeker?
+    if @user.recruiter?
+      @candidacies = @user.candidacies_as_recruiter
+    elsif @user.job_seeker?
       @candidacies = @user.candidacies_as_job_seeker
-      # Ajouter d'autres données spécifiques ici si nécessaire
     else
       redirect_to root_path, alert: "Accès refusé."
     end
@@ -16,7 +17,6 @@ class UsersController < ApplicationController
 
   # Affiche les demandeurs d'emploi pour les recruteurs à swiper
   def index
-    # On filtre les demandeurs d'emploi qui n'ont pas encore été swipés par le recruteur actuel
     offer = current_user.offer
     matches = Match.where(offer: offer).select{ |match| match.scoring >= 3 }
     ids = matches.pluck(:user_job_search_id)
@@ -27,14 +27,12 @@ class UsersController < ApplicationController
     #end
   end
 
-  # Action pour swipe gauche (rejet)
   def swipe_left
     job_seeker = User.find(params[:id])
     current_user.rejected_job_seekers << job_seeker unless current_user.rejected_job_seekers.include?(job_seeker)
     redirect_to users_path, notice: "Demandeur d'emploi rejeté."
   end
 
-  # Action pour swipe droite (favoris)
   def swipe_right
     job_seeker = User.find(params[:id])
     current_user.favorited_job_seekers << job_seeker unless current_user.favorited_job_seekers.include?(job_seeker)
