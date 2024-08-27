@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: turbo_stream.append(:messages, partial: "messages/message",
-            locals: { message: @message })
+            locals: { message: @message, user: current_user })
         end
         format.html { redirect_to chatroom_path(@chatroom) }
       end

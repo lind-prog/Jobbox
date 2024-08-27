@@ -1,13 +1,13 @@
 <h1 class ="pb-3">Ma messagerie</h1>
-
-<div class="container chat">
-  <h1>Votre messagerie avec <%= @chatroom.candidacy.offer.recruiter.name %></h1>
-
-<%= turbo_stream_from "chatroom_#{@chatroom.id}_messages" %>
-  <div id="messages" class="messages">
-    <% @chatroom.messages.each do |message| %>
-     <%= render "messages/message", message: message %>
-    <% end %>
+<div class="container chat d-flex">
+  <h1 class = "chatroom-titre"><strong><%= @chatroom.candidacy.offer.recruiter.name %></strong></h1>
+  <div class="container_chatroom">
+    <%= turbo_stream_from "chatroom_#{@chatroom.id}_messages" %>
+      <div id="messages" class="messages">
+        <% @chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message, user: current_user %>
+        <% end %>
+      </div>
   </div>
 
 <%= simple_form_for [@chatroom, @message], html: { class: "", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } } do |f| %>

@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
     <% unless (controller_name == 'users' && action_name == 'show') || (controller_name == 'pages' && action_name == 'home') %>
       <%= render "shared/navbar" %>
     <% end %>
