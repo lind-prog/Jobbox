@@ -27,6 +27,7 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.#addMarkerToOffer()
 
     // Attacher les écouteurs d'événements pour les cases à cocher
     this.element.addEventListener('change', this.#filterMarkers.bind(this));
@@ -47,7 +48,13 @@ export default class extends Controller {
         .addTo(this.map);
     });
   }
-
+  #addMarkerToOffer() {
+    this.markers.forEach(marker => {
+      marker.mapMarker = new mapboxgl.Marker(marker.element)
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(this.map);
+    });
+  }
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds();
     this.markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
