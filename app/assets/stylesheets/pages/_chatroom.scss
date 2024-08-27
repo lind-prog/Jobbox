@@ -1,16 +1,15 @@
 .chat {
-  background: white;
-  margin-top: 9px;
+  background: #efeeee;
   height: calc(100vh - 55px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
 
-  h1 {
-    border-bottom: 1px solid $gray-200;
-    margin-bottom: 0;
-    padding: 1rem;
+  .container_chatroom {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .messages {
@@ -71,10 +70,17 @@
 
   .chatroom-titre{
     margin-top : 5px;
+    border-bottom: 1px solid #979797;;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    font-size: 24px;
+    animation: none;
+    text-align: start;
   }
 
-  .container_chatroom{
-    background-color: beige;
-  }
-
+}
+.titre-list{
+  padding-top: 10px;
+  background-color: rgb(213, 213, 213);
+  margin-bottom: 0px;
 }

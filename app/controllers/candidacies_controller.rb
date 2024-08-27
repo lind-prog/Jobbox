@@ -6,7 +6,7 @@ class CandidaciesController < ApplicationController
     @candidacy.offer = Offer.find(params[:offer_id])
     if @candidacy.save
       @chatroom = Chatroom.create(candidacy: @candidacy)
-      redirect_to chatroom_path(@chatroom), notice: 'Votre candidature a bien été créée, vous pouvez maintenant discuter avec le recruteur!'
+      redirect_to chatrooms_path(chatroom: @chatroom), notice: 'Votre candidature a bien été créée, vous pouvez maintenant discuter avec le recruteur!'
     else
       render "offers/show", status: :unprocessable_entity
     end
