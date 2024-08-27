@@ -5,7 +5,13 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.user = current_user
     if @message.save
-      redirect_to chatroom_path(@chatroom)
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.append(:messages, partial: "messages/message",
+            locals: { message: @message, user: current_user })
+        end
+        format.html { redirect_to chatroom_path(@chatroom) }
+      end
     else
       render "chatrooms/show", status: :unprocessable_entity
     end

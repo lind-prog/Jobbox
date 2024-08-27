@@ -76,3 +76,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "actioncable-enhanced-postgresql-adapter"

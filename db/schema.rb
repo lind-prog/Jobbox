@@ -73,11 +73,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_26_174151) do
     t.index ["recruiter_id"], name: "index_offers_on_recruiter_id"
   end
 
-  create_table "swipes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "user_job_searches", force: :cascade do |t|
     t.string "title"
     t.string "contrat_type"
