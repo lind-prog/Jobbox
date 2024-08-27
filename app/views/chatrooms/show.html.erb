@@ -1,13 +1,1 @@
-<h1> Ma messagerie </h1>
 
-<%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
-%>
-  <% other_user = current_user == @chatroom.candidacy.job_seeker ? @chatroom.candidacy.offer.recruiter :  @chatroom.candidacy.job_seeker %>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message #{other_user.name}",
-    wrapper_html: {class: "flex-grow-1"}
-  %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-<% end %>
