@@ -4,7 +4,9 @@ import mapboxgl from 'mapbox-gl'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    latitude: Number,
+    longitude: Number
   }
 
   connect() {
@@ -12,7 +14,9 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/titizzy/cm0b493nv00pv01qtglrn5rcw"
+      style: "mapbox://styles/titizzy/cm0b493nv00pv01qtglrn5rcw",
+      center: [this.longitudeValue, this.latitudeValue],
+      zoom: 16
     })
 
     this.markers = this.markersValue.map(marker => ({
@@ -69,14 +73,3 @@ export default class extends Controller {
     });
   }
 }
-[
-  {
-    "lng": -73.985,
-    "lat": 40.758,
-    "info_window_html": "<p>Details here</p>",
-    "marker_html": "<div class='marker-icon'></div>",
-    "type": "legendary" // Assurez-vous d'inclure ce champ
-  },
-  // autres marqueurs
-]
-

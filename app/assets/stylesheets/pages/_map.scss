@@ -95,12 +95,15 @@
   }
 
   .map {
-    width: 66%;
+    width: 100%;
     height: 66vh;
     max-width: 1200px;
     margin-left: 30px;
     border-radius: 8px;
     border: 5px solid #02022c;
+  }
+  .map_offre {
+    height: 100%;
   }
 }
 
