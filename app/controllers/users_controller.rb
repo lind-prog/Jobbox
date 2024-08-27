@@ -6,12 +6,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    if @user.recruiter?
-      @candidacies = @user.candidacies_as_recruiter
-    elsif @user.job_seeker?
+    if @user.job_seeker?
       @candidacies = @user.candidacies_as_job_seeker
     else
-      redirect_to root_path, alert: "Accès refusé."
     end
   end
 

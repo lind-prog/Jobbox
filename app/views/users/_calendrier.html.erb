@@ -1,0 +1,15 @@
+<div class="calendar-section">
+  <div class="calendar">
+    <header>
+      <h2><%= Date.today.strftime("%A") %></h2>
+      <p><%= Date.today.strftime("%B %Y") %></p>
+    </header>
+    <div class="calendar-grid">
+      <% (Date.today.beginning_of_month..Date.today.end_of_month).each do |day| %>
+        <div class="calendar-day <%= 'today' if day == Date.today %>">
+          <%= day.day %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

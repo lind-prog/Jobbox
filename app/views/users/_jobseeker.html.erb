@@ -1,0 +1,27 @@
+<div class="profile-card">
+  <div class="profile-card-inner">
+    <div class="profile-image">
+      <%= link_to root_path do %>
+        <%= image_tag 'https://cdn.booke.fr/wp-content/uploads/2023/12/20221312/BKE1009.webp', alt: "Avatar Profil", class: 'avatar' %>
+      <% end %>
+    </div>
+    <div class="profile-info">
+      <h1><%= user.name %></h1>
+      <p><%= user.email %></p>
+    </div>
+  </div>
+</div>
+<div class="actions">
+  <section class="box profile-form">
+    <h2>Mon Profil</h2>
+    <%= link_to 'Compléter le formulaire', new_user_job_search_path(:user_id => user.id), class: 'btn' %>
+  </section>
+  <section class="box candidatures">
+    <h2>Mes Candidatures</h2>
+    <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn' %>
+  </section>
+  <section class="box messages">
+    <h2>Ma Messagerie</h2>
+    <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
+  </section>
+</div>
