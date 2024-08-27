@@ -1,7 +1,7 @@
 class Candidacy < ApplicationRecord
   belongs_to :job_seeker, class_name: "User"
   belongs_to :offer
-  has_many :chatrooms
+  has_one :chatroom
   enum :status, { pending: 0, validated: 1, declined: 2 }
   # validates :match_level, presence: true
 
