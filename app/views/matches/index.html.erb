@@ -8,7 +8,7 @@
   <h3>Filtrer par type</h3>
   <div class="filter-options">
     <%= simple_form_for :level, url: user_job_search_matches_path(@user_job_search), method: :get, remote: true, html: { id: "filter-form", data: { filter_target: "form" } } do |f| %>
-      <%= f.input :level, collection: ["Légendaire", "Epique", "Rare", "Commun"], as: :check_boxes, input_html: { class: "filter-checkbox", data:{ action: "click->filter#select", filter_target: "field" } } %>
+    <%= f.input :level, collection: ["Légendaire", "Epique", "Rare", "Commun"], as: :check_boxes, item_wrapper_class: 'form-check form-check-inline', input_html: { class: "form-check-input", data: { action: "click->filter#select", filter_target: "field" } }, label_html: { class: "form-check-label" } %>
     <% end %>
   </div>
 </div>
@@ -23,12 +23,16 @@
             <li><span class="common-dot"></span> Commun = Match à 50%</li>
           </ul>
         </div>
-
-        <div class="map col-7"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <div class="col-7">
+          <%= turbo_frame_tag :map_frame do %>
+            <div class="map"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          <% end %>
         </div>
+
     </div>
 
   <div class="info-box">

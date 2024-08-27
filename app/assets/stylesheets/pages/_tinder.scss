@@ -98,6 +98,18 @@
   color: #333; /* Couleur de texte pour les titres */
 }
 
+.tinder--card h5 {
+  margin-top: 32px;
+  font-size: 24px;
+  padding: 0 16px;
+  pointer-events: none;
+  color: #333; /* Couleur de texte pour les titres */
+}
+
+.tinder--card button {
+  width: 130px;
+}
+
 .tinder--card p {
   margin-top: 24px;
   font-size: 20px;
@@ -198,4 +210,17 @@
 /* Forcer l'affichage des informations */
 .diplome.d-block, .experience.d-block {
   display: block;
+}
+
+/* Style pour le niveau de matching */
+.matching-level {
+  text-align: center;
+  margin-top: 20px; /* Espacement entre les boutons et le niveau de matching */
+  font-size: 20px; /* Taille de la police pour le niveau de matching */
+  color: #333; /* Couleur du texte */
+}
+
+.matching-level strong {
+  font-weight: bold; /* Mettre en gras le niveau de matching */
+  color: #007bff; /* Couleur du texte du niveau de matching pour le faire ressortir */
 }

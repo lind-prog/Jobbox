@@ -12,7 +12,7 @@ class UserJobSearchesController < ApplicationController
     if @user_job_search.update(user_job_search_params)
       Match.where(user_job_search: @user_job_search).destroy_all
       Offer.all.each do |offer|
-        Match.create!(offer: offer, user_job_search: @user_job_search)
+        Match.create!(offer: offer, user_job_search: @user_job_search) unless Candidacy.where(offer: offer, job_seeker: @user_job_search.job_seeker).exists?
       end
       redirect_to user_job_search_matches_path(@user_job_search), notice: "Votre profil a été complété avec succès !"
     else
