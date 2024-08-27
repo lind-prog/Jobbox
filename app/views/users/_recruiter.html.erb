@@ -15,10 +15,11 @@
   <section class="box profile-form">
     <h2>Offres</h2>
     <%= link_to 'Créer une offre', new_user_job_search_path(:user_id => user.id), class: 'btn' %>
+    <%= link_to 'Voir mon offre', new_user_job_search_path(:user_id => user.id), class: 'btn' %>
   </section>
   <section class="box candidatures">
     <h2>Mes Candidats</h2>
-    <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn' %>
+    <%= link_to 'Voir les candidatures', users_path, class: 'btn' %>
   </section>
   <section class="box messages">
     <h2>Ma Messagerie</h2>

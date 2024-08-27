@@ -7,7 +7,7 @@ class CandidaciesController < ApplicationController
     user = current_user || User.find(params[:user_id])
     @candidacy.job_seeker = user.role == "job_seeker" ? user : User.find(params[:user_id])
     @candidacy.offer = Offer.find(params[:offer_id])
-    Match.find_by(offer: @candidacy.offer, user_job_search: @candidacy.job_seeker.user_job_search).delete
+    Match.find_by(offer: @candidacy.offer, user_job_search: @candidacy.job_seeker.user_job_search).destroy
     if @candidacy.save
       @chatroom = Chatroom.create(candidacy: @candidacy)
       # redirect_to chatroom_path(@chatroom), notice: "Vous pouvez maintenant discuter avec le candidat!"
