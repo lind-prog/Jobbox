@@ -62,7 +62,7 @@ export default class extends Controller {
 
   swipeRight(event) {
     this.handleSwipe(true);
-    event.preventDefault();
+    // event.preventDefault();
   }
 
   handleSwipe(love) {
@@ -78,7 +78,10 @@ export default class extends Controller {
     card.style.transform = `translate(${love ? moveOutWidth : -moveOutWidth}px, -100px) rotate(${love ? -30 : 30}deg)`;
 
     if (love) {
-      console.log('redirect to chatroom')
+      const url = `${window.location.origin}/offers/${card.dataset.offer}/candidacies?user_id=${card.dataset.id}`;
+      fetch(url, {
+        method: 'POST',
+      })
     } else {
       console.log('remove')
     }

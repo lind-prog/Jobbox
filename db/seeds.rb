@@ -20,27 +20,88 @@ User.destroy_all
 # Creating users
 User.create!(
   name: "Jean Dupont",
-  email: "Dupont@gmail.com",
+  email: "dupont@gmail.com",
   password: "password123",
   password_confirmation: "password123",
   role: 0,
   phone: "06 12 34 56 78",
   address: "15 Rue Fondaudège, 33000 Bordeaux",
-  diplome: "J'ai obtenu une Licence en Informatique suivie d'un Master en Sciences des Données à l'Université de Paris-Saclay, où j'ai développé une expertise en algorithmes et en analyse de données",
+  diplome: "J'ai obtenu une Licence en Informatique suivie d'un Master en Sciences des Données à l'Université de Paris-Saclay, où j'ai développé une expertise en algorithmes et en analyse de données.",
   experience: "J'ai travaillé comme ingénieur en intelligence artificielle chez TechInnov, où j'ai conçu des solutions d'apprentissage automatique et optimisé des systèmes de recommandation, tout en dirigeant des projets de R&D pour améliorer les performances des produits technologiques."
 )
 
 User.create!(
   name: "Jules Durand",
-  email: "Durand@gmail.com",
+  email: "durand@gmail.com",
   password: "password123",
   password_confirmation: "password123",
   role: 0,
-  phone: "06 12 34 56 78",
-  address: "17 Rue sainte Catherine, 33000 Bordeaux",
-  diplome: "J'ai obtenu une Licence en Informatique suivie d'un Master en Sciences des Données à l'Université de Paris-Saclay, où j'ai développé une expertise en algorithmes et en analyse de données",
-  experience: "J'ai travaillé comme ingénieur en intelligence artificielle chez TechInnov, où j'ai conçu des solutions d'apprentissage automatique et optimisé des systèmes de recommandation, tout en dirigeant des projets de R&D pour améliorer les performances des produits technologiques."
+  phone: "06 98 76 54 32",
+  address: "17 Rue Sainte Catherine, 33000 Bordeaux",
+  diplome: "Diplômé d'un Master en Développement Logiciel à l'École Polytechnique, spécialisé dans le développement d'applications web et mobiles.",
+  experience: "J'ai occupé le poste de développeur full-stack chez WebDevCo, où j'ai travaillé sur le développement d'applications web complexes en utilisant des frameworks modernes tels que React et Ruby on Rails."
 )
+
+User.create!(
+  name: "Alice Martin",
+  email: "martin.alice@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  role: 0,
+  phone: "07 11 22 33 44",
+  address: "12 Boulevard des Capucines, 75009 Paris",
+  diplome: "Titulaire d'un Doctorat en Intelligence Artificielle de l'Université de Grenoble, avec une spécialisation en apprentissage profond et réseaux de neurones.",
+  experience: "Chercheuse senior en IA chez DeepMind Labs, j'ai mené des recherches sur les réseaux de neurones profonds et développé des modèles d'apprentissage automatique pour des applications dans la reconnaissance vocale et la vision par ordinateur."
+)
+
+User.create!(
+  name: "Marie Leclerc",
+  email: "leclerc.marie@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  role: 0,
+  phone: "06 44 55 66 77",
+  address: "25 Avenue des Champs-Élysées, 75008 Paris",
+  diplome: "Diplômée d'un Master en Cybersécurité à l'École Nationale Supérieure des Télécommunications de Paris.",
+  experience: "Ingénieure en cybersécurité chez SecureNetworks, j'ai élaboré des stratégies de protection des données, réalisé des tests de pénétration, et mis en place des protocoles de sécurité pour protéger les systèmes d'information des entreprises."
+)
+
+User.create!(
+  name: "Paul Simon",
+  email: "simon.paul@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  role: 0,
+  phone: "07 88 99 00 11",
+  address: "30 Rue du Louvre, 75001 Paris",
+  diplome: "Licence en Informatique et Réseaux de Télécommunication de l'Université de Lille.",
+  experience: "Administrateur réseau chez NetworkSolutions, où j'ai été responsable de la gestion et de la maintenance des infrastructures réseau, en assurant la disponibilité et la sécurité des services réseau pour une clientèle internationale."
+)
+
+User.create!(
+  name: "Emma Lefebvre",
+  email: "lefebvre.emma@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  role: 0,
+  phone: "06 77 88 99 22",
+  address: "45 Rue de Rivoli, 75004 Paris",
+  diplome: "Master en Design UX/UI de l'École Supérieure des Arts et Technologies de l'Image (ESATI).",
+  experience: "Designer UX/UI chez CreativeTech, j'ai conçu des interfaces utilisateur intuitives pour des applications mobiles et web, en me concentrant sur l'expérience utilisateur et l'amélioration de l'accessibilité et de la convivialité des produits."
+)
+
+User.create!(
+  name: "Lucas Bernard",
+  email: "bernard.lucas@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  role: 0,
+  phone: "06 55 66 77 88",
+  address: "50 Quai de la Rapée, 75012 Paris",
+  diplome: "Master en Ingénierie Logicielle de l'Université de Strasbourg, avec une spécialisation en architecture logicielle.",
+  experience: "Architecte logiciel chez SoftBuild, où j'ai dirigé des équipes de développement pour concevoir des architectures logicielles robustes et scalables, tout en optimisant les performances et la sécurité des systèmes d'information."
+)
+
 
 recruiter = User.create!(
   name: "techInnov",
