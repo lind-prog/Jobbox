@@ -1,12 +1,21 @@
 # Destroy all existing users and offers
-puts "Destroy start"
+#puts "Destroy start"
+#Match.destroy_all
+
+#Offer.destroy_all
+
+#UserJobSearch.destroy_all
+#User.destroy_all
+#puts "Destroy end"
+Chatroom.destroy_all
+
+Candidacy.destroy_all
+
 Match.destroy_all
 
 Offer.destroy_all
 
-UserJobSearch.destroy_all
 User.destroy_all
-puts "Destroy end"
 
 # Creating users
 User.create!(
@@ -140,6 +149,124 @@ Offer.create!(
   recruiter: recruiter
 )
 
+Offer.create!(
+  title: "Développeur Front-End",
+  contrat_type: "CDI",
+  experience_level: "1-2 ans",
+  study_level: "Bac+3",
+  salary: "28k€ - 38k€",
+  sector: "Technologie",
+  address: "5 Avenue de l'Yser, 33700 Mérignac",
+  description: "En tant que Développeur Front-End, vous serez responsable de la création et de l'optimisation des interfaces utilisateur. Vous travaillerez avec des technologies modernes telles que React ou Vue.js pour développer des applications web réactives et performantes. Vous collaborerez avec les équipes de design pour garantir que les interfaces sont intuitives et attrayantes, et vous participerez à l'amélioration continue des processus de développement. Ce poste offre un environnement de travail dynamique avec des possibilités de croissance professionnelle.",
+  recruiter: recruiter
+)
 
+Offer.create!(
+  title: "Analyste Business Intelligence",
+  contrat_type: "CDI",
+  experience_level: "2-3 ans",
+  study_level: "Master",
+  salary: "35k€ - 45k€",
+  sector: "Technologie",
+  address: "12 Rue du Hâ, 33700 Mérignac",
+  description: "En tant qu'Analyste Business Intelligence, vous serez chargé de la collecte, de l'analyse, et de l'interprétation des données pour soutenir les décisions stratégiques de l'entreprise. Vous développerez des tableaux de bord, des rapports et des analyses pour aider à la compréhension des tendances du marché et des performances de l'entreprise. Vous utiliserez des outils BI comme Tableau ou Power BI pour fournir des insights clairs et exploitables.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Responsable de la Supply Chain",
+  contrat_type: "CDI",
+  experience_level: "5-10 ans",
+  study_level: "Master",
+  salary: "50k€ - 60k€",
+  sector: "Logistique",
+  address: "25 Avenue du Maréchal Juin, 33700 Mérignac",
+  description: "Le Responsable de la Supply Chain sera en charge de l'ensemble de la chaîne logistique, depuis l'approvisionnement jusqu'à la distribution. Vous optimiserez les processus d'approvisionnement, de stockage et de livraison pour maximiser l'efficacité opérationnelle. Vous coordonnerez les activités avec les fournisseurs et les partenaires logistiques pour garantir un flux de marchandises fluide et sans interruption.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Chargé de Clientèle",
+  contrat_type: "CDD",
+  experience_level: "1-2 ans",
+  study_level: "Bac+2",
+  salary: "22k€ - 32k€",
+  sector: "Service",
+  address: "8 Rue de la République, 33130 Bègles",
+  description: "En tant que Chargé de Clientèle, vous serez le point de contact principal pour les clients, répondant à leurs demandes, résolvant les problèmes et assurant un service de qualité. Vous gérerez les appels entrants, traiterez les réclamations, et travaillerez à la satisfaction client. Ce poste offre une opportunité de développer vos compétences en communication et en gestion de la relation client.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Assistant Marketing",
+  contrat_type: "CDD",
+  experience_level: "0-1 an",
+  study_level: "Bac+3",
+  salary: "20k€ - 28k€",
+  sector: "Marketing",
+  address: "15 Avenue de la Liberté, 33130 Bègles",
+  description: "En tant qu'Assistant Marketing, vous assisterez l'équipe marketing dans la mise en œuvre de campagnes et la gestion des projets marketing. Vous serez impliqué dans la création de contenu, la gestion des réseaux sociaux, et l'analyse des performances des campagnes. Ce poste est idéal pour débuter une carrière dans le marketing et acquérir une expérience pratique dans un environnement dynamique.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Développeur Java",
+  contrat_type: "CDI",
+  experience_level: "2-3 ans",
+  study_level: "Master",
+  salary: "32k€ - 42k€",
+  sector: "Technologie",
+  address: "20 Rue du Prieuré, 33500 Bruges",
+  description: "En tant que Développeur Java, vous serez responsable de la conception et du développement d'applications Java robustes et scalables. Vous travaillerez sur des projets variés, de la création de nouvelles fonctionnalités à l'amélioration des systèmes existants. Vous collaborerez avec les équipes de développement pour assurer la qualité du code et la réussite des projets.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Responsable Commercial",
+  contrat_type: "CDI",
+  experience_level: "5-10 ans",
+  study_level: "Master",
+  salary: "45k€ - 55k€",
+  sector: "Commercial",
+  address: "5 Avenue des Anciens Combattants, 33290 Cauderan",
+  description: "Le Responsable Commercial sera chargé de développer et de gérer les relations avec les clients clés, d'identifier de nouvelles opportunités de marché, et de mettre en œuvre des stratégies pour atteindre les objectifs de vente. Vous superviserez l'équipe commerciale et travaillerez à l'élargissement de la clientèle.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Technicien Support IT",
+  contrat_type: "CDI",
+  experience_level: "1-2 ans",
+  study_level: "Bac+2",
+  salary: "25k€ - 35k€",
+  sector: "Technologie",
+  address: "10 Rue du Parc Bordelais, 33290 Cauderan",
+  description: "En tant que Technicien Support IT, vous serez responsable de l'assistance technique aux utilisateurs et de la résolution des problèmes informatiques. Vous gérerez les incidents, effectuerez des réparations et veillerez à ce que les systèmes informatiques fonctionnent correctement.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Assistant Ressources Humaines",
+  contrat_type: "CDI",
+  experience_level: "1-2 ans",
+  study_level: "Bac+3",
+  salary: "28k€ - 38k€",
+  sector: "Ressources Humaines",
+  address: "22 Avenue des Capucins, 33290 Cauderan",
+  description: "L'Assistant Ressources Humaines soutiendra les équipes RH dans la gestion des recrutements, l'administration des dossiers employés, et l'organisation des formations. Vous participerez à la mise en œuvre des politiques RH et contribuerez à la gestion des relations avec les employés.",
+  recruiter: recruiter
+)
+
+Offer.create!(
+  title: "Gestionnaire de Projet",
+  contrat_type: "CDI",
+  experience_level: "3-5 ans",
+  study_level: "Master",
+  salary: "40k€ - 50k€",
+  sector: "Gestion de Projet",
+  address: "3 Rue du Commerce, 33290 Blanquefort",
+  description: "En tant que Gestionnaire de Projet, vous serez responsable de la planification, de l'exécution, et de la clôture des projets. Vous coordonnerez les équipes, gérerez les budgets, et assurerez la livraison des projets dans les délais impartis.",
+  recruiter: recruiter
+)
 
 puts Offer.count

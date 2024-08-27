@@ -46,7 +46,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   border-radius: 12px;
   width: 100%;
   max-width: 500px;
@@ -116,7 +116,7 @@
 }
 
 .calendar {
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 5px 5px #0b0727;
@@ -177,7 +177,7 @@
 
 .box {
   padding: 20px;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   border-radius: 8px;
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -198,7 +198,7 @@
   width: 100%;
   padding: 10px;
   text-align: center;
-  background-color: #eeece7;
+  background-color: #f5f5f0;
   color: #333;
   text-decoration: none;
   border-radius: 4px;
@@ -207,7 +207,8 @@
 }
 
 .btn:hover {
-  background-color: #567aff;
+  background-color: #ffffff;
+  color: #ffffff;
   transform: scale(1.02);
 }
 
