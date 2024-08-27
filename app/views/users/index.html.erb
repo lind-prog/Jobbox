@@ -4,14 +4,26 @@
       <div data-id="<%= user.id %>" class="tinder--card" data-tinder-target="card">
         <h3><%= user.name %></h3>
         <p>Email: <%= user.email %></p>
-        <button data-action="click->tinder#toggleDiplome" class="btn-diplome">Diplôme</button>
-        <button data-action="click->tinder#toggleExperience" class="btn-experience">Expérience</button>
-        <div class="details diplome-details" style="display: none;">
-          <p><%= user.diplome %></p>
-        </div>
-        <div class="details experience-details" style="display: none;">
-          <p><%= user.experience %></p>
-        </div>
+
+      <%# <div class="card-infos-container"> %>
+        <!-- Détails positionnés à droite -->
+        <%# <div class="card-info diplome-card"> %>
+          <!--<p><%= user.diplome %></p>-->
+        <%# </div> %>
+
+        <!-- Détails positionnés à gauche -->
+        <%# <div class="card-info experience-card"> %>
+          <!--<p><%= user.experience %></p>-->
+        <%# </div> %>
+      <%# </div> %>
+        <button data-action="click->tinder#displayDiplome" class="btn-diplome">Diplôme</button>
+        <button data-action="click->tinder#displayExperience" class="btn-experience">Expérience</button>
+      </div>
+      <div class="diplome d-none" id="<%= user.id %>_diplome">
+        <p><%= user.diplome %></p>
+      </div>
+      <div class="experience d-none" id="<%= user.id %>_experience">
+        <p><%= user.experience %></p>
       </div>
     <% end %>
   </div>

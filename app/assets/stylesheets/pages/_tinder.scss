@@ -8,9 +8,9 @@
 }
 
 body {
-  background: #CCFBFE;
-  overflow: hidden;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
 }
 
 .tinder {
@@ -21,6 +21,9 @@ body {
   position: relative;
   opacity: 1;
   transition: opacity 0.1s ease-in-out;
+  background-color: #fff; /* Fond blanc pour une meilleure visibilité */
+  border-radius: 8px; /* Bordure arrondie pour une apparence plus douce */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce */
 }
 
 .loaded.tinder {
@@ -47,7 +50,6 @@ body {
   margin-left: -50px;
 }
 
-/* Modifier ici pour utiliser fa-briefcase au lieu de fa-heart */
 .tinder_love .fa-briefcase {
   opacity: 0.7;
   transform: scale(1);
@@ -81,6 +83,7 @@ body {
   will-change: transform;
   transition: all 0.3s ease-in-out;
   cursor: grab;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce pour les cartes */
 }
 
 .moving.tinder--card {
@@ -98,6 +101,7 @@ body {
   font-size: 32px;
   padding: 0 16px;
   pointer-events: none;
+  color: #333; /* Couleur de texte pour les titres */
 }
 
 .tinder--card p {
@@ -105,6 +109,7 @@ body {
   font-size: 20px;
   padding: 0 16px;
   pointer-events: none;
+  color: #666; /* Couleur de texte pour les paragraphes */
 }
 
 .tinder--buttons {
@@ -121,6 +126,7 @@ body {
   background: #FFFFFF;
   display: inline-block;
   margin: 0 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce pour les boutons */
 }
 
 .tinder--buttons button:focus {
@@ -138,4 +144,64 @@ body {
 
 .fa-remove {
   color: #CDD6DD;
+}
+
+.card-info {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.btn-diplome, .btn-experience {
+  margin-top: 10px;
+  padding: 10px 20px; /* Plus d'espace pour les boutons */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Taille de police plus grande pour les boutons */
+}
+
+.btn-diplome:hover, .btn-experience:hover {
+  background-color: #0056b3;
+}
+
+/* Positionner les textes à gauche ou à droite dans un bloc plus large et étroit */
+.diplome, .experience {
+  position: absolute;
+  top: 10px;
+  width: 90%; /* Largeur similaire à celle de la carte principale */
+  height: 70%; /* Hauteur pour correspondre à la hauteur de la carte Tinder */
+  max-width: 400px; /* Largeur maximum pour s'aligner avec la carte principale */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px; /* Plus d'espace pour le texte */
+  border-radius: 8px; /* Bordure arrondie pour un aspect doux */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce */
+  overflow: auto; /* Gérer le texte long */
+  box-sizing: border-box; /* Assurer que le padding et border ne débordent */
+  text-align: center; /* Centre le texte dans les blocs */
+}
+
+/* Texte du diplôme aligné à gauche */
+.diplome.d-block {
+  left: 10px; /* Déplacement à gauche de la carte */
+}
+
+/* Texte de l'expérience aligné à droite */
+.experience.d-block {
+  right: 10px; /* Déplacement à droite de la carte */
+}
+
+/* Masquer les informations par défaut */
+.diplome.d-none, .experience.d-none {
+  display: none;
+}
+
+/* Forcer l'affichage des informations */
+.diplome.d-block, .experience.d-block {
+  display: block;
 }
