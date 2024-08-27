@@ -199,3 +199,16 @@
 .diplome.d-block, .experience.d-block {
   display: block;
 }
+
+/* Style pour le niveau de matching */
+.matching-level {
+  text-align: center;
+  margin-top: 20px; /* Espacement entre les boutons et le niveau de matching */
+  font-size: 20px; /* Taille de la police pour le niveau de matching */
+  color: #333; /* Couleur du texte */
+}
+
+.matching-level strong {
+  font-weight: bold; /* Mettre en gras le niveau de matching */
+  color: #007bff; /* Couleur du texte du niveau de matching pour le faire ressortir */
+}
