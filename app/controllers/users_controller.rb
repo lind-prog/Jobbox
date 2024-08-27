@@ -17,8 +17,9 @@ class UsersController < ApplicationController
 
   # Affiche les demandeurs d'emploi pour les recruteurs à swiper
   def index
-    offer = current_user.offer
-    matches = Match.where(offer: offer).select{ |match| match.scoring >= 3 }
+    # On filtre les demandeurs d'emploi qui n'ont pas encore été swipés par le recruteur actuel
+    @offer = current_user.offer
+    matches = Match.where(offer: @offer).select{ |match| match.scoring >= 3 }
     ids = matches.pluck(:user_job_search_id)
     searches = UserJobSearch.where(id: ids)
     @job_seekers = searches.map(&:job_seeker)
