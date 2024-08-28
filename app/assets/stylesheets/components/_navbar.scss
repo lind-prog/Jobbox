@@ -3,11 +3,11 @@
 }
 
 .navbar-scroll {
-  background-color: #0f0f0f;
+  background-color: #e7e5e5;
   transition: background-color 0.3s ease;
 
   .nav-link, .navbar-toggler-icon, .navbar-brand {
-    color: #fff;
+    color: #000000;
     transition: color 0.3s ease;
   }
 }
@@ -87,5 +87,5 @@
   position: relative;
   height: 43px;
   width: auto;
-  justify-content: flex-end;
+  left: 500%;
 }
