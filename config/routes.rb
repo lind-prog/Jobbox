@@ -26,6 +26,9 @@ Rails.application.routes.draw do
     resources :matches, only: %i[index]
   end
 
+  post 'candidacies/:id/accept', to: 'candidacies#accept', as: 'accept_candidacy'
+  post 'candidacies/:id/refuse', to: 'candidacies#refuse', as: 'refuse_candidacy'
+
   resources :candidacies, only: %i[show] do
     collection do
       get :my_candidacies

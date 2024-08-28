@@ -1,3 +1,9 @@
+$accept-color: #2ecc71;
+$refuse-color: #ff1900;
+$pending-color: #f1c40f;
+
+
+
 .btn-back {
   display: inline-block;
   margin: 20px 0 0 0;
@@ -25,7 +31,7 @@ h1 {
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 .card-category{
@@ -87,4 +93,30 @@ h1 {
     border-bottom: 4px solid transparent;
   }
 
+}
+
+.button-choice {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-right: 10px;
+
+  &.btn-success {
+    background-color: #27ae60;
+    color: white;
+
+    &:hover {
+      background-color: darken(#27ae60, 10%);
+    }
+  }
+
+  &.btn-danger {
+    background-color: $refuse-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($refuse-color, 10%);
+    }
+  }
 }

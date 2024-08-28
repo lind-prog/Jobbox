@@ -22,11 +22,44 @@ class CandidaciesController < ApplicationController
   end
 
   def my_candidacies
-    if params[:status]
-      @candidacies = current_user.candidacies_as_job_seeker.where(status: params[:status]).includes(:offer)
+    # Si current user est un candidat
+    if current_user.role == "job_seeker"
+      if params[:status]
+        @candidacies = current_user.candidacies_as_job_seeker.where(status: params[:status]).includes(:offer).order(created_at: :desc)
+      else
+        @candidacies = current_user.candidacies_as_job_seeker.includes(:offer).order(created_at: :desc)
+      end
     else
-      @candidacies = current_user.candidacies_as_job_seeker.includes(:offer)
+      # Sinon (si il est recruteur)
+      # Récupérer les candidacies liées à l'offre du recruteur
+      if params[:status]
+        @candidacies = current_user.offer.candidacies.where(status: params[:status]).order(created_at: :desc)
+      else
+        @candidacies = current_user.offer.candidacies.order(created_at: :desc)
+      end
     end
+  end
+
+  def accept
+    @candidacy = Candidacy.find(params[:id])
+    @candidacy.update(status: 1)
+    Message.create(
+      chatroom: @candidacy.chatroom,
+      user: current_user,
+      content: "Votre candidature pour le poste de #{@candidacy.offer.title} a été acceptée."
+    )
+    redirect_to my_candidacies_candidacies_path
+  end
+
+  def refuse
+    @candidacy = Candidacy.find(params[:id])
+    @candidacy.update(status: 2)
+    Message.create(
+      chatroom: @candidacy.chatroom,
+      user: current_user,
+      content: "Votre candidature pour le poste de #{@candidacy.offer.title} a été refusée."
+    )
+    redirect_to my_candidacies_candidacies_path
   end
 
   private
