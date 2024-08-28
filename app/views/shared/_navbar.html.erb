@@ -4,10 +4,19 @@
     <%= link_to user_job_search_matches_path(@user_job_search), class: 'navbar-brand d-flex align-items-center' do %>
       <i class="fas fa-map-marked-alt fa-lg"></i>
       <% end %>
+    <% elsif user_signed_in? && current_user.recruiter? %>
+      <%= link_to users_path, class: 'navbar-brand d-flex align-items-center' do %>
+      <i class="fa-regular fa-cards-blank"></i>
+      <% end %>
     <% end %>
         <%= link_to root_path, class: 'navbar-brand d-flex align-items-center' do %>
       <i class="fas fa-home fa-lg"></i>
     <% end %>
+
+    <div class="mx-auto d-flex justify-content-center">
+      <%= image_tag 'logojobbox.png', alt: 'Logo', class: 'navbar-logo' %>
+    </div>
+  </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
