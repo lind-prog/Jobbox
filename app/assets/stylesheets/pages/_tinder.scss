@@ -7,6 +7,7 @@
   margin: 0;
 }
 
+/* Container principal de Tinder */
 .tinder {
   height: 75vh;
   overflow: hidden;
@@ -15,47 +16,60 @@
   position: relative;
   opacity: 1;
   transition: opacity 0.1s ease-in-out;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #B8ADFF; /* Fond de la carte */
+  border-radius: 12px; /* Coins arrondis */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Ombre douce */
+  // margin-top: 80px; /* Espace en haut pour un effet de continuité */
+  padding: 20px; /* Espacement interne */
 }
 
-.loaded.tinder {
-  opacity: 1;
+/* Section des boutons - alignement et effet hover cohérent */
+.tinder--buttons {
+  display: flex;
+  justify-content: space-between; /* Espace entre les boutons */
+  align-items: center;
+  width: 180px; /* Largeur pour contenir les deux boutons */
+  margin: 0 auto; /* Centre les boutons horizontalement */
+  padding-top: 20px;
 }
 
-.tinder--status {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -30px;
-  z-index: 2;
-  width: 100%;
-  text-align: center;
-  pointer-events: none;
+.tinder--buttons a {
+  text-decoration: none; /* Supprime le soulignement des liens */
 }
 
-.tinder--status i {
-  font-size: 100px;
-  opacity: 0;
-  transform: scale(0.3);
-  transition: all 0.2s ease-in-out;
-  position: absolute;
-  width: 100px;
-  margin-left: -50px;
+.tinder--buttons .btn {
+  border-radius: 50%; /* Boutons ronds */
+  width: 60px; /* Taille uniforme des boutons */
+  height: 60px; /* Taille uniforme des boutons */
+  border: 0;
+  background: #FFFFFF; /* Fond blanc des boutons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Ombre douce */
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s; /* Transition pour hover */
 }
 
-.tinder_love .fa-briefcase {
-  opacity: 0.7;
-  transform: scale(1);
+.tinder--buttons .btn:hover {
+  transform: scale(1.1); /* Légère augmentation de taille au survol */
+  background-color: #F2F1FD; /* Changement de couleur de fond au survol */
 }
 
-.tinder_nope .fa-remove {
-  opacity: 0.7;
-  transform: scale(1);
+.tinder--buttons .btn i {
+  font-size: 28px; /* Taille de l'icône */
+  color: #333; /* Couleur des icônes */
 }
 
+.btn-briefcase i {
+  color: #B8ADFF; /* Couleur pour le bouton valisette */
+}
+
+.btn-nope i {
+  color: #FF6B6B; /* Couleur pour le bouton croix */
+}
+
+/* Ajustement de l'espace violet au-dessus et en dessous de la carte */
 .tinder--cards {
   flex-grow: 1;
   padding-top: 40px;
@@ -71,15 +85,15 @@
   width: 90vw;
   max-width: 400px;
   height: 60vh;
-  background: #FFFFFF;
+  background: #ffffff; /* Fond violet pour la carte */
   padding-bottom: 40px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   position: absolute;
   will-change: transform;
   transition: all 0.3s ease-in-out;
   cursor: grab;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Ombre plus marquée */
 }
 
 .moving.tinder--card {
@@ -94,103 +108,103 @@
 
 .tinder--card h3 {
   margin-top: 32px;
-  font-size: 32px;
-  padding: 0 16px;
+  font-size: 28px;
+  padding: 0 20px;
   pointer-events: none;
-  color: #333;
+  color: #000000; /* Couleur du texte pour la carte */
+  text-align: center; /* Centrage du texte */
 }
 
 .tinder--card h5 {
-  margin-top: 32px;
-  font-size: 24px;
-  padding: 0 16px;
+  margin-top: 16px;
+  font-size: 20px;
+  padding: 0 20px;
   pointer-events: none;
-  color: #333;
-}
-
-.tinder--card button {
-  width: 130px;
+  color: #020202; /* Couleur du texte pour la carte */
+  text-align: center; /* Centrage du texte */
 }
 
 .tinder--card p {
   margin-top: 24px;
-  font-size: 20px;
-  padding: 0 16px;
+  font-size: 18px;
+  padding: 0 20px;
   pointer-events: none;
-  color: #666;
+  color: #000000; /* Couleur du texte pour la carte */
+  text-align: center; /* Centrage du texte */
 }
 
-/* Section des boutons - organisé avec espace et style rond */
-.tinder--buttons {
-  display: flex;
-  justify-content: space-between; /* Espace entre les boutons */
-  align-items: center;
-  width: 150px; /* Largeur pour contenir les deux boutons */
-  margin: 0 auto; /* Centre les boutons horizontalement */
-  padding-top: 20px;
+/* Status (boutons) */
+.tinder--status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -40px;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
 }
 
-.tinder--buttons button,
-.tinder--buttons a {
-  border-radius: 50%; /* Boutons ronds */
-  width: 50px; /* Taille uniforme des boutons */
-  height: 50px; /* Taille uniforme des boutons */
-  border: 0;
-  background: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  cursor: pointer;
+.tinder--status i {
+  font-size: 120px;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  width: 100px;
+  margin-left: -50px;
 }
 
-.tinder--buttons i {
-  font-size: 24px; /* Taille de l'icône */
-  color: #333; /* Couleur des icônes */
+.tinder_love .fa-briefcase {
+  opacity: 0.9;
+  transform: scale(1);
+  color: #B8ADFF; /* Couleur pour le bouton valisette */
 }
 
-.fa-briefcase {
-  color: #FFACE4;
+.tinder_nope .fa-remove {
+  opacity: 0.9;
+  transform: scale(1);
+  color: #FF6B6B; /* Couleur pour le bouton croix */
 }
 
-.fa-remove {
-  color: #CDD6DD;
-}
-
+/* Informations sur la carte */
 .card-info {
-  padding: 10px;
-  background-color: #f9f9f9;
+  padding: 15px;
+  background-color: #FFFFFF; /* Fond de la carte d'information */
   border: 1px solid #ddd;
   margin-top: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .btn-diplome, .btn-experience {
   margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 12px 24px;
+  background-color: #8e75ff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s; /* Transition pour hover */
 }
 
 .btn-diplome:hover, .btn-experience:hover {
   background-color: #0056b3;
 }
 
+/* Sections d'informations supplémentaires */
 .diplome, .experience {
   position: absolute;
   top: 10px;
   width: 90%;
   height: 70%;
   max-width: 400px;
-  background-color: #f9f9f9;
+  background-color: #FFFFFF; /* Fond des informations */
   border: 1px solid #ddd;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Ombre douce */
   overflow: auto;
   box-sizing: border-box;
   text-align: center;
@@ -215,11 +229,11 @@
 .matching-level {
   text-align: center;
   margin-top: 20px;
-  font-size: 20px;
-  color: #333;
+  font-size: 22px;
+  color: #333; /* Couleur du texte */
 }
 
 .matching-level strong {
   font-weight: bold;
-  color: #007bff;
+  color: #0800ff; /* Couleur des niveaux */
 }
