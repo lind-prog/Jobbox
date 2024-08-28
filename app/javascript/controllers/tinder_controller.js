@@ -57,7 +57,7 @@ export default class extends Controller {
 
   swipeLeft(event) {
     this.handleSwipe(false);
-    event.preventDefault();
+    // event.preventDefault();
   }
 
   swipeRight(event) {
@@ -83,7 +83,10 @@ export default class extends Controller {
         method: 'POST',
       })
     } else {
-      console.log('remove')
+      const url = `${window.location.origin}/matches/${card.dataset.match}?id=${card.dataset.match}`;
+      fetch(url, {
+        method: 'DELETE',
+      })
     }
   }
 
