@@ -15,9 +15,9 @@
   position: relative;
   opacity: 1;
   transition: opacity 0.1s ease-in-out;
-  background-color: #fff; /* Fond blanc pour une meilleure visibilité */
-  border-radius: 8px; /* Bordure arrondie pour une apparence plus douce */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .loaded.tinder {
@@ -27,6 +27,8 @@
 .tinder--status {
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin-top: -30px;
   z-index: 2;
   width: 100%;
@@ -77,7 +79,7 @@
   will-change: transform;
   transition: all 0.3s ease-in-out;
   cursor: grab;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce pour les cartes */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .moving.tinder--card {
@@ -95,7 +97,7 @@
   font-size: 32px;
   padding: 0 16px;
   pointer-events: none;
-  color: #333; /* Couleur de texte pour les titres */
+  color: #333;
 }
 
 .tinder--card h5 {
@@ -103,7 +105,7 @@
   font-size: 24px;
   padding: 0 16px;
   pointer-events: none;
-  color: #333; /* Couleur de texte pour les titres */
+  color: #333;
 }
 
 .tinder--card button {
@@ -115,37 +117,40 @@
   font-size: 20px;
   padding: 0 16px;
   pointer-events: none;
-  color: #666; /* Couleur de texte pour les paragraphes */
+  color: #666;
 }
 
+/* Section des boutons - organisé avec espace et style rond */
 .tinder--buttons {
-  flex: 0 0 100px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Espace entre les boutons */
+  align-items: center;
+  width: 150px; /* Largeur pour contenir les deux boutons */
+  margin: 0 auto; /* Centre les boutons horizontalement */
   padding-top: 20px;
 }
 
-.tinder--buttons button {
-  border-radius: 50%;
-  line-height: 60px;
-  width: 60px;
+.tinder--buttons button,
+.tinder--buttons a {
+  border-radius: 50%; /* Boutons ronds */
+  width: 50px; /* Taille uniforme des boutons */
+  height: 50px; /* Taille uniforme des boutons */
   border: 0;
   background: #FFFFFF;
-  display: inline-block;
-  margin: 0 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce pour les boutons */
-}
-
-.tinder--buttons button:focus {
-  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
 
 .tinder--buttons i {
-  font-size: 32px;
-  vertical-align: middle;
+  font-size: 24px; /* Taille de l'icône */
+  color: #333; /* Couleur des icônes */
 }
 
 .fa-briefcase {
-  color: #FFACE4; /* couleur pour la valisette */
+  color: #FFACE4;
 }
 
 .fa-remove {
@@ -162,65 +167,59 @@
 
 .btn-diplome, .btn-experience {
   margin-top: 10px;
-  padding: 10px 20px; /* Plus d'espace pour les boutons */
+  padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px; /* Taille de police plus grande pour les boutons */
+  font-size: 16px;
 }
 
 .btn-diplome:hover, .btn-experience:hover {
   background-color: #0056b3;
 }
 
-/* Positionner les textes à gauche ou à droite dans un bloc plus large et étroit */
 .diplome, .experience {
   position: absolute;
   top: 10px;
-  width: 90%; /* Largeur similaire à celle de la carte principale */
-  height: 70%; /* Hauteur pour correspondre à la hauteur de la carte Tinder */
-  max-width: 400px; /* Largeur maximum pour s'aligner avec la carte principale */
+  width: 90%;
+  height: 70%;
+  max-width: 400px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  padding: 20px; /* Plus d'espace pour le texte */
-  border-radius: 8px; /* Bordure arrondie pour un aspect doux */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre douce */
-  overflow: auto; /* Gérer le texte long */
-  box-sizing: border-box; /* Assurer que le padding et border ne débordent */
-  text-align: center; /* Centre le texte dans les blocs */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: auto;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Texte du diplôme aligné à gauche */
 .diplome.d-block {
-  left: 10px; /* Déplacement à gauche de la carte */
+  left: 10px;
 }
 
-/* Texte de l'expérience aligné à droite */
 .experience.d-block {
-  right: 10px; /* Déplacement à droite de la carte */
+  right: 10px;
 }
 
-/* Masquer les informations par défaut */
 .diplome.d-none, .experience.d-none {
   display: none;
 }
 
-/* Forcer l'affichage des informations */
 .diplome.d-block, .experience.d-block {
   display: block;
 }
 
-/* Style pour le niveau de matching */
 .matching-level {
   text-align: center;
-  margin-top: 20px; /* Espacement entre les boutons et le niveau de matching */
-  font-size: 20px; /* Taille de la police pour le niveau de matching */
-  color: #333; /* Couleur du texte */
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
 }
 
 .matching-level strong {
-  font-weight: bold; /* Mettre en gras le niveau de matching */
-  color: #007bff; /* Couleur du texte du niveau de matching pour le faire ressortir */
+  font-weight: bold;
+  color: #007bff;
 }

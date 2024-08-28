@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  delete "matches/:id", to: "matches#destroy", as: :destroy_match
+
   resources :users, only: %i[show]
   resources :user_job_searches, only: %i[new update create]
 
