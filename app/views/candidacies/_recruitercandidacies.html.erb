@@ -1,0 +1,45 @@
+  <h1>Candidatures</h1>
+    <div class="text-end mb-3">
+        <%= link_to "Retour", user_path(current_user), class: "btn-back mb-3"%>
+    </div>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "Tout", my_candidacies_candidacies_path, data: { turbo_frame: :candidacies }, class:"tab-underlined active" %>
+      </li>
+      <li>
+        <%= link_to "Reçues", my_candidacies_candidacies_path(status: :pending), data: { turbo_frame: :candidacies }, class:"tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Validées", my_candidacies_candidacies_path(status: :validated), data: { turbo_frame: :candidacies },class:"tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Déclinées", my_candidacies_candidacies_path(status: :declined), data: { turbo_frame: :candidacies },class:"tab-underlined" %>
+      </li>
+    </ul>
+<%= turbo_frame_tag :candidacies do %>
+  <div class="cards">
+      <% @candidacies.each do |candidacy| %>
+        <div class="card-category p-3">
+          <%= link_to chatrooms_path(chatroom: candidacy.chatroom), class: "card-link", data: { turbo_frame: '_top' } do %>
+              <p class ="text-card text-center"><strong><%= candidacy.job_seeker.name %></strong></p>
+              <p class ="text-card text-center"><%= candidacy.job_seeker.email %></p>
+              <p class ="text-card border-top-line"><strong> Diplômes : </strong><br><%= candidacy.job_seeker.diplome %></p>
+              <p class ="text-card"><strong> Expériences : </strong><br><%= candidacy.job_seeker.experience %></p>
+              <p class = "text-card font-weight-lighter font-italic border-top-line"> Envoyée le <%= candidacy.created_at.strftime("%d/%m/%Y") %></p>
+          <% end %>
+            <% if candidacy.status == 'pending' %>
+                <%= form_with url: accept_candidacy_path(candidacy), method: :post, class: "d-inline" do %>
+                  <%= button_to "Accept", accept_candidacy_path(candidacy), class: "btn button-choice btn-success" %>
+                <% end %>
+                <%= form_with url: refuse_candidacy_path(candidacy), method: :post, class: "d-inline" do %>
+                  <%= button_to "Refuse", refuse_candidacy_path(candidacy), class: " btn button-choice btn-danger" %>
+                <% end %>
+              <% elsif candidacy.status == 'validated' %>
+                <p class="status-message text-success py-2 px-3 text-center">La candidature a été validée.</p>
+              <% elsif candidacy.status == 'declined' %>
+                <p class="status-message text-danger py-2 px-3 text-center">La candidature a été déclinée.</p>
+              <% end %>
+        </div>
+      <% end %>
+  </div>
+<% end %>

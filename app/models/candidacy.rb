@@ -14,7 +14,7 @@ class Candidacy < ApplicationRecord
     when "declined"
       "Déclinée"
     else
-      "Inconnu"
+      "En cours"
     end
   end
 end
