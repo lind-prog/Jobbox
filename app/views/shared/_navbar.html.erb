@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
   <div class="container-fluid">
-  <% if user_signed_in?  && current_user.user_job_search.present? %>
+  <% if user_signed_in?  && current_user.job_seeker? %>
     <%= link_to user_job_search_matches_path(@user_job_search), class: 'navbar-brand d-flex align-items-center' do %>
       <i class="fas fa-map-marked-alt fa-lg"></i>
       <% end %>
@@ -14,7 +14,7 @@
     <% end %>
 
     <div class="mx-auto d-flex justify-content-center">
-      <%= image_tag 'logojobbox.png', alt: 'Logo', class: 'navbar-logo' %>
+      <%= image_tag 'logojb2.png', alt: 'Logo', class: 'navbar-logo' %>
     </div>
   </div>
 

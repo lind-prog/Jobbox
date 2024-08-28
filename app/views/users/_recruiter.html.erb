@@ -14,7 +14,7 @@
 <div class="actions">
   <section class="box profile-form">
     <h2>Offres</h2>
-    <%= link_to 'Créer une offre', new_user_job_search_path(:user_id => user.id), class: 'btn' %>
+    <%= link_to 'Créer une offre', new_offer_path(:user_id => user.id), class: 'btn' %>
     <%= link_to 'Voir mon offre', offer_path(@offer), class: 'btn' %>
   </section>
   <section class="box candidatures">

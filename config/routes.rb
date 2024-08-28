@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :matches, only: %i[index]
   end
 
-  resources :offers, only: %i[index show new create] do
+  resources :offers, only: %i[index show new create update] do
     resources :candidacies, only: %i[create]
     resources :matches, only: %i[index]
   end

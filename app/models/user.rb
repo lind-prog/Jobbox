@@ -21,6 +21,10 @@ class User < ApplicationRecord
     role == 'recruiter'
   end
 
+  def job_seeker?
+    role == 'job_seeker'
+  end
+
   def find_match(offer)
     Match.find_by(user_job_search: self.user_job_search, offer: offer)
   end
