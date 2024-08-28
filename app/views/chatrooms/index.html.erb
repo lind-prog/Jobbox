@@ -6,7 +6,11 @@
     <%= turbo_frame_tag :chatroom do %>
       <% if params[:chatroom] %>
         <div class="container chat d-flex">
-          <h1 class = "chatroom-titre"><strong><%= @chatroom.candidacy.offer.recruiter.name %></strong></h1>
+          <% if current_user.recruiter? %>
+            <h1 class = "chatroom-titre"><strong><%= @chatroom.candidacy.job_seeker.name %></strong></h1>
+          <% else %>
+            <h1 class = "chatroom-titre"><strong><%= @chatroom.candidacy.offer.recruiter.name %></strong></h1>
+          <% end %>
           <div class="container_chatroom">
             <%= turbo_stream_from "chatroom_#{@chatroom.id}_messages" %>
               <div id="messages" class="messages">

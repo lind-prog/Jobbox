@@ -12,9 +12,9 @@ class CandidaciesController < ApplicationController
       @chatroom = Chatroom.create(candidacy: @candidacy)
       # redirect_to chatroom_path(@chatroom), notice: "Vous pouvez maintenant discuter avec le candidat!"
       if user.role == "job_seeker"
-        redirect_to chatroom_path(@chatroom), notice: "Votre candidature a bien été créée, vous pouvez maintenant discuter avec le recruteur!"
+        redirect_to chatrooms_path(chatroom: @chatroom), notice: "Votre candidature a bien été créée, vous pouvez maintenant discuter avec le recruteur!"
       else
-        redirect_to chatroom_path(@chatroom), notice: "Vous pouvez maintenant discuter avec le candidat!"
+        redirect_to chatrooms_path(chatroom: @chatroom), notice: "Vous pouvez maintenant discuter avec le candidat!"
       end
     else
       render "offers/show", status: :unprocessable_entity
