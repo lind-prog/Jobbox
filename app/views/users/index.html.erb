@@ -1,21 +1,24 @@
 <div data-controller="tinder" class="tinder">
   <div data-tinder-target="cards" class="tinder--cards">
     <% @job_seekers.each do |user| %>
-      <div data-id="<%= user.id %>" data-offer="<%= @offer.id %>" class="tinder--card" data-tinder-target="card">
+      <% match = user.find_match(current_user.offer) %>
+      <div data-id="<%= user.id %>" data-offer="<%= @offer.id %>" data-match="<%= match.id %>" class="tinder--card" data-tinder-target="card">
         <h3><%= user.name %></h3>
         <p>Email: <%= user.email %></p>
         <div class="d-flex justify-content-evenly">
           <button data-action="click->tinder#displayDiplome" class="btn-diplome">Diplôme</button>
           <button data-action="click->tinder#displayExperience" class="btn-experience">Expérience</button>
         </div>
-        <h5><%= Match.find_by(user_job_search: user.user_job_search, offer: current_user.offer).level %></h5>
+        <h5><%= match.level %></h5>
         <div class="tinder--buttons">
-          <button data-action="click->tinder#swipeLeft" id="nope"><i class="fa fa-remove"></i></button>
-          <%= link_to offer_candidacies_path(@offer, user_id: user.id), data: { turbo_method: "POST", action: "click->tinder#swipeRight" }, id: "love", class: "btn btn-briefcase" do %>
-          <i class="fa fa-briefcase"></i>
+          <!-- Bouton Croix (X) -->
+          <%= link_to destroy_match_path(match), data: { turbo_method: "DELETE", action: "click->tinder#swipeLeft" }, id: "nope", class: "fa fa-remove" do %>
+            <i class="fa fa-remove"></i>
           <% end %>
-
-          <%# <button data-action="click->tinder#swipeRight" id="love"></i></button> %>
+          <!-- Bouton Valisette -->
+          <%= link_to offer_candidacies_path(@offer, user_id: user.id), data: { turbo_method: "POST", action: "click->tinder#swipeRight" }, id: "love", class: "btn btn-briefcase" do %>
+            <i class="fa fa-briefcase"></i>
+          <% end %>
         </div>
       </div>
       <div class="diplome d-none" id="<%= user.id %>_diplome">
@@ -24,13 +27,10 @@
       <div class="experience d-none" id="<%= user.id %>_experience">
         <p><%= user.experience %></p>
       </div>
-
-
     <% end %>
   </div>
 </div>
 
 <div class="tinder--status">
   <i class="fa fa-briefcase"></i> <!-- Valisette pour swipe droite -->
-  <i class="fa fa-remove"></i> <!-- Croix pour swipe gauche -->
 </div>

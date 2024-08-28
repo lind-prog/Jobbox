@@ -1,4 +1,6 @@
 class MatchesController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def index
     @user_job_search = UserJobSearch.find(params[:user_job_search_id])
     @user_matches = Match.where(user_job_search: @user_job_search)
@@ -17,6 +19,13 @@ class MatchesController < ApplicationController
         marker_html: render_to_string(partial: marker)
       }
     end
+  end
+
+  def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+    # No need for app/views/matchs/destroy.html.erb
+    redirect_to users_path, status: :see_other
   end
 
   private
