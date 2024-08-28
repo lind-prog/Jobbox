@@ -12,7 +12,7 @@
         <h5><%= match.level %></h5>
         <div class="tinder--buttons">
           <!-- Bouton Croix (X) -->
-          <%= link_to destroy_match_path(match), data: { turbo_method: "DELETE", action: "click->tinder#swipeLeft" }, id: "nope", class: "fa fa-remove" do %>
+          <%= link_to destroy_match_path(match), data: { turbo_method: "DELETE", action: "click->tinder#swipeLeft" }, id: "nope", class: "btn btn-nope" do %>
             <i class="fa fa-remove"></i>
           <% end %>
           <!-- Bouton Valisette -->
