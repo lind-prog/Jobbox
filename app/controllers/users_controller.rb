@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # Affiche le profil de l'utilisateur (demandeur d'emploi)
   def show
     @user = User.find(params[:id])
-
+    @offer = current_user.offer if current_user.recruiter?
     if @user.job_seeker?
       @candidacies = @user.candidacies_as_job_seeker
     else
