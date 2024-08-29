@@ -1,4 +1,5 @@
 <div data-controller="tinder" class="tinder">
+  <h2 class="tinder-title">Swipez à DROITE si le profil vous intéresse, sinon swipez à GAUCHE.</h2>
   <div data-tinder-target="cards" class="tinder--cards">
     <% @job_seekers.each do |user| %>
       <% match = user.find_match(current_user.offer) %>
@@ -9,7 +10,21 @@
           <button data-action="click->tinder#displayDiplome" class="btn-diplome">Diplôme</button>
           <button data-action="click->tinder#displayExperience" class="btn-experience">Expérience</button>
         </div>
-        <h5><%= match.level %></h5>
+        <!-- Utilisation de if pour déterminer la classe à appliquer -->
+        <% if match.level.downcase == 'commun' %>
+          <% class_level = 'common-dot' %>
+        <% elsif match.level.downcase == 'rare' %>
+          <% class_level = 'rare-dot' %>
+        <% elsif match.level.downcase == 'epique' %>
+          <% class_level = 'epic-dot' %>
+        <% elsif match.level.downcase == 'légendaire' %>
+          <% class_level = 'legendary-dot' %>
+        <% end %>
+        <h5 class="match-level <%= class_level %>"
+          data-level="<%= match.level %>">
+          <%= match.level %>
+        </h5>
+
         <div class="tinder--buttons">
           <!-- Bouton Croix (X) -->
           <%= link_to destroy_match_path(match), data: { turbo_method: "DELETE", action: "click->tinder#swipeLeft" }, id: "nope", class: "btn btn-nope" do %>
