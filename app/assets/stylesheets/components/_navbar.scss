@@ -1,7 +1,8 @@
 #neubar {
   background: #e7e5e5;
-  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
   position: inherit;
+  height: 5vh;
 
   .nav-link, .navbar-toggler-icon, .navbar-brand {
     color: #454545;
@@ -53,7 +54,7 @@
 }
 
 .navbar-logo {
-  height: 60px;
+  height: 40px;
   width: auto;
   left: 150%;
 }
