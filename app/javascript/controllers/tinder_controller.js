@@ -7,7 +7,7 @@ export default class extends Controller {
 
   connect() {
     this.addSwipeHandlers();
-    document.body.style.backgroundColor = "#b8adFF"
+    document.body.style.backgroundColor = "#EEEBFF"
   }
 
   addSwipeHandlers() {

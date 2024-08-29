@@ -1,7 +1,7 @@
 .form-container {
   width: 100%;
   max-width: 800px;
-  background-color: #B8ADFF;
+  background-color: #EEEBFF;
   padding: 30px;
   border-radius: 8px;
   margin: 20px auto;
@@ -34,6 +34,9 @@ h1, h2 {
   padding: 12px;
 }
 
+.form-control-description {
+  height: 200px;
+}
 .form-container label {
   color: #000000;
 }
@@ -106,5 +109,6 @@ h2{
   &:hover {
     background-color: #4970ff;
     border-color: #4970ff;
+    color: #ffffff;
   }
 }
