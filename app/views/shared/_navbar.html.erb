@@ -6,7 +6,7 @@
       <% end %>
     <% elsif user_signed_in? && current_user.recruiter? %>
       <%= link_to users_path, class: 'navbar-brand d-flex align-items-center' do %>
-      <i class="fa-regular fa-cards-blank"></i>
+      <i class="fa fa-briefcase fa-lg"></i>
       <% end %>
     <% end %>
         <%= link_to root_path, class: 'navbar-brand d-flex align-items-center' do %>
@@ -43,8 +43,6 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to 'Profile Settings', edit_user_registration_path, class: 'dropdown-item' %>
-              <%= link_to 'Account Settings', edit_user_registration_path, class: 'dropdown-item' %>
-              <%= link_to 'Privacy Settings', edit_user_registration_path, class: 'dropdown-item' %>
             </ul>
           </li>
           <li class="nav-item">

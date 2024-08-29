@@ -8,25 +8,27 @@
     <div class="profile-info">
       <h1><%= user.name %></h1>
       <p><%= user.email %></p>
+
     </div>
+  </header>
+
+  <div class="dashboard-content">
+    <section class="box profile-form">
+      <h2>Offres</h2>
+      <%= link_to 'Créer/Editer une offre', new_offer_path(:user_id => user.id), class: 'btn' %>
+      <%= link_to 'Voir mon offre', offer_path(@offer), class: 'btn' %>
+    </section>
+    <section class="box candidatures">
+      <h2>Mes Candidats</h2>
+      <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn' %>
+    </section>
+    <section class="box messages">
+      <h2>Ma Messagerie</h2>
+      <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
+    </section>
+    <section class="box swipe">
+      <h2>Recruter</h2>
+      <%= link_to 'Trouver mon candidat idéal', users_path, class: 'btn' %>
+    </section>
   </div>
-</div>
-<div class="actions">
-  <section class="box profile-form">
-    <h2>Mes offres</h2>
-    <%= link_to 'Créer une offre', new_offer_path(:user_id => user.id), class: 'btn' %>
-    <%= link_to 'Voir mon offre', offer_path(@offer), class: 'btn' %>
-  </section>
-  <section class="box candidatures">
-    <h2>Mes candidats</h2>
-    <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn' %>
-  </section>
-  <section class="box messages">
-    <h2>Ma messagerie</h2>
-    <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
-  </section>
-   <section class="box swipe">
-    <h2>Recruter</h2>
-    <%= link_to 'Trouver mon candidat idéal', users_path, class: 'btn' %>
-  </section>
 </div>
