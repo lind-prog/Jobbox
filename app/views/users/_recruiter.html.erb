@@ -1,32 +1,35 @@
-<div class="profile-card">
-  <div class="profile-card-inner">
-    <div class="profile-image">
-      <%= link_to root_path do %>
-        <%= image_tag 'https://www.images-et-reseaux.com/voy_content/uploads/2024/01/techinnov_logo.jpg', alt: "Avatar Profil", class: 'avatar' %>
-      <% end %>
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="profile-card">
+      <div class="profile-image">
+        <%= link_to root_path do %>
+          <%= image_tag 'https://www.images-et-reseaux.com/voy_content/uploads/2024/01/techinnov_logo.jpg', alt: "Avatar Profil", class: 'avatar' %>
+        <% end %>
+      </div>
+      <div class="profile-info">
+        <h1><%= user.name %></h1>
+        <p><%= user.email %></p>
+      </div>
     </div>
-    <div class="profile-info">
-      <h1><%= user.name %></h1>
-      <p><%= user.email %></p>
-    </div>
+  </header>
+
+  <div class="dashboard-content">
+    <section class="box profile-form">
+      <h2>Offres</h2>
+      <%= link_to 'Créer/Editer une offre', new_offer_path(:user_id => user.id), class: 'btn' %>
+      <%= link_to 'Voir mon offre', offer_path(@offer), class: 'btn' %>
+    </section>
+    <section class="box candidatures">
+      <h2>Mes Candidats</h2>
+      <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn' %>
+    </section>
+    <section class="box messages">
+      <h2>Ma Messagerie</h2>
+      <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
+    </section>
+    <section class="box swipe">
+      <h2>Recruter</h2>
+      <%= link_to 'Trouver mon candidat idéal', users_path, class: 'btn' %>
+    </section>
   </div>
-</div>
-<div class="actions">
-  <section class="box profile-form">
-    <h2>Offres</h2>
-    <%= link_to 'Créer une offre', new_offer_path(:user_id => user.id), class: 'btn' %>
-    <%= link_to 'Voir mon offre', offer_path(@offer), class: 'btn' %>
-  </section>
-  <section class="box candidatures">
-    <h2>Mes Candidats</h2>
-    <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn' %>
-  </section>
-  <section class="box messages">
-    <h2>Ma Messagerie</h2>
-    <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
-  </section>
-   <section class="box swipe">
-    <h2>Recruter</h2>
-    <%= link_to 'Trouver mon candidat idéal', users_path, class: 'btn' %>
-  </section>
 </div>
