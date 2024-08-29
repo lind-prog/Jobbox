@@ -57,8 +57,11 @@
             <cite>- Marie Curie</cite>
           </div>
         </div>
-
-        <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path , class: 'btn btn-primary' %>
+         <% if current_user.recruiter? %>
+          <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path , class: 'btn btn-primary' %>
+         <% else %>
+          <%= button_to 'Postuler', offer_candidacies_path(@offer) , class: 'btn btn-primary' %>
+        <%end%>
       </div>
 
       <div class="map-container">

@@ -1,0 +1,26 @@
+<div class="chat d-flex">
+  <% if user.recruiter? %>
+    <h1 class = "chatroom-titre"><strong><%= chatroom.candidacy.job_seeker.name %></strong></h1>
+  <% else %>
+    <h1 class = "chatroom-titre"><strong><%= chatroom.candidacy.offer.recruiter.name %></strong></h1>
+  <% end %>
+  <div class="container_chatroom">
+    <%= turbo_stream_from "chatroom_#{chatroom.id}_messages" %>
+      <div id="messages" class="messages">
+        <% chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message, user: user %>
+        <% end %>
+      </div>
+  </div>
+  <div class="input_user_chat">
+    <%= simple_form_for [chatroom, new_message], html: { class: "d-flex", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } } do |f| %>
+      <% other_user = user == chatroom.candidacy.job_seeker ? chatroom.candidacy.offer.recruiter : chatroom.candidacy.job_seeker %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message #{other_user.name}",
+        wrapper_html: { class: "flex-grow-1 col-9 new_message_content" }
+      %>
+      <%= f.submit "Envoyer", class: "btn btn-primary button_submit flex-fill" %>
+    <% end %>
+  </div>
+</div>

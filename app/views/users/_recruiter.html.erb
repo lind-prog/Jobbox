@@ -2,7 +2,7 @@
   <div class="profile-card-inner">
     <div class="profile-image">
       <%= link_to root_path do %>
-        <%= image_tag 'https://www.images-et-reseaux.com/voy_content/uploads/2024/01/techinnov_logo.jpg', alt: "Avatar Profil", class: 'avatar' %>
+        <%= image_tag 'https://www.olin.edu/sites/default/files/styles/card/public/2022-04/DassaultSystemes.png?itok=00lvjIZo', alt: "Avatar Profil", class: 'avatar' %>
       <% end %>
     </div>
     <div class="profile-info">
@@ -13,16 +13,16 @@
 </div>
 <div class="actions">
   <section class="box profile-form">
-    <h2>Offres</h2>
+    <h2>Mes offres</h2>
     <%= link_to 'Créer une offre', new_offer_path(:user_id => user.id), class: 'btn' %>
     <%= link_to 'Voir mon offre', offer_path(@offer), class: 'btn' %>
   </section>
   <section class="box candidatures">
-    <h2>Mes Candidats</h2>
+    <h2>Mes candidats</h2>
     <%= link_to 'Voir les candidatures', my_candidacies_candidacies_path, class: 'btn' %>
   </section>
   <section class="box messages">
-    <h2>Ma Messagerie</h2>
+    <h2>Ma messagerie</h2>
     <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
   </section>
    <section class="box swipe">
