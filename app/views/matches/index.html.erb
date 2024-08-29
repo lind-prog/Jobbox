@@ -8,7 +8,7 @@
   <h3>Filtrer par type</h3>
   <div class="filter-options">
     <%= simple_form_for :level, url: user_job_search_matches_path(@user_job_search), method: :get, remote: true, html: { id: "filter-form", data: { filter_target: "form" } } do |f| %>
-    <%= f.input :level, collection: ["Légendaire", "Epique", "Rare", "Commun"], as: :check_boxes, item_wrapper_class: 'form-check form-check-inline', input_html: { class: "form-check-input", data: { action: "click->filter#select", filter_target: "field" } }, label_html: { class: "form-check-label" } %>
+    <%= f.input :level, collection: ["Commun", "Rare", "Epique", "Légendaire"], as: :check_boxes, item_wrapper_class: 'form-check form-check-inline', input_html: { class: "form-check-input", data: { action: "click->filter#select", filter_target: "field" } }, label_html: { class: "form-check-label" } %>
     <% end %>
   </div>
 </div>
