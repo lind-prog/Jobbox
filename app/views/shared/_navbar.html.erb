@@ -1,57 +1,55 @@
 <nav class="navbar navbar-expand-sm navbar-light" id="neubar">
   <div class="container">
-    <!-- Logo -->
+
     <%= link_to root_path do %>
       <%= image_tag 'logojb2.png', class: 'navbar-logo', alt: 'Logo', height: "60" %>
     <% end %>
 
-    <!-- Toggle Button for Mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar Links -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <% if user_signed_in? && current_user.job_seeker? %>
           <li class="nav-item">
             <%= link_to user_job_search_matches_path(@user_job_search), class: 'nav-link mx-2' do %>
-              <i class="fas fa-map-marked-alt fa-lg"></i> Home
+              <i class="fas fa-map-marked-alt fa-lg"></i> Map
             <% end %>
           </li>
         <% elsif user_signed_in? && current_user.recruiter? %>
           <li class="nav-item">
             <%= link_to users_path, class: 'nav-link mx-2' do %>
-              <i class="fa fa-briefcase"></i> Products
+              <i class="fa fa-briefcase"></i> Recruter
             <% end %>
           </li>
         <% end %>
 
         <li class="nav-item">
           <%= link_to chatrooms_path, class: 'nav-link mx-2' do %>
-            <i class="fas fa-comment-dots fa-lg"></i> Messaging
+            <i class="fas fa-comment-dots fa-lg"></i> Messagerie
           <% end %>
         </li>
 
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to user_path(current_user), class: 'nav-link mx-2' do %>
-              <i class="fas fa-tachometer-alt fa-lg"></i> Dashboard
+              <i class="fas fa-tachometer-alt fa-lg"></i> Tableau de Bord
             <% end %>
           </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-cog fa-lg"></i> Company
+              <i class="fas fa-cog fa-lg"></i> Paramètres
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to 'Profile Settings', edit_user_registration_path, class: 'dropdown-item' %>
+              <%= link_to 'Paramètre de profil', edit_user_registration_path, class: 'dropdown-item' %>
             </ul>
           </li>
 
           <li class="nav-item">
             <%= link_to destroy_user_session_path, class: 'nav-link mx-2', data: { turbo_method: :delete } do %>
-              <i class="fas fa-sign-out-alt fa-lg"></i> Logout
+              <i class="fas fa-sign-out-alt fa-lg"></i> Déconnexion
             <% end %>
           </li>
         <% end %>

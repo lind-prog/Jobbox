@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class="dashboard-content">
+  <div class="dashboard-content-jobseeker">
     <section class="box profile-form">
       <h2>Mon profil</h2>
       <%= link_to 'Compléter mon profil', new_user_job_search_path(:user_id => user.id), class: 'btn' %>
@@ -25,6 +25,12 @@
     <section class="box messages">
       <h2>Ma messagerie</h2>
       <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
+    </section>
+  </div>
+  <div>
+      <section class="box candidatures">
+      <h2>Mes dernières candidatures</h2>
+      <%=1 %>
     </section>
   </div>
 </div>
