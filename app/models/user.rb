@@ -36,4 +36,12 @@ class User < ApplicationRecord
   def candidacies_as_recruiter
     Candidacy.where(offer: self.offer)
   end
+
+  def last_candidacies
+    result = []
+    self.candidacies.last(3).map(&:offer).each do |offer|
+      result << "#{offer.title} - #{offer.recruiter.name}"
+    end
+    result
+  end
 end
