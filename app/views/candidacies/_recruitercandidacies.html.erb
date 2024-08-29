@@ -27,6 +27,7 @@
               <p class ="text-card"><strong> Expériences : </strong><br><%= candidacy.job_seeker.experience %></p>
               <p class = "text-card font-weight-lighter font-italic border-top-line"> Envoyée le <%= candidacy.created_at.strftime("%d/%m/%Y") %></p>
           <% end %>
+          <div class="d-flex justify-content-center mx-2">
             <% if candidacy.status == 'pending' %>
                 <%= form_with url: accept_candidacy_path(candidacy), method: :post, class: "d-inline" do %>
                   <%= button_to "Valider", accept_candidacy_path(candidacy), class: "btn button-choice btn-success" %>
@@ -39,6 +40,7 @@
               <% elsif candidacy.status == 'declined' %>
                 <p class="status-message text-danger py-2 px-3 text-center">La candidature a été déclinée.</p>
               <% end %>
+            </div>
         </div>
       <% end %>
   </div>

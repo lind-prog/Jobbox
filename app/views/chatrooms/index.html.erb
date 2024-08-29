@@ -6,7 +6,7 @@
 
   <div class="chatrooms-grid">
     <%= render 'chatrooms/list', chatrooms: @chatrooms %>
-    <%= turbo_frame_tag :chatroom do %>
+      <%= turbo_frame_tag :chatroom do %>
       <% if params[:chatroom] %>
         <%= render 'chatrooms/chat', user: current_user, chatroom: @chatroom, new_message: @message %>
       <% else %>
