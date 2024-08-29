@@ -9,7 +9,6 @@
     <%= turbo_frame_tag :chatroom do %>
       <% if params[:chatroom] %>
         <%= render 'chatrooms/chat', user: current_user, chatroom: @chatroom, new_message: @message %>
-
       <% else %>
         <div class="text-secondary p-3" id="chatroom"> Sélectionnez une conversation </div>
       <% end %>

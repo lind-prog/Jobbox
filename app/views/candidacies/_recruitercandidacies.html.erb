@@ -29,10 +29,10 @@
           <% end %>
             <% if candidacy.status == 'pending' %>
                 <%= form_with url: accept_candidacy_path(candidacy), method: :post, class: "d-inline" do %>
-                  <%= button_to "Accept", accept_candidacy_path(candidacy), class: "btn button-choice btn-success" %>
+                  <%= button_to "Valider", accept_candidacy_path(candidacy), class: "btn button-choice btn-success" %>
                 <% end %>
                 <%= form_with url: refuse_candidacy_path(candidacy), method: :post, class: "d-inline" do %>
-                  <%= button_to "Refuse", refuse_candidacy_path(candidacy), class: " btn button-choice btn-danger" %>
+                  <%= button_to "Décliner", refuse_candidacy_path(candidacy), class: " btn button-choice btn-danger" %>
                 <% end %>
               <% elsif candidacy.status == 'validated' %>
                 <p class="status-message text-success py-2 px-3 text-center">La candidature a été validée.</p>
