@@ -9,18 +9,18 @@
 
 /* Container principal de Tinder */
 .tinder {
-  height: 75vh;
+  height: 80vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
   opacity: 1;
   transition: opacity 0.1s ease-in-out;
-  background-color: #B8ADFF; /* Fond de la carte */
   border-radius: 12px; /* Coins arrondis */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Ombre douce */
   // margin-top: 80px; /* Espace en haut pour un effet de continuité */
   padding: 20px; /* Espacement interne */
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /* Section des boutons - alignement et effet hover cohérent */
@@ -120,7 +120,6 @@
   font-size: 20px;
   padding: 0 20px;
   pointer-events: none;
-  color: #020202; /* Couleur du texte pour la carte */
   text-align: center; /* Centrage du texte */
 }
 
@@ -178,6 +177,7 @@
 }
 
 .btn-diplome, .btn-experience {
+  width: 134px;
   margin-top: 10px;
   padding: 12px 24px;
   background-color: #8e75ff;
@@ -196,44 +196,95 @@
 /* Sections d'informations supplémentaires */
 .diplome, .experience {
   position: absolute;
-  top: 10px;
-  width: 90%;
-  height: 70%;
+  top: 30%; /* Ajuste la hauteur pour aligner avec la carte principale */
+  width: 80%;
   max-width: 400px;
-  background-color: #FFFFFF; /* Fond des informations */
-  border: 1px solid #ddd;
+  height: 50vh; /* Ajuste la hauteur pour un équilibre avec la carte principale */
+  background-color: #FFFFFF; /* Fond blanc propre et moderne */
+  border-radius: 16px; /* Coins arrondis pour un effet moderne */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Ombre douce pour un effet flottant */
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Ombre douce */
-  overflow: auto;
   box-sizing: border-box;
   text-align: center;
-}
-
-.diplome.d-block {
-  left: 10px;
-}
-
-.experience.d-block {
-  right: 10px;
-}
-
-.diplome.d-none, .experience.d-none {
-  display: none;
+  transform: scale(0.95); /* Réduction de la taille pour l'effet de zoom */
+  opacity: 0; /* Masque les cartes au départ */
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Transition fluide pour l'affichage */
 }
 
 .diplome.d-block, .experience.d-block {
-  display: block;
+  display: flex; /* Utilise Flexbox pour centrer le contenu */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  transform: scale(1); /* Réinitialise la taille lors de l'affichage */
+  opacity: 1; /* Rends les cartes visibles */
 }
 
-.matching-level {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 22px;
+/* Animation de l'affichage */
+.diplome.d-block {
+  left: 5%; /* Position légèrement ajustée pour un effet visuel agréable */
+  animation: fadeInUp 0.6s ease-out; /* Animation fluide pour l'apparition */
+}
+
+.experience.d-block {
+  right: 5%; /* Position légèrement ajustée pour un effet visuel agréable */
+  animation: fadeInUp 0.6s ease-out; /* Animation fluide pour l'apparition */
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95); /* Animation de la position et de la taille */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Réinitialisation de la position et de la taille */
+  }
+}
+
+/* Style pour le texte à l'intérieur des cartes */
+.diplome p, .experience p {
+  font-size: 18px;
   color: #333; /* Couleur du texte */
+  margin: 0;
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  padding: 0; /* Retrait de l'espacement interne */
+  text-align: center; /* Centrage du texte */
 }
 
-.matching-level strong {
-  font-weight: bold;
-  color: #0800ff; /* Couleur des niveaux */
+
+/* Styles pour les niveaux de match */
+.match-level {
+  font-size: 22px;  /* Taille de police pour le niveau de match */
+  font-weight: bold;  /* Gras pour mettre en évidence */
+  text-align: center; /* Centrage du texte */
+  margin-top: 10px;   /* Espacement au-dessus */
+}
+
+.common-dot {
+  color: #545a5f; /* Couleur pour Commun */
+}
+
+.rare-dot {
+  color: #eeff00; /* Couleur pour Rare */
+}
+
+.epic-dot {
+  color: #ffae00; /* Couleur pour Epic */
+}
+
+.legendary-dot {
+  color: #ff0707; /* Couleur pour Légendaire */
+}
+
+/* app/assets/stylesheets/application.css */
+
+/* Style du titre pour la section Tinder */
+.tinder-title {
+  text-align: center;
+  font-size: 1.5rem; /* Taille du texte */
+  color: #ffffff; /* Couleur du texte */
+  margin-bottom: 20px; /* Espacement sous le titre */
+  font-weight: bold; /* Mettre en gras le texte */
+  padding-top: 20px; /* Espacement au-dessus du titre */
 }

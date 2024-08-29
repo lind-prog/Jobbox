@@ -1,5 +1,6 @@
 class CandidaciesController < ApplicationController
   protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
     @candidacy = Candidacy.new
@@ -16,6 +17,11 @@ class CandidaciesController < ApplicationController
       if user.role == "job_seeker"
         redirect_to chatrooms_path(chatroom: @chatroom), notice: "Votre candidature a bien été créée, vous pouvez maintenant discuter avec le recruteur!"
       else
+        Message.create(
+          chatroom: @chatroom,
+          user: user,
+          content: "Votre profil nous intéresse, avez-vous envisagé de postuler chez nous ?"
+        )
         redirect_to chatrooms_path(chatroom: @chatroom), notice: "Vous pouvez maintenant discuter avec le candidat!"
       end
     else

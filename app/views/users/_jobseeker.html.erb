@@ -1,5 +1,5 @@
-<div class="profile-card">
-  <div class="profile-card-inner">
+<div class="dashboard-container">
+  <div class="profile-card">
     <div class="profile-image">
       <%= link_to root_path do %>
         <%= image_tag 'https://static.wixstatic.com/media/331f88_a68a95780b1c4c94bc5edaa2fdc81a39~mv2.jpg/v1/fill/w_980,h_1470,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/331f88_a68a95780b1c4c94bc5edaa2fdc81a39~mv2.jpg', alt: "Avatar Profil", class: 'avatar' %>
@@ -10,18 +10,21 @@
       <p><%= user.email %></p>
     </div>
   </div>
-</div>
-<div class="actions">
-  <section class="box profile-form">
-    <h2>Mon profil</h2>
-    <%= link_to 'Compléter mon profil', new_user_job_search_path(:user_id => user.id), class: 'btn' %>
-  </section>
-  <section class="box candidatures">
-    <h2>Mes candidatures</h2>
-    <%= link_to 'Suivre mes candidatures', my_candidacies_candidacies_path, class: 'btn' %>
-  </section>
-  <section class="box messages">
-    <h2>Ma messagerie</h2>
-    <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
-  </section>
+
+  <div class="dashboard-content">
+    <section class="box profile-form">
+      <h2>Mon profil</h2>
+      <%= link_to 'Compléter mon profil', new_user_job_search_path(:user_id => user.id), class: 'btn' %>
+    </section>
+
+    <section class="box candidatures">
+      <h2>Mes candidatures</h2>
+      <%= link_to 'Suivre mes candidatures', my_candidacies_candidacies_path, class: 'btn' %>
+    </section>
+
+    <section class="box messages">
+      <h2>Ma messagerie</h2>
+      <%= link_to 'Accéder aux messages', chatrooms_path, class: 'btn' %>
+    </section>
+  </div>
 </div>

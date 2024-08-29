@@ -7,6 +7,7 @@ export default class extends Controller {
 
   connect() {
     this.addSwipeHandlers();
+    document.body.style.backgroundColor = "#b8adFF"
   }
 
   addSwipeHandlers() {
@@ -56,11 +57,13 @@ export default class extends Controller {
   }
 
   swipeLeft(event) {
+    event.preventDefault()
     this.handleSwipe(false);
     // event.preventDefault();
   }
 
   swipeRight(event) {
+    event.preventDefault()
     this.handleSwipe(true);
     // event.preventDefault();
   }
