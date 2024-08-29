@@ -2,7 +2,7 @@
 
     <div class="d-flex row map-container-map">
 <div class="filter-bar" data-controller="filter">
-<h2 class="title">Voici les meilleurs offres pour le poste de #{job.title}</h2>
+<h2 class="title">Voici les meilleurs offres pour ta recherche</h2>
   <h3>Filtrer par type</h3>
   <div class="filter-options">
     <%= simple_form_for :level, url: user_job_search_matches_path(@user_job_search), method: :get, remote: true, html: { id: "filter-form", data: { filter_target: "form" } } do |f| %>
