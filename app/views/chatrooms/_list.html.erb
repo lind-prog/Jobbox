@@ -1,6 +1,6 @@
 <div class="list-group" data-controller="highlight">
   <% chatrooms.each do |chatroom| %>
-    <% if current_user.recruiter?%>
+    <% if current_user.recruiter? %>
       <%= link_to chatroom.candidacy.job_seeker.name, chatroom, class: "list-group-item list-group-item-action", data: { highlight_target: 'contact', action: "click->highlight#setColor", turbo_frame: "chatroom"} %>
     <% else %>
       <%= link_to chatroom.candidacy.offer.recruiter.name, chatroom, class: "list-group-item list-group-item-action", data: { highlight_target: 'contact', action: "click->highlight#setColor", turbo_frame: "chatroom"} %>
