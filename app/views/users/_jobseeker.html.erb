@@ -29,8 +29,8 @@
   </div>
   <div>
       <section class="box candidatures">
-      <h2>Mes dernières candidatures</h2>
-      <%=1 %>
+      <h2>Mes dernières candidatures :</h2>
+      <%= user.last_candidacies.join("  |  ") %>
     </section>
   </div>
 </div>
