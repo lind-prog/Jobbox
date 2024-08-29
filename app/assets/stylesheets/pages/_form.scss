@@ -1,7 +1,7 @@
 .form-container {
   width: 100%;
   max-width: 800px;
-  background-color: #f5f5f0;
+  background-color: #B8ADFF;
   padding: 30px;
   border-radius: 8px;
   margin: 20px auto;
@@ -50,6 +50,7 @@ h1, h2 {
 
 h1{
 font-family: 'Lovelo', sans-serif;
+padding-top: 20px;
 }
 
 h2{
@@ -81,20 +82,22 @@ h2{
   margin-bottom: 10px;
 }
 
-.avatar-container {
+.avatar-container-form {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Aligne l'image à droite */
   align-items: center;
-  margin: 50px;
-  margin-right: 90px;
-
+  margin-right: 100px; /* Ajoute de l'espace à droite de l'image */
+  margin-top: 100px;
 }
 
-.avatar {
-  border-radius: 50%;
-  object-fit: cover;
+.avatar-form {
+  width: 200px; /* Augmente la largeur de l'image */
+  height: 200px; /* Augmente la hauteur pour garder une forme ovale */
+  border-radius: 50%; /* Maintient la forme ovale */
+  object-fit: cover; /* Assure que l'image garde ses proportions */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .btn-custom{
   background-color: #0037ff;
