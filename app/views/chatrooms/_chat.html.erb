@@ -1,8 +1,14 @@
 <div class="chat d-flex">
   <% if user.recruiter? %>
-    <h1 class = "chatroom-titre"><strong><%= chatroom.candidacy.job_seeker.name %></strong></h1>
+  <div class="chatroom-titre">
+    <h1 class = "chatroom-title"><strong><%= chatroom.candidacy.job_seeker.name %></strong></h1>
+    <p class = "chatroom-level"> Niveau de match : <%= @candidacy.match_level%> </p>
+  </div>
   <% else %>
-    <h1 class = "chatroom-titre"><strong><%= chatroom.candidacy.offer.recruiter.name %></strong></h1>
+    <div class="chatroom-titre">
+      <h1 class = "chatroom-title"><strong><%= chatroom.candidacy.offer.recruiter.name %></strong></h1>
+      <p class = "chatroom-level"> Niveau de match : <%= @candidacy.match_level%> </p>
+    </div>
   <% end %>
   <div class="container_chatroom">
     <%= turbo_stream_from "chatroom_#{chatroom.id}_messages" %>

@@ -78,7 +78,18 @@
     font-size: 24px;
     animation: none;
     text-align: start;
-    height: 10%;
+    height: 15%;
+  }
+
+  .chatroom-title{
+    font-size: 24px;
+    animation: none;
+    text-align: start;
+  }
+
+  .chatroom-level{
+    font-size: 18px;
+    text-align: start;
   }
 
   .input_user_chat {
@@ -97,15 +108,16 @@
     }
   }
 
-
 }
 .titre-list{
   padding-top: 10px;
-  background-color: rgb(213, 213, 213);
+  background-color: #cac6f6;
   margin-bottom: 0px;
   animation: none;
   height: 10%;
   width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 
@@ -165,12 +177,18 @@
   background-color: rgb(213, 213, 213);
   font-weight: bolder;
   &:hover {
-    background-color: rgb(166, 165, 165);
+    background-color: #B8ADFF;
   }
  }
  .list-group {
   background-color: rgb(213, 213, 213);
   height: 100%;
   border-color: #979797;
+  border-bottom-left-radius: 8px;
  }
+}
+
+
+.grey-color {
+  background-color: #B8ADFF !important;
 }
