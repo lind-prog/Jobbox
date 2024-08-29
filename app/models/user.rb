@@ -28,4 +28,12 @@ class User < ApplicationRecord
   def find_match(offer)
     Match.find_by(user_job_search: self.user_job_search, offer: offer)
   end
+
+  def candidacies
+    Candidacy.where(job_seeker: self)
+  end
+
+  def candidacies_as_recruiter
+    Candidacy.where(offer: self.offer)
+  end
 end

@@ -1,7 +1,8 @@
 class ChatroomsController < ApplicationController
   def index
     # raise
-    @chatrooms = Chatroom.all
+
+    @chatrooms = current_user.recruiter? ? Chatroom.where(candidacy: current_user.candidacies_as_recruiter) : Chatroom.where(candidacy: current_user.candidacies)
     if params[:chatroom]
       @chatroom = Chatroom.find(params[:chatroom])
       @candidacy = @chatroom.candidacy
