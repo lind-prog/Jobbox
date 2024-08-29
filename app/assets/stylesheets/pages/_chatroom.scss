@@ -1,6 +1,6 @@
 .chat {
-  background: #efeeee;
-  height: calc(100vh - 55px);
+  background: #dddddd;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,22 +10,25 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow: hidden;
   }
 
   .messages {
-    height: 100%;
-    overflow: scroll;
+    flex-grow: 1; /* Prendre tout l'espace disponible */
+    overflow-y: auto; /* Activer le scroll vertical */
     padding: 1rem;
   }
 
   #new_message {
-    border-top: 1px solid $gray-200;
+    border-top: 1px solid #979797;
     padding: 1rem;
 
     .form-group {
       margin-bottom: 0;
+      background-color: #ffffff;
     }
   }
+
   .message {
     display: flex;
     flex-direction: column;
@@ -69,18 +72,105 @@
   }
 
   .chatroom-titre{
-    margin-top : 5px;
-    border-bottom: 1px solid #979797;;
-    margin-bottom: 0;
-    padding-bottom: 1rem;
+    border-bottom: 1px solid #979797;
+    padding-top: 5px ;
+    padding-left: 10px;
     font-size: 24px;
     animation: none;
     text-align: start;
+    height: 10%;
   }
+
+  .input_user_chat {
+    height: 20%;
+
+    .new_message_content {
+      margin-right: 5px;
+      margin-bottom: 0px !important;
+      align-self: center;
+    }
+
+    .button_submit {
+      margin: 0px !important;
+      align-self: center;
+      width: 0%;
+    }
+  }
+
 
 }
 .titre-list{
   padding-top: 10px;
   background-color: rgb(213, 213, 213);
   margin-bottom: 0px;
+  animation: none;
+  height: 10%;
+  width: 100%;
+}
+
+
+.btn-back-chatroom{
+  display: inline-block;
+  margin: 10px;
+  padding: 9px 10px;
+  font-size: 14px;
+  background-color: #0037ff;
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  border: #0037ff;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #4a71ff;
+    transform: scale(1.05);
+  }
+}
+
+.text-end{
+  background-color: white;
+}
+
+.chatroom_container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  margin: 20px;
+  border-radius: 20px;
+  height: 90vh;
+}
+
+.chatrooms-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 90%;
+
+  > * {
+    overflow-y: auto;
+  }
+
+  > :first-child {
+    border-right: 1px solid #979797;
+  }
+
+  > :last-child {
+    background-color: rgb(213, 213, 213);
+  }
+
+ .list-group-item {
+  background-color: rgb(213, 213, 213);
+  font-weight: bolder;
+  &:hover {
+    background-color: rgb(166, 165, 165);
+  }
+ }
+ .list-group {
+  background-color: rgb(213, 213, 213);
+  height: 100%;
+  border-color: #979797;
+ }
 }

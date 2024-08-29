@@ -1,15 +1,14 @@
-<div class="dashboard-container">
-  <header class="dashboard-header">
-    <div class="profile-card">
-      <div class="profile-image">
-        <%= link_to root_path do %>
-          <%= image_tag 'https://www.images-et-reseaux.com/voy_content/uploads/2024/01/techinnov_logo.jpg', alt: "Avatar Profil", class: 'avatar' %>
-        <% end %>
-      </div>
-      <div class="profile-info">
-        <h1><%= user.name %></h1>
-        <p><%= user.email %></p>
-      </div>
+<div class="profile-card">
+  <div class="profile-card-inner">
+    <div class="profile-image">
+      <%= link_to root_path do %>
+        <%= image_tag 'https://www.olin.edu/sites/default/files/styles/card/public/2022-04/DassaultSystemes.png?itok=00lvjIZo', alt: "Avatar Profil", class: 'avatar' %>
+      <% end %>
+    </div>
+    <div class="profile-info">
+      <h1><%= user.name %></h1>
+      <p><%= user.email %></p>
+
     </div>
   </header>
 
