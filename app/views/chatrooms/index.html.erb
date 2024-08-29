@@ -1,38 +1,19 @@
-
-  <h1 class ="titre-list pb-3">Ma messagerie</h1>
+ <%# <div class="text-end"> %>
+  <%# <%= link_to "retour", user_path(current_user), class: "btn-back-chatroom mb-3"%>
+<%# </div> %>
+<div class = "chatroom_container">
+  <h1 class ="titre-list pb-3">Messagerie</h1>
 
   <div class="chatrooms-grid">
     <%= render 'chatrooms/list', chatrooms: @chatrooms %>
     <%= turbo_frame_tag :chatroom do %>
       <% if params[:chatroom] %>
-        <div class="container chat d-flex">
-          <% if current_user.recruiter? %>
-            <h1 class = "chatroom-titre"><strong><%= @chatroom.candidacy.job_seeker.name %></strong></h1>
-          <% else %>
-            <h1 class = "chatroom-titre"><strong><%= @chatroom.candidacy.offer.recruiter.name %></strong></h1>
-          <% end %>
-          <div class="container_chatroom">
-            <%= turbo_stream_from "chatroom_#{@chatroom.id}_messages" %>
-              <div id="messages" class="messages">
-                <% @chatroom.messages.each do |message| %>
-                <%= render "messages/message", message: message, user: current_user %>
-                <% end %>
-              </div>
-          </div>
+        <%= render 'chatrooms/chat', user: current_user, chatroom: @chatroom, new_message: @message %>
 
-          <%= simple_form_for [@chatroom, @message], html: { class: "", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } } do |f| %>
-            <% other_user = current_user == @chatroom.candidacy.job_seeker ? @chatroom.candidacy.offer.recruiter : @chatroom.candidacy.job_seeker %>
-            <%= f.input :content,
-              label: false,
-              placeholder: "Message #{other_user.name}",
-              wrapper_html: { class: "flex-grow-1" }
-            %>
-            <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
-          <% end %>
-        </div>
       <% else %>
         <div class="text-secondary p-3" id="chatroom"> Sélectionnez une conversation </div>
       <% end %>
 
     <% end %>
   </div>
+</div>
