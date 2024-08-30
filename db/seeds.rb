@@ -278,7 +278,7 @@ Offer.create!(
 Offer.create!(
   title: "Chargé de Communication",
   contrat_type: "CDD",
-  experience_level: "1-2 ans",
+  experience_level: "1-3 ans",
   study_level: "Bac+3",
   salary: "20k€ - 30k€",
   sector: "Communication",
@@ -314,9 +314,9 @@ Offer.create!(
 Offer.create!(
   title: "Développeur Front-End",
   contrat_type: "CDI",
-  experience_level: "1-2 ans",
+  experience_level: "1-3 ans",
   study_level: "Bac+3",
-  salary: "28k€ - 38k€",
+  salary: "20k€ - 30k€",
   sector: "Technologie",
   address: "5 Avenue de l'Yser, 33700 Mérignac",
   description: "En tant que Développeur Front-End, vous serez responsable de la création et de l'optimisation des interfaces utilisateur. Vous travaillerez avec des technologies modernes telles que React ou Vue.js pour développer des applications web réactives et performantes. Vous collaborerez avec les équipes de design pour garantir que les interfaces sont intuitives et attrayantes, et vous participerez à l'amélioration continue des processus de développement. Ce poste offre un environnement de travail dynamique avec des possibilités de croissance professionnelle.",
@@ -372,9 +372,9 @@ UserJobSearch.create!(
 UserJobSearch.create!(
   job_seeker: job_seekers[2],
   sector: "Technologie",
-  experience_level: "1-2 ans",
+  experience_level: "1-3 ans",
   study_level: "Bac+3",
-  salary: "28k€ - 38k€",
+  salary: "20k€ - 30k€",
   city: "Pessac"
 )
 
@@ -399,7 +399,7 @@ UserJobSearch.create!(
 UserJobSearch.create!(
   job_seeker: job_seekers[5],
   sector: "Communication",
-  experience_level: "1-2 ans",
+  experience_level: "1-3 ans",
   study_level: "Bac+3",
   salary: "20k€ - 30k€",
   city: "Bordeaux"
@@ -408,9 +408,9 @@ UserJobSearch.create!(
 UserJobSearch.create!(
   job_seeker: job_seekers[6],
   sector: "Technologie",
-  experience_level: "1-2 ans",
+  experience_level: "1-3 ans",
   study_level: "Bac+3",
-  salary: "28k€ - 38k€",
+  salary: "20k€ - 30k€",
   city: "Mérignac"
 )
 
@@ -427,4 +427,3 @@ Offer.all.each do |offer|
 end
 
 puts "Matches created"
-
