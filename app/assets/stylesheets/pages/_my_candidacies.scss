@@ -1,6 +1,6 @@
 $accept-color: #2ecc71;
 $refuse-color: #ff1900;
-$pending-color: #f1c40f;
+$pending-color: #ffb820;
 
 
 
@@ -79,10 +79,12 @@ h1 {
   align-items: center;
   margin-bottom: 40px;
   font-size: 18px;
+
   .tab-underlined.active {
     opacity: 1;
     border-bottom: 3px solid #0037ff;
   }
+
   .tab-underlined {
     color: #000000;
     padding: 8px;
