@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-controller="switch-button">
   <% if current_user.recruiter? %>
     <%= render "recruitercandidacies", user: @user %>
   <% else %>

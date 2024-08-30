@@ -2,18 +2,18 @@
   <div class="text-end mb-3">
       <%= link_to "Retour", user_path(current_user), class: "btn-back mb-3"%>
   </div>
-  <ul class="list-inline tabs-underlined" data-controller="switch_button">
+  <ul class="list-inline tabs-underlined">
     <li>
-      <%= link_to "Tout", my_candidacies_candidacies_path, data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch_button#switch"  }, class:"tab-underlined active" %>
+      <%= link_to "Tout", my_candidacies_candidacies_path, data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch-button#switch"  }, class:"tab-underlined active" %>
     </li>
     <li>
-      <%= link_to "En cours", my_candidacies_candidacies_path(status: :pending), data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch_button#switch"   }, class:"tab-underlined" %>
+      <%= link_to "En cours", my_candidacies_candidacies_path(status: :pending), data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch-button#switch"   }, class:"tab-underlined" %>
     </li>
     <li>
-      <%= link_to "Validées", my_candidacies_candidacies_path(status: :validated), data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch_button#switch"   },class:"tab-underlined" %>
+      <%= link_to "Validées", my_candidacies_candidacies_path(status: :validated), data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch-button#switch"   },class:"tab-underlined" %>
     </li>
     <li>
-      <%= link_to "Déclinées", my_candidacies_candidacies_path(status: :declined), data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch_button#switch"   },class:"tab-underlined" %>
+      <%= link_to "Déclinées", my_candidacies_candidacies_path(status: :declined), data: { turbo_frame: :candidacies, switch_button_target: "button", action: "click->switch-button#switch"   },class:"tab-underlined" %>
     </li>
   </ul>
 <%= turbo_frame_tag :candidacies do %>

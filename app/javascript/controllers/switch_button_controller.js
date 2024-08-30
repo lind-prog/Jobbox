@@ -2,17 +2,10 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="switch-button"
 export default class extends Controller {
-  static targets = ["button"]
-
-  connect() {
-    console.log(this.buttonTarget)
-  }
+  static targets = ["button"];
 
   switch(event) {
-    event.preventDefault()
-
-    this.buttonTargets.remove("active")
-    this.buttonTarget.add("active")
+    this.buttonTargets.forEach((element) => element.classList.remove("active"));
+    event.currentTarget.classList.add("active")
   }
-
 }
